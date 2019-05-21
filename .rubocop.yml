@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+Style/AsciiComments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Rails:
+  Enabled: true
