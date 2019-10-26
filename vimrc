@@ -73,42 +73,21 @@ cnoremap <C-n> <Down>
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
-"dein Scripts-----------------------------
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+"""""""""""""""""""""""""""
+"" PluginManaging (vim-plug)
+"""""""""""""""""""""""""""
+" vim-plug is distributed as a single Vimscript file.
+" All you have to do is to download the file in a directory so that Vim can load it.
+" $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
 
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+" Declare the list of plugins.
+Plug 'scrooloose/nerdtree'
+Plug 'slim-template/vim-slim'
 
-  call dein#add('~/.cache/dein')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('slim-template/vim-slim')
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
 
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-" もし、未インストールものものがあったらインストール
-if dein#check_install()
-  call dein#install()
-endif
-
-filetype plugin indent on
-syntax enable
-"End dein Scripts-------------------------
+" Run :PlugInstall to install the plugins.
