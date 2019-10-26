@@ -1,7 +1,7 @@
-"*****************************************************************************
-"" Basic & Display Setup
-"*****************************************************************************"
-"" encoding
+"******************************
+" Basic & Display Setup
+"******************************
+" encoding
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -9,14 +9,14 @@ set bomb
 set binary
 set ttyfast
 
-"" file dealing
+" file dealing
 set confirm    " 保存されていないファイルがあるときは終了前に保存確認
 set hidden     " 保存されていないファイルがあるときでも別のファイルを開くことが出来る
 set autoread   " 外部でファイルに変更がされた場合は読みなおす
 set nobackup   " ファイル保存時にバックアップファイルを作らない
 set noswapfile " ファイル編集中にスワップファイルを作らない
 
-"" tab, indent
+" tab, indent
 set expandtab     " タブ入力を複数の空白入力に置き換える
 set tabstop=2     " 画面上でタブ文字が占める幅
 set shiftwidth=2  " 自動インデントでずれる幅
@@ -24,13 +24,13 @@ set softtabstop=2 " 連続した空白に対してタブキーやバックスペ
 set autoindent    " 改行時に前の行のインデントを継続する
 set smartindent   " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 
-"" yank to clipboard
+" yank to clipboard
 set clipboard+=unnamed
 
-"" fix backspace indent
+" fix backspace indent
 set backspace=indent,eol,start
 
-"" searching
+" searching
 set hlsearch
 set incsearch  " インクリメンタルサーチ
 set ignorecase " 大文字小文字の区別をせずに検索
@@ -50,16 +50,16 @@ colorscheme darkblue
 " when vim start
 autocmd BufRead,BufNewFile *.slim setfiletype slim
 
-"""""""""""""""""""""""""""
-"" KeyMapping
-"""""""""""""""""""""""""""
+"******************************
+" KeyMapping
+"******************************
 inoremap jj <ESC>
 cnoremap nnn NERDTree<CR><ESC>
 
-"" clean highlight
+" clean highlight
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 
-"" switching windows
+" switching windows
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
@@ -73,9 +73,9 @@ cnoremap <C-n> <Down>
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 
-"""""""""""""""""""""""""""
-"" PluginManaging (vim-plug)
-"""""""""""""""""""""""""""
+"******************************
+" PluginManaging (vim-plug)
+"******************************
 " vim-plug is distributed as a single Vimscript file.
 " All you have to do is to download the file in a directory so that Vim can load it.
 " $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
