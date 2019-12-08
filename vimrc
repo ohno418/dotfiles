@@ -85,7 +85,11 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'simeji/winresizer'
+
 Plug 'slim-template/vim-slim'
+Plug 'leafgarland/typescript-vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
