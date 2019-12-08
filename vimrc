@@ -55,7 +55,6 @@ autocmd BufRead,BufNewFile *.slim setfiletype slim
 "******************************
 inoremap jj <ESC>
 cnoremap nnn NERDTree<CR>
-cnoremap term vert term<CR>
 
 " clean highlight
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
