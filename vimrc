@@ -1,7 +1,32 @@
 "******************************
+" PluginManaging (vim-plug)
+"******************************
+" vim-plug is distributed as a single Vimscript file.
+" All you have to do is to download the file in a directory so that Vim can load it.
+" $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
+Plug 'scrooloose/nerdtree'                      " Source tree
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
+Plug 'dense-analysis/ale'                       " Linter
+Plug 'vim-airline/vim-airline'                  " Status bar
+Plug 'simeji/winresizer'                        " Window resizing
+Plug 'fatih/molokai'                            " Colorscheme
+
+Plug 'slim-template/vim-slim'
+Plug 'leafgarland/typescript-vim'
+" List ends here. Plugins become visible to Vim after this call.
+" Run :PlugInstall to install the plugins.
+call plug#end()
+
+"******************************
 " Basic & Display Setup
 "******************************
 syntax on
+colorscheme molokai
 
 " encoding
 set encoding=utf-8
@@ -51,33 +76,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 inoremap jj <ESC>
 cnoremap nnn NERDTree<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
-
-"******************************
-" PluginManaging (vim-plug)
-"******************************
-" vim-plug is distributed as a single Vimscript file.
-" All you have to do is to download the file in a directory so that Vim can load it.
-" $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-" Plugins will be downloaded under the specified directory.
-call plug#begin('~/.vim/plugged')
-
-" Declare the list of plugins.
-Plug 'scrooloose/nerdtree'                      " Source tree
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " Autocompletion
-Plug 'dense-analysis/ale'                       " Linter
-Plug 'vim-airline/vim-airline'                  " Status bar
-Plug 'simeji/winresizer'                        " Window resizing
-Plug 'fatih/molokai'                            " Colorscheme
-
-Plug 'slim-template/vim-slim'
-Plug 'leafgarland/typescript-vim'
-" List ends here. Plugins become visible to Vim after this call.
-" Run :PlugInstall to install the plugins.
-call plug#end()
-
-colorscheme molokai
