@@ -76,8 +76,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 inoremap jj <ESC>
 cnoremap nnn NERDTree<CR>
 cnoremap <C-p> <Up>
