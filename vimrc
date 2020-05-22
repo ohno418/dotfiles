@@ -9,9 +9,10 @@
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'dense-analysis/ale' " Linter
-Plug 'simeji/winresizer'  " Window resizing
-Plug 'fatih/molokai'      " Colorscheme
+Plug 'scrooloose/nerdtree' " Filer
+Plug 'dense-analysis/ale'  " Linter
+Plug 'simeji/winresizer'   " Window resizing
+Plug 'fatih/molokai'       " Colorscheme
 
 Plug 'leafgarland/typescript-vim'
 " List ends here. Plugins become visible to Vim after this call.
@@ -67,12 +68,6 @@ set wildmenu " Display all matching files when we tab-completion
 " Create the `tags` file
 command! MakeTags !ctags -R .
 
-" File browsing (netrw)
-let g:netrw_banner=0       " disable annoying banner
-let g:netrw_browse_split=4 " open in prior window
-let g:netrw_altv=1         " open splits to the right
-let g:netrw_liststyle=3    " tree view
-
 "*************
 " KeyMapping
 "*************
@@ -87,3 +82,4 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
+cnoremap nnn NERDTree<CR>
