@@ -82,7 +82,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
-cnoremap t<CR> tabnew<CR>
-cnoremap t<Space> tabe<Space>
-cnoremap f<Space> find<Space>
+cnoremap T<Space> tabe<Space>
+cnoremap F<Space> find<Space>
 cnoremap nnn NERDTree<CR>
