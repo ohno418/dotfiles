@@ -64,6 +64,7 @@ set noswapfile
 " File searching
 set path+=** " Search down into subfolders
 set wildmenu " Display all matching files when we tab-completion
+set wildignore+=*/node_modules/*,*/dist/* " Ignore these directories
 
 " Create the `tags` file
 command! MakeTags !ctags -R .
