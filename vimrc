@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
 Plug 'scrooloose/nerdtree' " Filer
+Plug 'ctrlpvim/ctrlp.vim'  " File searching
 Plug 'dense-analysis/ale'  " Linter
 Plug 'simeji/winresizer'   " Window resizing
 Plug 'fatih/molokai'       " Colorscheme
@@ -61,13 +62,8 @@ set autoread
 set nobackup
 set noswapfile
 
-" File searching
-set path+=** " Search down into subfolders
-set wildmenu " Display all matching files when we tab-completion
-set wildignore+=*/node_modules/*,*/dist/* " Ignore these directories
-
-" Create the `tags` file
-command! MakeTags !ctags -R .
+" Ignore these directories for file searching
+set wildignore+=*/node_modules/*,*/dist/*
 
 "*************
 " KeyMapping
@@ -76,7 +72,6 @@ inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap Y y$
 nnoremap <C-n> gt
-nnoremap <C-p> gT
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
@@ -86,3 +81,6 @@ cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
 cnoremap F<Space> find<Space>
 cnoremap nnn NERDTree<CR>
+
+" Create tags file
+command! Ctags !ctags -R .
