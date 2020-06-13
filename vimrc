@@ -63,7 +63,7 @@ set nobackup
 set noswapfile
 
 " Ignore these directories for file searching
-set wildignore+=*/node_modules/*,*/dist/*
+set wildignore+=*/node_modules/*,*/dist/*,*.o
 
 "*************
 " KeyMapping
