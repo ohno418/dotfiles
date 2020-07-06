@@ -70,7 +70,6 @@ set wildignore+=*/node_modules/*,*/dist/*,*.o
 "*************
 inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
-nnoremap Y y$
 nnoremap <C-n> gt
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -79,7 +78,6 @@ nnoremap <C-h> <C-w>h
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
-cnoremap F<Space> find<Space>
 cnoremap nnn NERDTree<CR>
 
 " Create tags file
