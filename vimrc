@@ -13,7 +13,7 @@ Plug 'scrooloose/nerdtree' " Filer
 Plug 'ctrlpvim/ctrlp.vim'  " File searching
 Plug 'dense-analysis/ale'  " Linter
 Plug 'simeji/winresizer'   " Window resizing
-Plug 'fatih/molokai'       " Colorscheme
+Plug 'w0ng/vim-hybrid'     " Colorscheme
 
 Plug 'leafgarland/typescript-vim'
 " List ends here. Plugins become visible to Vim after this call.
@@ -25,7 +25,9 @@ call plug#end()
 "*************
 syntax enable
 filetype plugin on
-colorscheme molokai
+
+set background=dark
+colorscheme hybrid
 
 set number
 set encoding=utf-8
