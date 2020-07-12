@@ -9,11 +9,11 @@
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'scrooloose/nerdtree' " Filer
-Plug 'ctrlpvim/ctrlp.vim'  " File searching
-Plug 'dense-analysis/ale'  " Linter
-Plug 'simeji/winresizer'   " Window resizing
-Plug 'w0ng/vim-hybrid'     " Colorscheme
+Plug 'scrooloose/nerdtree'     " Filer
+Plug 'ctrlpvim/ctrlp.vim'      " File searching
+Plug 'dense-analysis/ale'      " Linter
+Plug 'simeji/winresizer'       " Window resizing
+Plug 'tomasiser/vim-code-dark' " Colorscheme
 
 Plug 'leafgarland/typescript-vim'
 " List ends here. Plugins become visible to Vim after this call.
@@ -25,9 +25,7 @@ call plug#end()
 "*************
 syntax enable
 filetype plugin on
-
-set background=dark
-colorscheme hybrid
+colorscheme codedark
 
 set number
 set encoding=utf-8
@@ -53,6 +51,8 @@ set smartindent
 
 " Searching
 set hlsearch
+highlight Search ctermbg=lightgreen
+highlight Search ctermfg=black
 set incsearch
 set ignorecase
 set smartcase
