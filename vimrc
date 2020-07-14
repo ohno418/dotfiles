@@ -81,6 +81,4 @@ cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
 cnoremap nnn NERDTree<CR>
-
-" Create tags file
 command! Ctags !ctags -R .
