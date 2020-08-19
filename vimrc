@@ -43,7 +43,7 @@ set backspace=indent,eol,start " Fix backspace indent
 
 " tab, indent
 set expandtab
-set tabstop=2
+set tabstop=4
 set shiftwidth=2
 set softtabstop=2
 set autoindent
