@@ -13,7 +13,6 @@ Plug 'scrooloose/nerdtree'     " Filer
 Plug 'ctrlpvim/ctrlp.vim'      " File searching
 Plug 'dense-analysis/ale'      " Linter
 Plug 'simeji/winresizer'       " Window resizing
-Plug 'tomasiser/vim-code-dark' " Colorscheme
 
 Plug 'leafgarland/typescript-vim'
 " List ends here. Plugins become visible to Vim after this call.
@@ -25,7 +24,6 @@ call plug#end()
 "*************
 syntax enable
 filetype plugin on
-colorscheme codedark
 
 set number
 set encoding=utf-8
@@ -66,6 +64,9 @@ set noswapfile
 
 " Ignore these directories for file searching
 set wildignore+=*/node_modules/*,*/dist/*,*.o
+
+" Disable highlights for the linter.
+let g:ale_set_highlights = 0
 
 "*************
 " KeyMapping
