@@ -67,6 +67,8 @@ set wildignore+=*/node_modules/*,*/dist/*,*.o
 
 " Disable highlights for the linter.
 let g:ale_set_highlights = 0
+" Window resize setting
+let g:winresizer_vert_resize = 3
 
 "*************
 " KeyMapping
