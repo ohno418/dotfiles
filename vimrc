@@ -9,10 +9,10 @@
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-Plug 'scrooloose/nerdtree'     " Filer
-Plug 'ctrlpvim/ctrlp.vim'      " File searching
-Plug 'dense-analysis/ale'      " Linter
-Plug 'simeji/winresizer'       " Window resizing
+Plug 'preservim/nerdtree' " Filer
+Plug 'ctrlpvim/ctrlp.vim' " File searching
+Plug 'dense-analysis/ale' " Linter
+Plug 'simeji/winresizer'  " Window resizing
 
 Plug 'leafgarland/typescript-vim'
 " List ends here. Plugins become visible to Vim after this call.
@@ -75,13 +75,13 @@ let g:winresizer_vert_resize = 3
 "*************
 inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
-nnoremap <C-n> gt
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
+nnoremap <C-n> gt
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
-cnoremap nnn NERDTree<CR>
+cnoremap nnn NERDTreeToggle<CR>
 command! Ctags !ctags -R .
