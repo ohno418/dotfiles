@@ -14,7 +14,7 @@ cnoremap nnn NERDTreeToggle<CR>
 
 " File searching
 Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o
 
 " Linter
