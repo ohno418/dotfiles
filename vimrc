@@ -8,13 +8,26 @@
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
-" Declare the list of plugins.
-Plug 'preservim/nerdtree' " Filer
-Plug 'ctrlpvim/ctrlp.vim' " File searching
-Plug 'dense-analysis/ale' " Linter
-Plug 'simeji/winresizer'  " Window resizing
+" File explorer
+Plug 'preservim/nerdtree'
+cnoremap nnn NERDTreeToggle<CR>
 
+" File searching
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_working_path_mode = 'c'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o
+
+" Linter
+Plug 'dense-analysis/ale'
+let g:ale_set_highlights = 0
+
+" Window resizing
+Plug 'simeji/winresizer'
+let g:winresizer_vert_resize = 3
+
+" Syntax
 Plug 'leafgarland/typescript-vim'
+
 " List ends here. Plugins become visible to Vim after this call.
 " Run :PlugInstall to install the plugins.
 call plug#end()
@@ -62,14 +75,6 @@ set autoread
 set nobackup
 set noswapfile
 
-" Ignore these directories for file searching
-set wildignore+=*/node_modules/*,*/dist/*,*.o
-
-" Disable highlights for the linter.
-let g:ale_set_highlights = 0
-" Window resize setting
-let g:winresizer_vert_resize = 3
-
 "*************
 " KeyMapping
 "*************
@@ -83,5 +88,4 @@ nnoremap <C-n> gt
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
-cnoremap nnn NERDTreeToggle<CR>
 command! Ctags !ctags -R .
