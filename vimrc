@@ -46,9 +46,7 @@ set ttyfast
 set history=200
 set visualbell t_vb=
 set noerrorbells
-set showmatch
 set cursorline
-highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
 set clipboard+=unnamed         " Yank to clipboard
 set backspace=indent,eol,start " Fix backspace indent
 
