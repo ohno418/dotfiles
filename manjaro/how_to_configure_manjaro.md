@@ -4,4 +4,8 @@
 $ sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 ```
 
-2. 
+2. For installing packages, make sure to update the system together.
+
+```
+$ sudo pacman -Syu newpackage
+```
