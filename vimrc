@@ -10,10 +10,11 @@ call plug#begin('~/.vim/plugged')
 
 " File explorer
 Plug 'preservim/nerdtree'
-cnoremap nnn NERDTreeToggle<CR>
+cnoremap nnn NERDTree<CR>
 
 " File searching
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_map = ',<C-p>'
 let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o
 
@@ -83,6 +84,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-n> gt
+nnoremap <C-p> gT
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
