@@ -41,4 +41,27 @@ Both console and X11 keyboard settings are needed.
     ```
   ```
 
-  3. Restart
+Restart.
+
+4. Japanese input.
+
+```
+$ sudo pacman -Syu fcitx-mozc fcitx-gtk2 fcitx-gtk3 fcitx-qt5 fcitx-im
+$ vim ~/.xprofile
+  ```
+  export LANG="ja_JP.UTF-8"
+  export XMODIFIERS="@im=fcitx"
+  export XMODIFIER="@im=fcitx"
+  export GTK_IM_MODULE=fcitx
+  export QT_IM_MODULE=fcitx
+  export DefaultIMModule=fcitx
+  ```
+$ vim ~/.bashrc
+  ```
+  export GTK_IM_MODULE=fcitx
+  export XMODIFIERS=@im=fcitx
+  export QT_IM_MODULE=fcitx
+  ```
+```
+
+Restart.
