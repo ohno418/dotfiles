@@ -69,3 +69,14 @@ Restart.
 5. Xfce terminal settings.
 
 For shortcuts, edit `~/.config/xfce4/terminal/accels.scm`.
+
+6. Xfce keybindings settings.
+
+```
+$ vim ~/.config/gtk-3.0/settings.ini
+  ```
+  [Settings]
+  gtk-key-theme-name = Emacs
+  ```
+$ xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
+```
