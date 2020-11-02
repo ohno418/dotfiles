@@ -65,3 +65,7 @@ $ vim ~/.bashrc
 ```
 
 Restart.
+
+5. Xfce terminal settings.
+
+For shortcuts, edit `~/.config/xfce4/terminal/accels.scm`.
