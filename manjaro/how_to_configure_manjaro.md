@@ -83,4 +83,7 @@ $ xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
 
 7. Power management
 
-Make sure to suspend or hibernate when lid is closed.
+On Xfce power manager,
+
+- Suspend or hibernate when lid is closed.
+- Sleep settings.
