@@ -88,4 +88,3 @@ nnoremap <C-p> gT
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
 cnoremap T<Space> tabe<Space>
-command! Ctags !ctags -R .
