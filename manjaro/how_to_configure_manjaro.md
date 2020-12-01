@@ -1,10 +1,12 @@
-1. Change the mirror list, and synchronize to it.
+# Package install settings
+
+### Change the mirror list, and synchronize to it.
 
 ```
 $ sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
 ```
 
-2. Install packages.
+### Install packages.
 
 For installing packages, make sure to update the system together.
 
@@ -12,38 +14,51 @@ For installing packages, make sure to update the system together.
 $ sudo pacman -Syu <newpackage>
 ```
 
-3. Change keymapping.
+# Change keymapping.
 
+e.g. Exchange Ctrl and CapsLock.
 Both console and X11 keyboard settings are needed.
 
 (ref: https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration)
 
-  1. Console
+### Console
 
+```
+$ sudo mkdir -p /usr/local/share/kbd/keymaps
+$ sudo vim /usr/local/share/kbd/keymaps/personal.map
   ```
-  $ sudo mkdir -p /usr/local/share/kbd/keymaps
-  $ sudo vim /usr/local/share/kbd/keymaps/personal.map
-    ```
-    keycode 58 = Control
-    ```
-  $ sudo vim /etc/vconsole.conf
-    ```
-    VC Keymap: /usr/local/share/kbd/keymaps/personal.map
-    ```
+  keycode 58 = Control
   ```
 
-  2. X11/Xorg
+$ sudo vim /etc/vconsole.conf
+  ```
+  VC Keymap: /usr/local/share/kbd/keymaps/personal.map
+  ```
+```
 
+### X11/Xorg
+
+```
+$ sudo vim /etc/X11/xorg.conf.d/00-keyboard.conf
   ```
-  $ sudo vim /etc/X11/xorg.conf.d/00-keyboard.conf
-    ```
-    Option "XkbOptions" "ctrl:swapcaps"
-    ```
+  Option "XkbOptions" "ctrl:swapcaps"
   ```
+```
 
 Restart.
 
-4. Japanese input.
+# Xfce terminal shortcut settings.
+
+For shortcuts, edit `~/.config/xfce4/terminal/accels.scm`.
+
+# Power management
+
+On Xfce power manager,
+
+- Suspend or hibernate when lid is closed.
+- Sleep settings.
+
+# Japanese input
 
 ```
 $ sudo pacman -Syu fcitx-mozc fcitx-gtk2 fcitx-gtk3 fcitx-qt5 fcitx-im
@@ -56,6 +71,7 @@ $ vim ~/.xprofile
   export QT_IM_MODULE=fcitx
   export DefaultIMModule=fcitx
   ```
+
 $ vim ~/.bashrc
   ```
   export GTK_IM_MODULE=fcitx
@@ -66,11 +82,9 @@ $ vim ~/.bashrc
 
 Restart.
 
-5. Xfce terminal settings.
+# Xfce keybindings settings.
 
-For shortcuts, edit `~/.config/xfce4/terminal/accels.scm`.
-
-6. Xfce keybindings settings.
+Change to Emacs keybindings.
 
 ```
 $ vim ~/.config/gtk-3.0/settings.ini
@@ -80,10 +94,3 @@ $ vim ~/.config/gtk-3.0/settings.ini
   ```
 $ xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
 ```
-
-7. Power management
-
-On Xfce power manager,
-
-- Suspend or hibernate when lid is closed.
-- Sleep settings.
