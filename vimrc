@@ -1,3 +1,5 @@
+let mapleader=" "
+
 "*************
 " Plugin
 "*************
@@ -10,11 +12,11 @@ call plug#begin('~/.vim/plugged')
 
 " File explorer
 Plug 'preservim/nerdtree'
-cnoremap nnn NERDTree<CR>
+nnoremap <Leader>n :NERDTree<CR>
 
 " File searching
 Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = ',<C-p>'
+let g:ctrlp_map = "<Leader><C-p>"
 let g:ctrlp_working_path_mode = 0
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o
 
