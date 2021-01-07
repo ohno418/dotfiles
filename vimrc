@@ -87,6 +87,6 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+nnoremap <Leader>t :tabe %<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
-cnoremap T<Space> tabe<Space>
