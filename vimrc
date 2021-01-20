@@ -88,5 +88,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-n> gt
 nnoremap <C-p> gT
 nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>c :tabclose<CR>
 cnoremap <C-p> <Up>
 cnoremap <C-n> <Down>
