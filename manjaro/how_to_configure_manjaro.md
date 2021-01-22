@@ -62,7 +62,7 @@ On Xfce power manager,
 $ sudo pacman -Syu fcitx-mozc fcitx-gtk2 fcitx-gtk3 fcitx-qt5 fcitx-im
 $ vim ~/.xprofile
 
-  // This line might be unneeded.
+  // This line may be unneeded.
   // export LANG="ja_JP.UTF-8"
   export XMODIFIERS="@im=fcitx"
   export XMODIFIER="@im=fcitx"
