@@ -50,7 +50,6 @@ set history=200
 set visualbell t_vb=
 set noerrorbells
 set cursorline
-set clipboard=unnamedplus      " Yank to clipboard
 set backspace=indent,eol,start " Fix backspace indent
 
 " tab, indent
