@@ -18,7 +18,7 @@ nnoremap <Leader>n :NERDTree<CR>
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = "<Leader><C-p>"
 let g:ctrlp_working_path_mode = 0
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o,*/target/*
 
 " Linter
 Plug 'dense-analysis/ale'
