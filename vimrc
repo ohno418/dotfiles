@@ -1,43 +1,34 @@
 let mapleader=" "
 
-"*************
-" Plugin
-"*************
+"=== Plugin ===
 " vim-plug is distributed as a single Vimscript file.
 " All you have to do is to download the file in a directory so that Vim can load it.
 " $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-" Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
+    " File explorer
+    Plug 'preservim/nerdtree'
+    nnoremap <Leader>n :NERDTree<CR>
 
-" File explorer
-Plug 'preservim/nerdtree'
-nnoremap <Leader>n :NERDTree<CR>
+    " File searching
+    Plug 'ctrlpvim/ctrlp.vim'
+    let g:ctrlp_map = "<Leader><C-p>"
+    let g:ctrlp_working_path_mode = 0
+    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o,*/target/*
 
-" File searching
-Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_map = "<Leader><C-p>"
-let g:ctrlp_working_path_mode = 0
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o,*/target/*
+    " Linter
+    Plug 'dense-analysis/ale'
+    let g:ale_set_highlights = 0
 
-" Linter
-Plug 'dense-analysis/ale'
-let g:ale_set_highlights = 0
+    " Window resizing
+    Plug 'simeji/winresizer'
+    let g:winresizer_vert_resize = 3
 
-" Window resizing
-Plug 'simeji/winresizer'
-let g:winresizer_vert_resize = 3
-
-" Syntax
-Plug 'leafgarland/typescript-vim'
-
-" List ends here. Plugins become visible to Vim after this call.
-" Run :PlugInstall to install the plugins.
+    " Syntax
+    Plug 'leafgarland/typescript-vim'
 call plug#end()
+" Run :PlugInstall to install the plugins.
 
-"*************
-" Basic setup
-"*************
+"=== Basic setup ===
 syntax enable
 filetype plugin on
 
@@ -76,9 +67,7 @@ set autoread
 set nobackup
 set noswapfile
 
-"*************
-" KeyMapping
-"*************
+"=== KeyMapping ===
 inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-j> <C-w>j
