@@ -1,15 +1,15 @@
 let mapleader=" "
 
-"=== Plugin ===
 " vim-plug is distributed as a single Vimscript file.
 " All you have to do is to download the file in a directory so that Vim can load it.
-" $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+" ($ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)
+" Then run :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
     " File explorer
     Plug 'preservim/nerdtree'
     nnoremap <Leader>n :NERDTree<CR>
 
-    " File searching
+    " File search
     Plug 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_map = "<Leader><C-p>"
     let g:ctrlp_working_path_mode = 0
@@ -26,9 +26,7 @@ call plug#begin('~/.vim/plugged')
     " Syntax
     Plug 'leafgarland/typescript-vim'
 call plug#end()
-" Run :PlugInstall to install the plugins.
 
-"=== Basic setup ===
 syntax enable
 filetype plugin on
 
@@ -67,7 +65,6 @@ set autoread
 set nobackup
 set noswapfile
 
-"=== KeyMapping ===
 inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-j> <C-w>j
