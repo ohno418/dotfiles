@@ -17,7 +17,6 @@ call plug#begin('~/.vim/plugged')
 
     " Linter
     Plug 'dense-analysis/ale'
-    let g:ale_set_highlights = 0
 
     " Window resizing
     Plug 'simeji/winresizer'
