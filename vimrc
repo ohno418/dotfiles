@@ -23,12 +23,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'simeji/winresizer'
     let g:winresizer_vert_resize = 3
 
+    " Colorscheme
+    Plug 'jaredgorski/spacecamp'
+
     " Syntax
     Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 syntax enable
 filetype plugin on
+colorscheme spacecamp
 
 set number
 set encoding=utf-8
