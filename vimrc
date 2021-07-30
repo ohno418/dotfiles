@@ -55,11 +55,11 @@ set smartindent
 
 " Searching
 set hlsearch
-highlight Search ctermbg=lightgreen
-highlight Search ctermfg=black
 set incsearch
 set ignorecase
 set smartcase
+highlight Search ctermbg=LightGreen ctermfg=Black
+highlight MatchParen ctermbg=DarkGray ctermfg=LightGreen
 
 " File dealing
 set confirm
