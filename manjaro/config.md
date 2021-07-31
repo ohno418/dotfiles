@@ -20,9 +20,9 @@ e.g. Exchange Ctrl and CapsLock.
 
 Both console and X11 keyboard settings are needed.
 
-(ref: https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration)
-
 ### Console
+
+https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration
 
 ```
 $ sudo mkdir -p /usr/local/share/kbd/keymaps
@@ -36,6 +36,8 @@ $ sudo vim /etc/vconsole.conf
 ```
 
 ### X11/Xorg
+
+https://wiki.archlinux.org/title/Xorg/Keyboard_configuration
 
 ```
 $ sudo vim /etc/X11/xorg.conf.d/00-keyboard.conf
