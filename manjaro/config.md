@@ -26,13 +26,15 @@ https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration
 
 ```
 $ sudo mkdir -p /usr/local/share/kbd/keymaps
-$ sudo vim /usr/local/share/kbd/keymaps/personal.map
+$ sudo cp /usr/share/kbd/keymaps/i386/qwerty/us.map.gz /usr/local/share/kbd/keymaps/
+$ sudo gunzip /usr/local/share/kbd/keymaps/us.map.gz
+$ sudo vim /usr/local/share/kbd/keymaps/us.map
 
   keycode 58 = Control
 
 $ sudo vim /etc/vconsole.conf
 
-  VC Keymap: /usr/local/share/kbd/keymaps/personal.map
+  KEYMAP=/usr/local/share/kbd/keymaps/us.map
 ```
 
 ### X11/Xorg
