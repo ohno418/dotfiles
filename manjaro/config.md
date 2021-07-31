@@ -65,9 +65,7 @@ On Xfce power manager,
 
 # Japanese input
 
-// TODO:
-//   There's room to improve this code.
-//   https://wiki.archlinux.org/title/fcitx
+// TODO: There's room to improve this code. https://wiki.archlinux.org/title/fcitx
 
 ```
 $ sudo pacman -Syu fcitx-mozc fcitx-gtk2 fcitx-gtk3 fcitx-qt5 fcitx-im
