@@ -16,11 +16,11 @@ $ sudo pacman -Syu <newpackage>
 
 # Change keymapping
 
-e.g. Exchange Ctrl and CapsLock.
-
 Both vconsole and X11 keyboard settings are needed.
 
 ### Virtual Console
+
+Map CapsLock to Ctrl.
 
 https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration
 
@@ -36,6 +36,8 @@ $ sudo vim /etc/vconsole.conf
 ```
 
 ### X11/Xorg
+
+Exchange Ctrl and CapsLock.
 
 https://wiki.archlinux.org/title/Xorg/Keyboard_configuration
 
