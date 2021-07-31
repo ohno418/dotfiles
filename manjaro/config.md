@@ -46,6 +46,7 @@ https://wiki.archlinux.org/title/Xorg/Keyboard_configuration
 ```
 $ sudo vim /etc/X11/xorg.conf.d/00-keyboard.conf
 
+  // in `Section "InputClass"`
   Option "XkbOptions" "ctrl:swapcaps"
 ```
 
