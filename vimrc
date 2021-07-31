@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_map = "<Leader><C-p>"
     let g:ctrlp_working_path_mode = 0
-    set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*,*/dist/*,*.o,*/target/*
+    set wildignore+=*.o,*.swp,*/tmp/*,*/target/*,*/node_modules/*,*/dist/*
 
     " Linter
     Plug 'dense-analysis/ale'
