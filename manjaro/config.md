@@ -18,9 +18,9 @@ $ sudo pacman -Syu <newpackage>
 
 e.g. Exchange Ctrl and CapsLock.
 
-Both console and X11 keyboard settings are needed.
+Both vconsole and X11 keyboard settings are needed.
 
-### Console
+### Virtual Console
 
 https://wiki.archlinux.org/index.php/Linux_console/Keyboard_configuration
 
