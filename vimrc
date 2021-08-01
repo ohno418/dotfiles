@@ -29,10 +29,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'leafgarland/typescript-vim'
 call plug#end()
 
+" basics
+colorscheme spacecamp
 syntax enable
 filetype plugin on
-colorscheme spacecamp
-
 set number
 set encoding=utf-8
 set fileencoding=utf-8
@@ -42,8 +42,8 @@ set history=200
 set visualbell t_vb=
 set noerrorbells
 set cursorline
+set backspace=indent,eol,start " Fix <BS> behavior
 set clipboard=unnamedplus      " Yank to clipboard
-set backspace=indent,eol,start " Fix backspace indent
 
 " tab, indent
 set expandtab
