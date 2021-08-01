@@ -47,7 +47,7 @@ set clipboard=unnamedplus      " Yank to clipboard
 
 " tab, indent
 set expandtab
-set tabstop=4
+set tabstop=8
 set shiftwidth=2
 set softtabstop=2
 set autoindent
@@ -61,7 +61,7 @@ set smartcase
 highlight Search ctermbg=LightGreen ctermfg=Black
 highlight MatchParen ctermbg=DarkGray ctermfg=LightGreen
 
-" File dealing
+" File handling
 set confirm
 set hidden
 set autoread
