@@ -41,8 +41,8 @@ set history=200
 set visualbell t_vb=
 set noerrorbells
 set cursorline
-set backspace=indent,eol,start " Fix <BS> behavior
-set clipboard=unnamedplus      " Yank to clipboard
+set backspace=indent,eol,start " <BS> behavior
+set clipboard=unnamedplus      " yank to clipboard
 
 " tab, indent
 set expandtab
