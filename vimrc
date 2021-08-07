@@ -52,7 +52,7 @@ set softtabstop=2
 set autoindent
 set smartindent
 
-" Searching
+" searching
 set hlsearch
 set incsearch
 set ignorecase
@@ -60,7 +60,7 @@ set smartcase
 highlight Search ctermbg=LightGreen ctermfg=Black
 highlight MatchParen ctermbg=DarkGray ctermfg=LightGreen
 
-" File handling
+" file handling
 set confirm
 set hidden
 set autoread
