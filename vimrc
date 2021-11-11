@@ -23,16 +23,20 @@ call plug#begin('~/.vim/plugged')
     let g:winresizer_vert_resize = 3
 
     " Colorscheme
-    Plug 'jaredgorski/spacecamp'
+    Plug 'ayu-theme/ayu-vim'
 
     " Syntax
     Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 " basics
-colorscheme spacecamp
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
+
 syntax enable
 filetype plugin on
+
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
@@ -67,6 +71,7 @@ set autoread
 set nobackup
 set noswapfile
 
+" key mappings
 inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-j> <C-w>j
