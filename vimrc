@@ -62,8 +62,11 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-highlight Search ctermbg=LightGreen ctermfg=Black
-highlight MatchParen ctermbg=DarkGray ctermfg=LightGreen
+
+" highlight colors
+highlight Visual ctermfg=Black ctermbg=LightCyan guifg=Black guibg=LightCyan
+highlight Search ctermfg=Black ctermbg=LightGreen guifg=Black guibg=LightGreen
+highlight MatchParen ctermfg=LightCyan ctermbg=DarkBlue guifg=LightCyan guibg=DarkBlue
 
 " file handling
 set confirm
