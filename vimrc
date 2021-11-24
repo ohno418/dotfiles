@@ -70,6 +70,7 @@ set smartcase
 highlight Visual ctermfg=Black ctermbg=LightCyan guifg=Black guibg=LightCyan
 highlight Search ctermfg=Black ctermbg=LightGreen guifg=Black guibg=LightGreen
 highlight MatchParen ctermfg=LightCyan ctermbg=DarkBlue guifg=LightCyan guibg=DarkBlue
+highlight CursorLine cterm=underline gui=underline
 
 " file handling
 set confirm
