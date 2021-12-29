@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-ln -s ./dev/dotfiles/vimrc ~/.vimrc
-ln -s ./dev/dotfiles/tmux.conf ~/.tmux.conf
-ln -s ./dev/dotfiles/gitconfig ~/.gitconfig
+ln -s $(pwd)/vimrc ~/.vimrc
+ln -s $(pwd)/tmux.conf ~/.tmux.conf
+ln -s $(pwd)/gitconfig ~/.gitconfig
 
 echo OK
