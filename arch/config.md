@@ -1,5 +1,9 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
+# Network setting
+
+TODO
+
 # User
 
 Add a user with sudo.
