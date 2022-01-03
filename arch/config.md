@@ -1,5 +1,13 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
+# Disk partitioning
+
+TODO
+
+# Bootloader
+
+TODO
+
 # Network setting
 
 TODO
