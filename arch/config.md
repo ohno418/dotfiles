@@ -1,16 +1,13 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
-# Disk partitioning
-
-TODO
-
-# Bootloader
-
-TODO
-
 # Network setting
 
-TODO
+```
+$ pacman -Syu networkmanager
+$ systemctl enable NetworkManager
+```
+
+usage: https://wiki.archlinux.org/title/NetworkManager#Usage
 
 # User
 
@@ -22,7 +19,7 @@ $ passwd ohno
 
 # sudo
 $ pacman -Syu sudo
-$ vim /etc/sudoers
+$ EDITOR=vim visudo /etc/sudoers
 ```
 
 # Desktop environment
@@ -30,13 +27,20 @@ $ vim /etc/sudoers
 Install KDE plasma. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
-$ pacman -Syu xorg plasma-meta
+$ pacman -Syu plasma-desktop konsole sddm dolphin
+$ systemctl enable sddm
+```
 
-# terminal emulator
-$ pacman -Syu konsole
+- konsole: terminal emulator
+- sddm: display manager
+- dolphin: file manager
 
-# display manager (https://wiki.archlinux.org/title/SDDM)
-$ pacman -Syu sddm
+Reboot to login into Plasma.
+
+# Fonts
+
+```
+$ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
 
 # Japanese input
