@@ -40,11 +40,10 @@ $ systemctl enable lightdm
 ## i3 window manaager
 
 ```
-$ pacman -Syu i3-gaps i3status rofi alacritty
+$ pacman -Syu i3-gaps i3status dmenu alacritty
 ```
 
-- `rofi` is an application launcher.
-- `alacritty` is an terminal emulator.
+(`dmenu` is an application launcher (default for i3). `alacritty` is an terminal emulator.)
 
 # Reboot
 
