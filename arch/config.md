@@ -65,6 +65,4 @@ Add "Mozc" as an input method on Fcitx Configuration app.
 
 # Emacs keybindings for GTK applications
 
-// FIXME
-
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
