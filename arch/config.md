@@ -43,11 +43,9 @@ Reboot to login into Plasma.
 $ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
 
-# Emacs keybindings for GTK applications
-
-https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
-
 # Japanese input
+
+// FIXME
 
 https://wiki.archlinux.org/title/fcitx#Installation
 
@@ -64,3 +62,9 @@ export XMODIFIERS=@im=fcitx
 ```
 
 Add "Mozc" as an input method on Fcitx Configuration app.
+
+# Emacs keybindings for GTK applications
+
+// FIXME
+
+https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
