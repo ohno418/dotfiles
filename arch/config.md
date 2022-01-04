@@ -27,7 +27,7 @@ $ EDITOR=vim visudo /etc/sudoers
 Install KDE plasma. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
-$ pacman -Syu plasma-desktop konsole sddm dolphin
+$ pacman -Syu plasma-meta konsole sddm dolphin
 $ systemctl enable sddm
 ```
 
