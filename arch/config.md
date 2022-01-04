@@ -1,16 +1,13 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
-# Disk partitioning
-
-TODO
-
-# Bootloader
-
-TODO
-
 # Network setting
 
-TODO
+```
+$ pacman -Syu networkmanager
+$ systemctl enable NetworkManager
+```
+
+usage: https://wiki.archlinux.org/title/NetworkManager#Usage
 
 # User
 
@@ -22,22 +19,67 @@ $ passwd ohno
 
 # sudo
 $ pacman -Syu sudo
-$ vim /etc/sudoers
+$ EDITOR=vim visudo /etc/sudoers
 ```
 
-# Desktop environment
+# GUI settings
 
-Install KDE plasma. (https://wiki.archlinux.org/title/KDE#Plasma)
+## display server
 
 ```
-$ pacman -Syu xorg plasma-meta
-
-# terminal emulator
-$ pacman -Syu konsole
-
-# display manager (https://wiki.archlinux.org/title/SDDM)
-$ pacman -Syu sddm
+$ pacman -Syu xorg-server
 ```
+
+## display manager
+
+```
+$ pacman -Syu lighdm lighdm-gtk-greeter
+$ systemctl enable lightdm
+```
+
+## i3 window manaager
+
+```
+$ pacman -Syu i3-gaps i3status dmenu alacritty
+```
+
+(`dmenu` is an application launcher (default for i3). `alacritty` is an terminal emulator.)
+
+# Reboot
+
+```
+$ sudo reboot
+```
+
+# Remap CapsLock to Ctrl on X
+
+```
+$ pacman -Syu xorg-xmodmap
+```
+
+```
+# in ~/.Xmodmap
+
+clear lock
+clear control
+keycode 66 = Control_L
+add control = Control_L Control_R
+```
+
+```
+# in ~/.xprofile
+
+#!/bin/bash
+xmodmap ~/.Xmodmap
+```
+
+# Fonts
+
+```
+$ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+```
+
+// TODO: Is ricty really need to code?
 
 # Japanese input
 
