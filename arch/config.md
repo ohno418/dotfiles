@@ -1,14 +1,5 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
-# Network setting
-
-```
-$ pacman -Syu networkmanager
-$ systemctl enable NetworkManager
-```
-
-usage: https://wiki.archlinux.org/title/NetworkManager#Usage
-
 # User
 
 Add a user with sudo.
@@ -27,7 +18,7 @@ $ EDITOR=vim visudo /etc/sudoers
 Install KDE plasma. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
-$ pacman -Syu plasma-meta konsole sddm dolphin
+$ pacman -Syu xorg plasma-meta konsole sddm dolphin
 $ systemctl enable sddm
 ```
 
