@@ -26,19 +26,19 @@ call plug#begin('~/.vim/plugged')
     let g:winresizer_vert_resize = 3
 
     " Colorscheme
-    Plug 'ayu-theme/ayu-vim'
+    Plug 'NLKNguyen/papercolor-theme'
 
     " Syntax
     Plug 'leafgarland/typescript-vim'
 call plug#end()
 
-" basics
-set termguicolors
+" color
+set background=dark
+colorscheme PaperColor
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-let ayucolor="dark"
-colorscheme ayu
 
+" basics
 syntax enable
 filetype plugin on
 
