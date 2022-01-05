@@ -19,7 +19,10 @@ Install KDE plasma. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
 $ pacman -Syu xorg plasma-meta konsole sddm dolphin
+
+# Enable display manager and network.
 $ systemctl enable sddm
+$ systemctl enable NetworkManager
 ```
 
 - konsole: terminal emulator
@@ -34,14 +37,16 @@ Reboot to login into Plasma.
 $ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
 
-# Japanese input
+# Emacs keybindings for GTK applications
 
-// FIXME
+https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
+
+# Japanese input
 
 https://wiki.archlinux.org/title/fcitx#Installation
 
 ```
-$ pacman -Syu fcitx-im fcitx-mozc fcitx-configtool
+$ pacman -Syu fcitx fcitx-qt5 fcitx-mozc fcitx-configtool
 ```
 
 Append the following code to ~/.xprofile.
@@ -53,7 +58,3 @@ export XMODIFIERS=@im=fcitx
 ```
 
 Add "Mozc" as an input method on Fcitx Configuration app.
-
-# Emacs keybindings for GTK applications
-
-https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
