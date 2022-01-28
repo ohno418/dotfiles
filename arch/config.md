@@ -15,17 +15,17 @@ $ EDITOR=vim visudo /etc/sudoers
 
 # Desktop environment
 
-Install KDE plasma. (https://wiki.archlinux.org/title/KDE#Plasma)
+Install KDE plasma and essential apps. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
-$ pacman -Syu xorg plasma-meta konsole sddm dolphin
+$ pacman -Syu xorg plasma-meta alacritty sddm dolphin
 
 # Enable display manager and network.
 $ systemctl enable sddm
 $ systemctl enable NetworkManager
 ```
 
-- konsole: terminal emulator
+- alacritty: terminal emulator
 - sddm: display manager
 - dolphin: file manager
 
