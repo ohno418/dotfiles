@@ -849,6 +849,9 @@ colors:
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
 
+  # Enable tmux prefix (Ctrl-q) on macOS.
+  #- { key: Q,              mods: Control,                    chars: "\x11"                 }
+
 #debug:
   # Display the time it takes to redraw each frame.
   #render_timer: false
