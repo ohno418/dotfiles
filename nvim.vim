@@ -68,8 +68,11 @@ nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>c :tabclose<CR>
 
 "=== Netrw settings ===
-" Toggle left explorer.
 nnoremap <Leader>n :Le<CR>
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 15
 
 " Enable moving to left window with Ctrl-l from netrw window.
 augroup netrw_mapping
