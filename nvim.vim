@@ -1,3 +1,5 @@
+let mapleader=" "
+
 "=== Plugins ===
 " vim-plug is distributed as a single Vimscript file.
 " All you have to do is to download the file in a directory so that Vim can load it.
@@ -7,11 +9,10 @@ call plug#begin('~/.vim/plugged')
     " Colorscheme
     Plug 'ayu-theme/ayu-vim'
 
-    " File search
-    " Plug 'ctrlpvim/ctrlp.vim'
-    " let g:ctrlp_map = "<Leader><C-p>"
-    " let g:ctrlp_working_path_mode = 0
-    " set wildignore+=*.o,*.swp,*/tmp/*,*/target/*,*/node_modules/*,*/dist/*
+    " Fuzzy finder
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    nnoremap <Leader>f :Telescope find_files<CR>
 
     " Linter
     Plug 'dense-analysis/ale'
@@ -55,7 +56,6 @@ set noswapfile
 set clipboard+=unnamedplus
 
 "=== Key mappings ===
-let mapleader=" "
 inoremap jj <ESC>
 nnoremap <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap <C-j> <C-w>j
