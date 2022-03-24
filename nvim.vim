@@ -18,6 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     nnoremap <Leader>f :Telescope find_files<CR>
+    nnoremap <Leader>b :Telescope buffers<CR>
 
     " Linter
     Plug 'dense-analysis/ale'
