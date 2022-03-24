@@ -9,6 +9,11 @@ call plug#begin('~/.vim/plugged')
     " Colorscheme
     Plug 'ayu-theme/ayu-vim'
 
+    " File explorer
+    Plug 'scrooloose/nerdtree'
+    nnoremap <Leader>n :NERDTreeToggle<CR>
+    nnoremap <Leader>N :NERDTree<CR>
+
     " Fuzzy finder
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -66,18 +71,3 @@ nnoremap <C-n> gt
 nnoremap <C-p> gT
 nnoremap <Leader>t :tabnew<CR>
 nnoremap <Leader>c :tabclose<CR>
-
-"=== Netrw settings ===
-nnoremap <Leader>n :Le<CR>
-let g:netrw_liststyle = 3
-let g:netrw_winsize = 25
-
-" Enable moving to left window with Ctrl-l from netrw window.
-augroup netrw_mapping
-  autocmd!
-  autocmd filetype netrw call NetrwMapping()
-augroup END
-
-function! NetrwMapping()
-  nnoremap <buffer> <C-l> :wincmd l<CR>
-endfunction
