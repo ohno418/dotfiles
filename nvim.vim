@@ -70,7 +70,7 @@ nnoremap <Leader>c :tabclose<CR>
 "=== Netrw settings ===
 nnoremap <Leader>n :Le<CR>
 let g:netrw_liststyle = 3
-let g:netrw_winsize = 20
+let g:netrw_winsize = 25
 
 " Enable moving to left window with Ctrl-l from netrw window.
 augroup netrw_mapping
