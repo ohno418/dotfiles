@@ -10,7 +10,7 @@ $ passwd ohno
 
 # sudo
 $ pacman -Syu sudo
-$ EDITOR=vim visudo /etc/sudoers
+$ EDITOR=nvim visudo /etc/sudoers
 ```
 
 # Desktop environment
@@ -29,12 +29,12 @@ $ systemctl enable NetworkManager
 - sddm: display manager
 - dolphin: file manager
 
-Reboot to login into Plasma.
+Reboot to login Plasma as a non-root user.
 
 # Fonts
 
 ```
-$ pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+$ sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
 
 # Emacs keybindings for GTK applications
@@ -46,7 +46,7 @@ https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 https://wiki.archlinux.org/title/fcitx#Installation
 
 ```
-$ pacman -Syu fcitx fcitx-qt5 fcitx-mozc fcitx-configtool
+$ sudo pacman -Syu fcitx fcitx-qt5 fcitx-mozc fcitx-configtool
 ```
 
 Append the following code to ~/.xprofile.
@@ -58,3 +58,9 @@ export XMODIFIERS=@im=fcitx
 ```
 
 Add "Mozc" as an input method on Fcitx Configuration app.
+
+# Other apps
+
+```
+$ sudo pacman base-devel man-pages git tmux xclip
+```
