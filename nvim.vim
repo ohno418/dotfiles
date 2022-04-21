@@ -20,15 +20,13 @@ call plug#begin('~/.vim/plugged')
     nnoremap <Leader>f :Telescope find_files<CR>
     nnoremap <Leader>b :Telescope buffers<CR>
 
-    " Linter
-    Plug 'dense-analysis/ale'
-    highlight clear ALEErrorSign
-    highlight clear ALEWarningSign
-    let g:ale_set_highlights = 0
-
     " Window resizing
     Plug 'simeji/winresizer'
     let g:winresizer_vert_resize = 3
+
+    " LSP (Node.js require)
+    " e.g. To install Rust server, `:CocInstall coc-rust-analyzer`.
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "=== Options ===
