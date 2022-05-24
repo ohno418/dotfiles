@@ -40,6 +40,7 @@ set number
 set history=200
 set visualbell
 set cursorline
+highlight CursorLine cterm=underline gui=underline ctermbg=NONE guibg=NONE
 
 " tab, indent
 set expandtab
