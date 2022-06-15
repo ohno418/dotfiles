@@ -18,7 +18,7 @@ $ EDITOR=nvim visudo /etc/sudoers
 Install KDE plasma and essential apps. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
-$ pacman -Syu xorg plasma-meta alacritty sddm dolphin
+$ pacman -Syu xorg-server plasma-meta alacritty sddm dolphin
 
 # Enable display manager and network.
 $ systemctl enable sddm
@@ -31,25 +31,31 @@ $ systemctl enable NetworkManager
 
 Reboot to login Plasma as a non-root user.
 
-# Fonts
+# Other apps
 
 ```
-$ sudo pacman -Syu noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+$ sudo pacman base-devel git tmux man-pages openssh xclip
 ```
 
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
+# Fonts
+
+```
+$ sudo pacman -Syu noto-fonts-cjk noto-fonts-emoji
+```
+
 # Japanese input
 
-https://wiki.archlinux.org/title/fcitx#Installation
+https://wiki.archlinux.org/title/Fcitx5
 
 ```
-$ sudo pacman -Syu fcitx fcitx-qt5 fcitx-mozc fcitx-configtool
+$ sudo pacman -Syu fcitx5-mozc fcitx5-gtk fcitx5-configtool
 ```
 
-Append the following code to ~/.xprofile.
+Append the following code to /etc/environment.
 
 ```
 export GTK_IM_MODULE=fcitx
@@ -57,10 +63,4 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 ```
 
-Add "Mozc" as an input method on Fcitx Configuration app.
-
-# Other apps
-
-```
-$ sudo pacman base-devel man-pages git tmux xclip
-```
+Add "Mozc" as an input method on Fcitx Configuration app. Then restart X.
