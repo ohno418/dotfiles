@@ -15,10 +15,10 @@ $ EDITOR=nvim visudo /etc/sudoers
 
 # Desktop environment
 
-Install KDE plasma and essential apps. (https://wiki.archlinux.org/title/KDE#Plasma)
+Install KDE plasma and some apps. (https://wiki.archlinux.org/title/KDE#Plasma)
 
 ```
-$ pacman -Syu xorg-server plasma-meta alacritty dolphin
+$ pacman -Syu xorg-server plasma-meta alacritty dolphin spectacle
 
 # Enable display manager and network.
 $ systemctl enable sddm
@@ -27,6 +27,7 @@ $ systemctl enable NetworkManager
 
 - alacritty: terminal emulator
 - dolphin: file manager
+- spectacle: screenshot
 
 Reboot to login Plasma as a non-root user.
 
