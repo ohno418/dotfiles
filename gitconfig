@@ -13,3 +13,4 @@
 	b = branch
 	f = fetch
 	l = log
+	g = grep
