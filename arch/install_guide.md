@@ -8,6 +8,7 @@ Add a user with sudo.
 $ useradd -m -G wheel -s /bin/bash ohno
 $ passwd ohno
 
+# TODO: `base-devel` includes `sudo`.
 # sudo
 $ pacman -Syu sudo
 $ EDITOR=nvim visudo /etc/sudoers
