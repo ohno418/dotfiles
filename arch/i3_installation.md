@@ -100,18 +100,16 @@ https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 $ sudo pacman -Syu rofi
 ```
 
-# Audio
-
-```
-$ sudo pacman -Syu pulseaudio
-```
-
 # Status bar
+
+Install bumblebee-status from AUR.
+
+# Audio
 
 // TODO
 
 ```
-$ sudo pacman -Syu i3blocks
+$ sudo pacman -Syu pulseaudio
 ```
 
 # key repeate rate
