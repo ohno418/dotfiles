@@ -64,9 +64,27 @@ $ sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf
 
 ```
 Section "InputClass"
-    Identifier "Keyboard Setting"
-    MatchIsKeyboard "yes"
-    Option "XkbOptions" "ctrl:nocaps"
+        Identifier "Keyboard Setting"
+        MatchIsKeyboard "yes"
+        Option "XkbOptions" "ctrl:nocaps"
+EndSection
+```
+
+Restart to apply this setting.
+
+# Touchpad settings
+
+```
+$ sudo nvim /etc/X11/xorg.conf.d/30-touchpad.conf
+```
+
+```
+Section "InputClass"
+        Identifier "touchpad"
+        Driver "libinput"
+        MatchIsTouchpad "on"
+        Option "Tapping" "on"
+        Option "ScrollMethod" "twofinger"
 EndSection
 ```
 
