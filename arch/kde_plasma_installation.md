@@ -1,5 +1,7 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
+// TODO: Install base-devel at first
+
 # User
 
 Add a user with sudo.
@@ -35,7 +37,7 @@ Reboot to login Plasma as a non-root user.
 # Other apps
 
 ```
-$ sudo pacman base-devel git tmux man-pages openssh xclip
+$ sudo pacman -Syu firefox tmux git openssh man-db xclip
 ```
 
 # Emacs keybindings for GTK applications
@@ -43,6 +45,8 @@ $ sudo pacman base-devel git tmux man-pages openssh xclip
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
 # Fonts
+
+// TODO: noto-fonts?
 
 ```
 $ sudo pacman -Syu noto-fonts-cjk noto-fonts-emoji
