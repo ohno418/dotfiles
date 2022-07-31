@@ -94,13 +94,13 @@ Restart to apply this setting.
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
-# key repeate rate
+# Audio
 
-// TODO: This doesn't working.
+```
+$ sudo pacman -Syu pulseaudio
+```
 
-echo 'xset r rate 200 30' >> ~/.xinitrc
-
-# Configure i3
+# Status bar
 
 // TODO
 
@@ -108,4 +108,8 @@ echo 'xset r rate 200 30' >> ~/.xinitrc
 $ sudo pacman -Syu i3blocks
 ```
 
-- i3blocks: status bar
+# key repeate rate
+
+// TODO: This doesn't working.
+
+echo 'xset r rate 200 30' >> ~/.xinitrc
