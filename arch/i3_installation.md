@@ -58,3 +58,7 @@ More fonts.
 ```
 $ sudo pacman -Syu noto-fonts-cjk noto-fonts-emoji
 ```
+
+# Emacs keybindings for GTK applications
+
+https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
