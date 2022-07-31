@@ -94,6 +94,12 @@ Restart to apply this setting.
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
+# App launcher
+
+```
+$ sudo pacman -Syu rofi
+```
+
 # Audio
 
 ```
