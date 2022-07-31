@@ -90,32 +90,18 @@ EndSection
 
 Restart to apply this setting.
 
-# key repeate rate
+# i3 settings
 
 ```
-$ sudo pacman -Syu xorg-xset
+$ sudo pacman -Syu rofi i3status pulseaudio feh xorg-xset
 ```
+
+- rofi: application launcher
+- i3status: status bar
+- pulseaudio: audio
+- feh: image viewer for wallpaper
+- xorg-xset: used to change key repeat rate
 
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
-
-# App launcher
-
-```
-$ sudo pacman -Syu rofi
-```
-
-// TODO: feh
-
-# Status bar
-
-Install bumblebee-status from AUR.
-
-# Audio
-
-// TODO
-
-```
-$ sudo pacman -Syu pulseaudio
-```
