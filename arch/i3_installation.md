@@ -90,6 +90,12 @@ EndSection
 
 Restart to apply this setting.
 
+# key repeate rate
+
+```
+$ sudo pacman -Syu xorg-xset
+```
+
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
@@ -99,6 +105,8 @@ https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 ```
 $ sudo pacman -Syu rofi
 ```
+
+// TODO: feh
 
 # Status bar
 
@@ -111,9 +119,3 @@ Install bumblebee-status from AUR.
 ```
 $ sudo pacman -Syu pulseaudio
 ```
-
-# key repeate rate
-
-// TODO: This doesn't working.
-
-echo 'xset r rate 200 30' >> ~/.xinitrc
