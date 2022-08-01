@@ -6,7 +6,7 @@ ln -sf $(pwd)/nvim.vim ~/.config/nvim/init.vim
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
 
-ln -sf $(pwd)/i3/config ~/.config/i3/config
-ln -sf $(pwd)/i3/i3status-config ~/.config/i3status/config
+# ln -sf $(pwd)/i3/config ~/.config/i3/config
+# ln -sf $(pwd)/i3/i3status-config ~/.config/i3status/config
 
 echo OK
