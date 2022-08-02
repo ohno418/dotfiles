@@ -2,7 +2,8 @@
 set -e
 
 ln -sf $(pwd)/gitconfig ~/.gitconfig
-ln -sf $(pwd)/nvim.vim ~/.config/nvim/init.vim
+ln -sf $(pwd)/nvim/init.lua ~/.config/nvim/init.lua
+# ln -sf $(pwd)/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
 
