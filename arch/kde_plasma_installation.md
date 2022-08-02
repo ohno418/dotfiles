@@ -41,7 +41,7 @@ $ sudo pacman -Syu tmux firefox git openssh man-db xclip
 ### Font
 
 ```
-$ sudo pacman -Syu otf-ipaexfont
+$ sudo pacman -Syu adobe-source-han-sans-jp-fonts
 ```
 
 ### Input method
