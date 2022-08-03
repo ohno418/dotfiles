@@ -219,3 +219,12 @@ focus_follows_mouse no
 # class                     border      background      text        indicator       child_border
 client.focused              $fg         $bg             $fg         $darkgreen      $darkgreen
 client.unfocused            $bg         $bg             $fg         $darkgreen      $bg
+
+
+# TODO:
+# Not put gaps with only one window
+#smartgap on
+#
+# Move to next/previous workspace
+#workspace next
+#workspace previous
