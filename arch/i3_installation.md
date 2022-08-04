@@ -96,6 +96,8 @@ Restart to apply this setting.
 
 # i3 settings
 
+// TODO: Maybe i3blocks is better, instead of i3status.
+
 ```
 $ sudo pacman -Syu rofi i3status pulseaudio xorg-xset feh archlinux-wallpaper
 ```
