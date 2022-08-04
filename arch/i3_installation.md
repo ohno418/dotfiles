@@ -97,14 +97,15 @@ Restart to apply this setting.
 # i3 settings
 
 ```
-$ sudo pacman -Syu rofi i3status pulseaudio feh xorg-xset
+$ sudo pacman -Syu rofi i3status pulseaudio xorg-xset feh archlinux-wallpaper
 ```
 
 - rofi: application launcher
 - i3status: status bar
 - pulseaudio: audio
-- feh: image viewer for wallpaper
 - xorg-xset: used to change key repeat rate
+- feh: image viewer for wallpaper
+- archlinux-wallpaper: official Arch Linux wallpapers
 
 # Emacs keybindings for GTK applications
 
