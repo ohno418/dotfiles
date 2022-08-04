@@ -99,7 +99,7 @@ Restart to apply this setting.
 ```
 // TODO:
 // - Maybe i3blocks is better, instead of i3status.
-// - Install `tlp` for power management.
+// - Install `tlp` for battery life. (https://linrunner.de/tlp/)
 ```
 
 ```
