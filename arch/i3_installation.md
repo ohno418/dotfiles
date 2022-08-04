@@ -5,14 +5,14 @@ After official [installation guilde](https://wiki.archlinux.org/title/installati
 base-devel includes `sudo`.
 
 ```
-$ pacman -Syu base-devel
+# pacman -Syu base-devel
 ```
 
 # Network settings
 
 ```
-$ pacman -Syu networkmanager
-$ systemctl enable NetworkManager
+# pacman -Syu networkmanager
+# systemctl enable NetworkManager
 ```
 
 Usage: https://wiki.archlinux.org/title/NetworkManager#Usage
@@ -20,9 +20,9 @@ Usage: https://wiki.archlinux.org/title/NetworkManager#Usage
 # Add a user
 
 ```
-$ useradd -m -G wheel -s /bin/bash ohno
-$ passwd ohno
-$ EDITOR=nvim visudo /etc/sudoers
+# useradd -m -G wheel -s /bin/bash ohno
+# passwd ohno
+# EDITOR=nvim visudo /etc/sudoers
 ```
 
 # Install i3-gaps
