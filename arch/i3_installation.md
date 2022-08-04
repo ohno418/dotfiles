@@ -33,12 +33,16 @@ Install i3-gaps with X.
 $ sudo pacman -Syu xorg-server i3-gaps
 ```
 
+// TODO: Maybe can go without DM.
+
 Install display manager.
 
 ```
 $ sudo pacman -Syu lightdm lightdm-gtk-greeter
 $ sudo systemctl enable lightdm
 ```
+
+// TODO: Consider other fonts.
 
 Install a terminal emulator and fonts.
 
