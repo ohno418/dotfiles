@@ -116,3 +116,14 @@ $ sudo pacman -Syu rofi i3status pulseaudio xorg-xset feh archlinux-wallpaper
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
+
+# Suspend on lid switch
+
+// TODO
+
+```
+# /etc/systemd/logind.conf
+...
+HandleLidSwitch=suspend
+...
+```
