@@ -33,7 +33,7 @@ Install i3-gaps with X.
 $ sudo pacman -Syu xorg-server i3-gaps
 ```
 
-// TODO: Maybe can go without DM.
+// TODO: Can integrate with light-locker.
 
 Install display manager.
 
