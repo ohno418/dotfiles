@@ -42,8 +42,6 @@ $ sudo pacman -Syu lightdm lightdm-gtk-greeter
 $ sudo systemctl enable lightdm
 ```
 
-// TODO: Consider other fonts.
-
 Install a terminal emulator and fonts.
 
 ```
@@ -74,6 +72,12 @@ Section "InputClass"
 EndSection
 ```
 
+### key repeat rate
+
+```
+$ sudo pacman -Syu xorg-xset
+```
+
 Restart to apply this setting.
 
 # Touchpad settings
@@ -84,7 +88,7 @@ $ sudo nvim /etc/X11/xorg.conf.d/30-touchpad.conf
 
 ```
 Section "InputClass"
-        Identifier "touchpad"
+        Identifier "Touchpad"
         Driver "libinput"
         MatchIsTouchpad "on"
         Option "Tapping" "on"
@@ -94,32 +98,41 @@ EndSection
 
 Restart to apply this setting.
 
-# i3 settings
+# Get dotfiles
+
+Clone dotfiles from GitHub.
+
+# Application launcher
 
 ```
-// TODO:
-// - Maybe i3blocks is better, instead of i3status.
-// - Install `tlp` for battery life. (https://linrunner.de/tlp/)
+$ sudo pacman -Syu rofi
 ```
 
+# Status bar
+
 ```
-$ sudo pacman -Syu rofi i3status pulseaudio xorg-xset feh archlinux-wallpaper
+$ sudo pacman -Syu i3blocks
 ```
 
-- rofi: application launcher
-- i3status: status bar
-- pulseaudio: audio
-- xorg-xset: used to change key repeat rate
-- feh: image viewer for wallpaper
-- archlinux-wallpaper: official Arch Linux wallpapers
+# Audio
 
-# Emacs keybindings for GTK applications
+```
+$ sudo pacman -Syu rofi pulseaudio pavucontrol
+```
 
-https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
+Make sure sound and microphone are available.
+
+# Wallpaper
+
+```
+$ sudo pacman -Syu feh archlinux-wallpaper
+```
 
 # Suspend on lid switch
 
 // TODO
+
+i3lock
 
 ```
 # /etc/systemd/logind.conf
@@ -127,3 +140,12 @@ https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 HandleLidSwitch=suspend
 ...
 ```
+
+```
+// TODO:
+// - Install `tlp` for battery life. (https://linrunner.de/tlp/)
+```
+
+# Emacs keybindings for GTK applications
+
+https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
