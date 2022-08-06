@@ -2,6 +2,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+#==============================
+# General settings
+#==============================
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -34,13 +37,32 @@ exec --no-startup-id xset r rate 200 30
 # wallpaper
 exec --no-startup-id feh --bg-scale /usr/share/backgrounds/archlinux/sunset.jpg
 
-# TODO
+# 0-width boarder
+for_window [class=".*"] border pixel 2
+
+# gaps
+gaps top 3
+gaps bottom 3
+gaps right 3
+gaps left 3
+gaps inner 3
+
+# Not put gaps with only one window
+smart_gaps on
+
+#==============================
+# Keybindings
+#==============================
+# sound
 # Use pactl to adjust volume in PulseAudio.
+# TODO
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# backlight
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
 
@@ -140,6 +162,10 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Move to next/previous workspace
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -200,16 +226,6 @@ bar {
         # }
 }
 
-# 0-width boarder
-for_window [class=".*"] border pixel 2
-
-# gaps
-gaps top 3
-gaps bottom 3
-gaps right 3
-gaps left 3
-gaps inner 3
-
 # not focus by mouse
 focus_follows_mouse no
 
@@ -217,11 +233,3 @@ focus_follows_mouse no
 # class                     border      background      text        indicator       child_border
 client.focused              $fg         $bg             $fg         $darkgreen      $darkgreen
 client.unfocused            $bg         $bg             $fg         $darkgreen      $bg
-
-
-# Not put gaps with only one window
-smart_gaps on
-
-# Move to next/previous workspace
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
