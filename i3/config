@@ -205,7 +205,7 @@ set $orange     #f08080
 # finds out, if available)
 bar {
         status_command i3blocks
-        # font pango:Noto Sans 12
+        font pango:Noto Sans 10
         # position top
         # output primary
         # strip_workspace_numbers yes
