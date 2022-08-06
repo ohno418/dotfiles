@@ -25,6 +25,8 @@ Usage: https://wiki.archlinux.org/title/NetworkManager#Usage
 # EDITOR=nvim visudo /etc/sudoers
 ```
 
+Reboot to login as a general user.
+
 # Install i3-gaps
 
 Install i3-gaps with X.
@@ -148,16 +150,14 @@ $ sudo pacman -Syu feh archlinux-wallpaper
 
 # Suspend on lid switch
 
-// TODO
-
-i3lock
+Use `light-locker`.
 
 ```
-# /etc/systemd/logind.conf
-...
-HandleLidSwitch=suspend
-...
+$ sudo pacman -Syu light-locker
+$ echo 'light-locker --lock-on-suspend &' >> ~/.xprofile
 ```
+
+### light-dm
 
 ```
 // TODO:
