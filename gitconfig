@@ -15,4 +15,5 @@
 	l = log
 	g = grep
 	i = init
-	r = rebase
+	rs = reset
+	rb = rebase
