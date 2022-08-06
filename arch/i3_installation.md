@@ -74,13 +74,15 @@ Section "InputClass"
 EndSection
 ```
 
+Restart to apply this setting.
+
 ### key repeat rate
+
+Actual setting is in i3 config. All have to do is to enable `xset` command.
 
 ```
 $ sudo pacman -Syu xorg-xset
 ```
-
-Restart to apply this setting.
 
 # Touchpad settings
 
