@@ -35,7 +35,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 30
 
 # wallpaper
-exec --no-startup-id feh --bg-scale /usr/share/backgrounds/archlinux/sunset.jpg
+exec --no-startup-id feh --bg-scale /usr/share/backgrounds/wallpaper.jpg
 
 # 0-width boarder
 for_window [class=".*"] border pixel 2
@@ -74,6 +74,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 
 # app launcher
 bindsym $mod+m exec "rofi -modi drun,window -show drun"
+
+# lock
+bindsym $mod+Shift+x exec --no-startup-id light-locker-command -l
 
 # change focus
 bindsym $mod+h focus left

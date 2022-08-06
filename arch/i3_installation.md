@@ -144,8 +144,10 @@ Re-login to activate new group.
 
 # Wallpaper
 
+Put a wallpaper image in `/usr/share/backgrounds/`.
+
 ```
-$ sudo pacman -Syu feh archlinux-wallpaper
+$ sudo pacman -Syu feh
 ```
 
 # Suspend on lid switch
@@ -157,7 +159,22 @@ $ sudo pacman -Syu light-locker
 $ echo 'light-locker --lock-on-suspend &' >> ~/.xprofile
 ```
 
-### light-dm
+### LightDM config
+
+```
+# `/etc/lightdm/lightdm-gtk-greeter.conf`
+
+[greeter]
+background=/usr/share/backgrounds/wallpaper.jpg
+font-name=Noto Sans 11
+hide-user-image=true
+xft-antialias=true
+xft-dpi=96
+xft-hintstyle=hintslight
+xft-rgba=rgb
+indicators=~spacer;~clock;~spacer;separator;~session;~a11y;~power;
+clock-format=%a, %b %d, %H:%M
+```
 
 ```
 // TODO:
