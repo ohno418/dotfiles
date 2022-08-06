@@ -33,8 +33,6 @@ Install i3-gaps with X.
 $ sudo pacman -Syu xorg-server i3-gaps
 ```
 
-// TODO: Can integrate with light-locker.
-
 Install display manager.
 
 ```
@@ -56,7 +54,9 @@ Then, reboot to get into i3.
 $ sudo pacman -Syu firefox tmux git openssh man-db xclip
 ```
 
-# CapsLock as Ctrl
+# Keyboard settings
+
+### CapsLock as Ctrl
 
 https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files
 
@@ -117,10 +117,20 @@ $ sudo pacman -Syu i3blocks
 # Audio
 
 ```
-$ sudo pacman -Syu rofi pulseaudio pavucontrol
+$ sudo pacman -Syu pulseaudio pavucontrol
 ```
 
 Make sure sound and microphone are available.
+
+# Backlight
+
+https://wiki.archlinux.org/title/backlight
+
+(In my case,`xorg-xbacklight` couldn't handle backlight.)
+
+```
+$ sudo pacman -Syu acpilight
+```
 
 # Wallpaper
 
@@ -149,3 +159,22 @@ HandleLidSwitch=suspend
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
+
+# Japanese input method
+
+https://wiki.archlinux.org/title/Fcitx5
+
+```
+$ sudo pacman -Syu fcitx5-im fcitx5-mozc
+```
+
+Append the following code to `~/.xprofile`.
+
+```
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+fcitx5 &
+```
+
+Add "Mozc" as an input method on Fcitx Configuration app.

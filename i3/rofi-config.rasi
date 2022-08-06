@@ -1,0 +1,7 @@
+configuration {
+    modi: "combi,drun,rn,window";
+    combi-modi: "drun,rn,window";
+    show-icons: true;
+}
+
+@theme "slate"
