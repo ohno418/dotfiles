@@ -132,6 +132,14 @@ https://wiki.archlinux.org/title/backlight
 $ sudo pacman -Syu acpilight
 ```
 
+To allow a normal user to do `xbacklight`:
+
+```
+$ sudo usermod -a -G video <user-name>
+```
+
+Re-login to activate new group.
+
 # Wallpaper
 
 ```
