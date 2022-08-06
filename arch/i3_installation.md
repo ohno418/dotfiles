@@ -176,11 +176,6 @@ indicators=~spacer;~clock;~spacer;separator;~session;~a11y;~power;
 clock-format=%a, %b %d, %H:%M
 ```
 
-```
-// TODO:
-// - Install `tlp` for battery life. (https://linrunner.de/tlp/)
-```
-
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
@@ -203,3 +198,13 @@ fcitx5 &
 ```
 
 Add "Mozc" as an input method on Fcitx Configuration app.
+
+# Battery
+
+https://wiki.archlinux.org/title/TLP#Installation
+
+```
+$ sudo pacman -Syu tlp
+$ sudo systemctl enable tlp.service
+$ sudo systemctl start tlp.service
+```
