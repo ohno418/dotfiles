@@ -2,7 +2,7 @@
 BAT=$(acpi --battery)
 
 REMAIN=$(echo "$BAT" | grep -E -o '[0-9][0-9]?%')
-IS_CHARGING=$(echo "$BAT" | awk '{ printf("%s", substr($3, 0, length($3)-1 ) ) }')
+IS_CHARGING=$(echo "$BAT" | awk '{ printf("%s", substr($3, 0, length($3)-1)) }')
 
 echo "🔋$REMAIN"
 echo "BAT: $REMAIN"
