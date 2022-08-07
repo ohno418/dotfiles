@@ -1,10 +1,9 @@
 #!/bin/bash
-VOL=$(pamixer --get-volume)
-IS_MUTE=$(pamixer --get-mute)
-
-if [ "$IS_MUTE" = "true" ]
+if [ "$(pamixer --get-mute)" = "true" ]
 then
-    echo "🔇 $VOL%"
+    ICON="🔇"
 else
-    echo "🔊 $VOL%"
+    ICON="🔊"
 fi
+
+echo "$ICON $(pamixer --get-volume)%"
