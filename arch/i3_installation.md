@@ -53,7 +53,7 @@ Then, reboot to get into i3.
 # Install essential packages
 
 ```
-$ sudo pacman -Syu firefox tmux git openssh man-db xclip
+$ sudo pacman -Syu firefox tmux git openssh man-db man-pages xclip
 ```
 
 # Keyboard settings
