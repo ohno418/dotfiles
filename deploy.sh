@@ -12,5 +12,6 @@ ln -sf $(pwd)/i3/rofi-config.rasi ~/.config/rofi/config.rasi
 ln -sf $(pwd)/i3/rofi-slate.rasi ~/.config/rofi/slate.rasi
 ln -sf $(pwd)/i3/i3blocks/config ~/.config/i3blocks/config
 ln -sf $(pwd)/i3/i3blocks/battery.sh ~/.config/i3blocks/battery.sh
+ln -sf $(pwd)/i3/i3blocks/sound.sh ~/.config/i3blocks/sound.sh
 
 echo OK

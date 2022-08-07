@@ -1,5 +1,9 @@
 separator_block_width=16
 
+[volume]
+command=./sound.sh
+interval=10
+
 [battery]
 command=./battery.sh
 interval=10
