@@ -103,11 +103,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
-bindsym $mod+p focus parent
-
-# focus the child container
-bindsym $mod+c focus child
+# focus the parent/child container
+# bindsym $mod+p focus parent
+# bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
