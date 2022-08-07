@@ -10,6 +10,6 @@ ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
 ln -sf $(pwd)/i3/config ~/.config/i3/config
 ln -sf $(pwd)/i3/rofi-config.rasi ~/.config/rofi/config.rasi
 ln -sf $(pwd)/i3/rofi-slate.rasi ~/.config/rofi/slate.rasi
-ln -sf $(pwd)/i3/i3blocks-confjg ~/.config/i3blocks/config
+ln -sf $(pwd)/i3/i3blocks-config ~/.config/i3blocks/config
 
 echo OK
