@@ -149,15 +149,7 @@ $ sudo usermod -a -G video <user-name>
 
 Re-login to activate new group.
 
-# Wallpaper
-
-Put a wallpaper image in `/usr/share/backgrounds/`.
-
-```
-$ sudo pacman -Syu feh
-```
-
-# Suspend on lid switch
+# Lock on lid closed
 
 Use `light-locker`.
 
@@ -181,6 +173,14 @@ xft-hintstyle=hintslight
 xft-rgba=rgb
 indicators=~spacer;~clock;~spacer;separator;~session;~a11y;~power;
 clock-format=%a, %b %d, %H:%M
+```
+
+# Wallpaper
+
+Put a wallpaper image in `/usr/share/backgrounds/`.
+
+```
+$ sudo pacman -Syu feh
 ```
 
 # Emacs keybindings for GTK applications
