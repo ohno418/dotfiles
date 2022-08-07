@@ -217,3 +217,10 @@ $ sudo pacman -Syu tlp
 $ sudo systemctl enable tlp.service
 $ sudo systemctl start tlp.service
 ```
+
+# Hide mouse cursor when unneeded
+
+```
+$ sudo pacman -Syu unclutter
+$ echo 'unclutter &' >> ~/.xprofile
+```
