@@ -115,7 +115,7 @@ $ sudo pacman -Syu rofi
 # Status bar
 
 ```
-$ sudo pacman -Syu i3blocks
+$ sudo pacman -Syu i3blocks acpi
 ```
 
 # Audio

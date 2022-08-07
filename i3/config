@@ -199,15 +199,13 @@ set $orange     #f08080
 bar {
         status_command i3blocks
         font pango:Noto Sans 10
-        # position top
-        # output primary
-        # strip_workspace_numbers yes
-        # colors {
-        #         background $bg
-        #         focused_background $bg
-        #         focused_workspace $orange $orange $bg
-        #         inactive_workspace $bg $bg $fg
-        # }
+        position bottom
+        colors {
+                background $bg
+                focused_background $bg
+                focused_workspace $orange $orange $bg
+                inactive_workspace $bg $bg $fg
+        }
 }
 
 # not focus by mouse
