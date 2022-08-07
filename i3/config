@@ -197,7 +197,7 @@ set $orange     #f08080
 
 bar {
         status_command i3blocks
-        font pango:Noto Sans 10
+        font pango:Noto Sans 11
         position bottom
         colors {
                 background $bg
