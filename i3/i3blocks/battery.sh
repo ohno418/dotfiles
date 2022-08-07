@@ -18,5 +18,3 @@ else
         echo "#007872"
     fi
 fi
-
-exit 0
