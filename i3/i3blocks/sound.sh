@@ -4,7 +4,7 @@ IS_MUTE=$(pamixer --get-mute)
 
 if [ "$IS_MUTE" = "true" ]
 then
-    echo "🔇: $VOL%"
+    echo "🔇 $VOL%"
 else
-    echo "🔊: $VOL%"
+    echo "🔊 $VOL%"
 fi
