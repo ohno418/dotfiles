@@ -200,19 +200,17 @@ set $green #68DDC4
 
 # focus colors
 # class border background text indicator child_border
-client.focused   $fg $bg $fg $green $green
-client.unfocused $bg $bg $fg $bg $bg
+client.focused $bg $bg $fg $green $green
+client.focused_inactive $bg $bg $fg $bg $bg
 
 #==============================
 # Status bar
 #==============================
 bar {
         status_command i3blocks
-        font pango:Noto Sans 11
-        position bottom
+        font pango:Noto Sans 12
         colors {
                 background $bg
-                focused_background $bg
                 focused_workspace $green $green $bg
                 inactive_workspace $bg $bg $fg
         }
