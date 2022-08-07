@@ -145,10 +145,14 @@ $ sudo pacman -Syu rofi i3blocks acpi
 
 `acpi` is for battery status.
 
-# Screenshot
+# Wallpaper
+
+Put a wallpaper image in `/usr/share/backgrounds/`.
 
 ```
-$ pacman -Syu maim
+$ mkdir /usr/share/backgrounds/
+$ cp /usr/share/backgrounds/wallpaper.jpg
+$ sudo pacman -Syu feh
 ```
 
 # Lock on lid closed
@@ -175,14 +179,6 @@ xft-hintstyle=hintslight
 xft-rgba=rgb
 indicators=~spacer;~clock;~spacer;separator;~session;~a11y;~power;
 clock-format=%a, %b %d, %H:%M
-```
-
-# Wallpaper
-
-Put a wallpaper image in `/usr/share/backgrounds/`.
-
-```
-$ sudo pacman -Syu feh
 ```
 
 # Emacs keybindings for GTK applications
@@ -223,4 +219,10 @@ $ sudo systemctl start tlp.service
 ```
 $ sudo pacman -Syu unclutter
 $ echo 'unclutter &' >> ~/.xprofile
+```
+
+# Screenshot
+
+```
+$ pacman -Syu maim
 ```
