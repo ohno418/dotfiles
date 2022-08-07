@@ -1,4 +1,4 @@
-separator_block_width=16
+separator_block_width=20
 
 [volume]
 command=./sound.sh
