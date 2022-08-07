@@ -199,7 +199,7 @@ set $fg #cacacc
 set $green #68DDC4
 
 # focus colors
-# class background text indicator child_border
+# class border background text indicator child_border
 client.focused   $fg $bg $fg $green $green
 client.unfocused $bg $bg $fg $bg $bg
 
