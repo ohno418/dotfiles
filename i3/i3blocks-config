@@ -1,9 +1,5 @@
 separator_block_width=16
 
-[load average]
-command=uptime | awk -F': ' '{print $2}'
-interval=5
-
 [time]
-command=date '+%m/%d %H:%M'
-interval=3
+command=date '+%Y-%m-%d %H:%M'
+interval=5
