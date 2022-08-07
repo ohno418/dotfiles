@@ -1,10 +1,10 @@
 #!/bin/bash
-VOL=$(pactl get-sink-volume @DEFAULT_SINK@ | awk '{ printf("%s", $5) }')
-MUTE=$(pactl get-sink-mute @DEFAULT_SINK@ | awk '{ printf("%s", $2) }')
+VOL=$(pamixer --get-volume)
+IS_MUTE=$(pamixer --get-mute)
 
-if [ "$MUTE" = "yes" ]
+if [ "$IS_MUTE" = "true" ]
 then
-    echo "🔇: $VOL"
+    echo "🔇: $VOL%"
 else
-    echo "🔊: $VOL"
+    echo "🔊: $VOL%"
 fi

@@ -121,10 +121,15 @@ $ sudo pacman -Syu i3blocks acpi
 # Audio
 
 ```
-$ sudo pacman -Syu pulseaudio pavucontrol
+$ sudo pacman -Syu pulseaudio pamixer
 ```
 
-Make sure sound and microphone are available.
+Make sure sound and microphone are available. If mic volume is too low:
+
+```
+$ pamixer --default-source --get-volume
+$ pamixer --default-source --set-volume 80
+```
 
 # Backlight
 
