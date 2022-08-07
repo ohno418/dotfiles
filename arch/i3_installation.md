@@ -106,18 +106,6 @@ Restart to apply this setting.
 
 Clone dotfiles from GitHub.
 
-# Application launcher
-
-```
-$ sudo pacman -Syu rofi
-```
-
-# Status bar
-
-```
-$ sudo pacman -Syu i3blocks acpi
-```
-
 # Audio
 
 ```
@@ -148,6 +136,14 @@ $ sudo usermod -a -G video <user-name>
 ```
 
 Re-login to activate new group.
+
+# Launcher and status bar
+
+```
+$ sudo pacman -Syu rofi i3blocks acpi
+```
+
+`acpi` is for battery status.
 
 # Screenshot
 
@@ -212,7 +208,7 @@ fcitx5 &
 
 Add "Mozc" as an input method on Fcitx Configuration app.
 
-# Battery
+# Battery saving
 
 https://wiki.archlinux.org/title/TLP#Installation
 
