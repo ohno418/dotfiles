@@ -210,6 +210,8 @@ client.focused_inactive $bg $bg $fg $bg $bg
 bar {
         status_command i3blocks
         font pango:Noto Sans 12
+        mode hide
+        modifier $mod
         colors {
                 background $bg
                 focused_workspace $green $green $bg
