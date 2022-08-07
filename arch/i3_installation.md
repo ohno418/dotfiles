@@ -149,6 +149,12 @@ $ sudo usermod -a -G video <user-name>
 
 Re-login to activate new group.
 
+# Screenshot
+
+```
+$ pacman -Syu maim
+```
+
 # Lock on lid closed
 
 Use `light-locker`.
