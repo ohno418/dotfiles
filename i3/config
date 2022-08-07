@@ -30,8 +30,9 @@ gaps right 3
 gaps left 3
 gaps inner 3
 
-# Not put gaps with only one window
+# no gap or border when only one window
 smart_gaps on
+hide_edge_borders smart
 
 # not focus by mouse
 focus_follows_mouse no
