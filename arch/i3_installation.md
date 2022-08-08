@@ -226,3 +226,9 @@ $ echo 'unclutter &' >> ~/.xprofile
 ```
 $ pacman -Syu maim
 ```
+
+# Enable SDD TRIM
+
+```
+$ sudo systemctl enable fstrim.timer
+```
