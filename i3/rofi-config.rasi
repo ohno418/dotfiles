@@ -1,7 +1,7 @@
 configuration {
-    modi: "combi,drun,rn,window";
-    combi-modi: "drun,rn,window";
+    modi: "combi,drun,run,window";
+    combi-modi: "drun,run,window";
     show-icons: true;
 }
 
-@theme "slate"
+@theme "Arc-Dark"
