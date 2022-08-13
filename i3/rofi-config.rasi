@@ -4,4 +4,4 @@ configuration {
     show-icons: true;
 }
 
-@theme "Arc-Dark"
+@theme "android_notification"
