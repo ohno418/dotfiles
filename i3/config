@@ -52,8 +52,8 @@ bindsym XF86AudioMute exec --no-startup-id pamixer --toggle-mute && $refresh_i3s
 bindsym XF86AudioMicMute exec --no-startup-id pamixer --default-source -t
 
 # backlight
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 # screenshot
 bindsym Print exec --no-startup-id maim ~/Downloads/$(date '+%Y%m%d_%H%M%S').png
