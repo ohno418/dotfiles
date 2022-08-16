@@ -41,7 +41,7 @@ Install a terminal emulator and fonts that are necessary for i3.
 $ sudo pacman -Syu alacritty noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
 
-Install xinit and get into i3.
+Install xinit and set up to start i3 automatically with `startx`. Then get into i3.
 
 ```
 $ sudo pacman -Syu xorg-xinit
@@ -215,4 +215,12 @@ $ pacman -Syu maim
 
 ```
 $ sudo systemctl enable fstrim.timer
+```
+
+# Set up to run `startx` automatically when login
+
+Add the following code to the beginning of `~/.bash_profile`.
+
+```
+[ -z "$DISPLAY" -a $XDG_VTNR -eq 1 ] && startx
 ```
