@@ -156,8 +156,6 @@ $ sudo pacman -Syu feh
 
 # Lock on lid closed
 
-// TODO
-
 ```
 $ sudo pacman -Syu i3lock xss-lock
 ```
