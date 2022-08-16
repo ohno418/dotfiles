@@ -35,20 +35,19 @@ Install i3-gaps with X.
 $ sudo pacman -Syu xorg-server i3-gaps
 ```
 
-Install display manager.
-
-```
-$ sudo pacman -Syu lightdm lightdm-gtk-greeter
-$ sudo systemctl enable lightdm
-```
-
-Install a terminal emulator and fonts.
+Install a terminal emulator and fonts that are necessary for i3.
 
 ```
 $ sudo pacman -Syu alacritty noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
 
-Then, reboot to get into i3.
+Install xinit and get into i3.
+
+```
+$ sudo pacman -Syu xorg-xinit
+$ echo 'exec i3' > ~/.xinitrc
+$ startx
+```
 
 # Install essential packages
 
@@ -151,34 +150,16 @@ Put a wallpaper image in `/usr/share/backgrounds/`.
 
 ```
 $ mkdir /usr/share/backgrounds/
-$ cp /usr/share/backgrounds/wallpaper.jpg
+$ cp dotfiles/i3/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
 $ sudo pacman -Syu feh
 ```
 
 # Lock on lid closed
 
-Use `light-locker`.
+// TODO
 
 ```
-$ sudo pacman -Syu light-locker
-$ echo 'light-locker --lock-on-suspend &' >> ~/.xprofile
-```
-
-### LightDM config
-
-```
-# `/etc/lightdm/lightdm-gtk-greeter.conf`
-
-[greeter]
-background=/usr/share/backgrounds/wallpaper.jpg
-font-name=Noto Sans 11
-hide-user-image=true
-xft-antialias=true
-xft-dpi=96
-xft-hintstyle=hintslight
-xft-rgba=rgb
-indicators=~spacer;~clock;~spacer;separator;~session;~a11y;~power;
-clock-format=%a, %b %d, %H:%M
+$ sudo pacman -Syu i3lock xss-lock
 ```
 
 # Emacs keybindings for GTK applications
@@ -193,7 +174,7 @@ https://wiki.archlinux.org/title/Fcitx5
 $ sudo pacman -Syu fcitx5-im fcitx5-mozc
 ```
 
-Append the following code to `~/.xprofile`.
+Add the following code to the beginning of `~/.xinitrc`.
 
 ```
 export GTK_IM_MODULE=fcitx
@@ -218,7 +199,12 @@ $ sudo systemctl start tlp.service
 
 ```
 $ sudo pacman -Syu unclutter
-$ echo 'unclutter &' >> ~/.xprofile
+```
+
+Add the following code to the beginning of `~/.xinitrc`.
+
+```
+unclutter &
 ```
 
 # Screenshot
