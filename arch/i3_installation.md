@@ -150,7 +150,7 @@ Put a wallpaper image in `/usr/share/backgrounds/`.
 
 ```
 $ mkdir /usr/share/backgrounds/
-$ cp dotfiles/i3/wallpaper.jpg /usr/share/backgrounds/wallpaper.jpg
+$ sudo cp dotfiles/i3/wallpaper.png /usr/share/backgrounds/wallpaper.png
 $ sudo pacman -Syu feh
 ```
 
