@@ -20,7 +20,6 @@ exec --no-startup-id xset r rate 200 30
 # wallpaper
 exec --no-startup-id feh --bg-scale /usr/share/backgrounds/wallpaper.jpg
 
-# TODO
 # lock on lid closed
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
