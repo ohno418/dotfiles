@@ -210,7 +210,7 @@ unclutter &
 # Screenshot
 
 ```
-$ pacman -Syu maim
+$ pacman -Syu flameshot
 ```
 
 # Enable SDD TRIM
