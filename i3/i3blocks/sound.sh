@@ -1,9 +1,8 @@
 #!/bin/bash
-if [ "$(pamixer --get-mute)" = "true" ]
-then
-    ICON="🔇"
+if [ "$(pamixer --get-mute)" = "true" ]; then
+    LABEL="muted"
 else
-    ICON="🔊"
+    LABEL="VOL"
 fi
 
-echo "$ICON $(pamixer --get-volume)%"
+echo "$LABEL $(pamixer --get-volume)%"
