@@ -120,6 +120,8 @@ $ pamixer --default-source --set-volume 80
 
 # Backlight
 
+memo: `brightnessctl` is a much lighter package and works fine.
+
 https://wiki.archlinux.org/title/backlight
 
 (In my case,`xorg-xbacklight` couldn't handle backlight.)
