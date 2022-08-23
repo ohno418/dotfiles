@@ -24,8 +24,9 @@ exec --no-startup-id feh --bg-scale /usr/share/backgrounds/wallpaper.png
 set $lock_screen i3lock --nofork --image=/usr/share/backgrounds/wallpaper.png --ignore-empty-password
 exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock_screen
 
-# 0-width boarder
-for_window [class=".*"] border pixel 2
+# Hide window title bar
+default_border pixel 1
+default_floating_border pixel 1
 
 # gaps
 gaps top 3
