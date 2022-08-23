@@ -32,14 +32,14 @@ default_floating_border pixel 1
 hide_edge_borders smart
 
 # gaps
-gaps top 3
-gaps bottom 3
-gaps right 3
-gaps left 3
-gaps inner 3
+# gaps top 3
+# gaps bottom 3
+# gaps right 3
+# gaps left 3
+# gaps inner 3
 
 # no gap or border when only one window
-smart_gaps on
+# smart_gaps on
 
 # not focus by mouse
 focus_follows_mouse no

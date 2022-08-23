@@ -29,6 +29,8 @@ Reboot to login as a general user.
 
 # Install i3-gaps
 
+memo: Try i3-wm, not i3-gaps.
+
 Install i3-gaps with X.
 
 ```
