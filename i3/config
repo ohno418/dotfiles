@@ -28,6 +28,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- $lock_screen
 default_border pixel 1
 default_floating_border pixel 1
 
+# hide borders when only one window
+hide_edge_borders smart
+
 # gaps
 gaps top 3
 gaps bottom 3
@@ -37,9 +40,6 @@ gaps inner 3
 
 # no gap or border when only one window
 smart_gaps on
-
-# hide borders when only one window
-hide_edge_borders smart
 
 # not focus by mouse
 focus_follows_mouse no
