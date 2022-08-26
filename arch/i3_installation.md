@@ -140,13 +140,11 @@ $ sudo usermod -a -G video <user-name>
 
 Re-login to activate new group.
 
-# Launcher and status bar
+# Launcher
 
 ```
-$ sudo pacman -Syu rofi i3blocks acpi
+$ sudo pacman -Syu rofi
 ```
-
-`acpi` is for battery status.
 
 # Wallpaper
 
