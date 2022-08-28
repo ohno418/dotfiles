@@ -63,10 +63,10 @@ floating_minimum_size 75 x 50
 floating_maximum_size 1500 x 1000
 
 # terminal emulator
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
 
 # app launcher
-bindsym $mod+m exec "rofi -modi drun,window -show drun"
+bindsym $mod+m exec --no-startup-id "rofi -modi drun,window -show drun"
 
 # lock
 bindsym $mod+Shift+x exec --no-startup-id $lock_screen
