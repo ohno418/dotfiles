@@ -215,6 +215,8 @@ bar {
         font pango:Noto Sans 12
         mode hide
         modifier $mod
+        # no tray icon
+        tray_output none
         colors {
                 background $bg
                 focused_workspace $green $green $bg
