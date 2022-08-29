@@ -11,12 +11,9 @@ set $lock swaylock \
               --daemonize \
               --ignore-empty-password \
               --image /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
-# This will lock your screen after 180 seconds of inactivity, then turn off
-# your displays after 600 seconds, and turn your screens back on when resumed.
-# It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
          timeout 180 "$lock" \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep "$lock"
 
 # wallpaper
