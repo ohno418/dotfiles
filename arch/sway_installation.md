@@ -1,3 +1,32 @@
+After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
+
+# Install base-devel
+
+Including `sudo`.
+
+```
+# pacman -Syu base-devel
+```
+
+# Network settings
+
+```
+# pacman -Syu networkmanager
+# systemctl enable NetworkManager
+```
+
+Use `nmtui` command for network settings.
+
+# Add a user
+
+```
+# useradd -m -G wheel -s /bin/bash ohno
+# passwd ohno
+# EDITOR=nvim visudo /etc/sudoers
+```
+
+Reboot to login as a general user.
+
 # Install Sway
 
 With xwayland and a terminal emulator (`foot`).
@@ -6,15 +35,24 @@ With xwayland and a terminal emulator (`foot`).
 $ sudo pacman -Syu sway xorg-xwayland foot
 ```
 
-# Start sway on login
-
-Add the following code to the end of `~/.bash_profile`.
+To automatically start Sway from virtual console, add the following code to the end of `~/.bash_profile`.
 
 ```
+# Start Sway from virtual console.
 [ "$(tty)" = "/dev/tty1" ] && exec sway
 ```
 
+# Essential packages
+
+```
+$ sudo pacman -Syu firefox tmux git openssh man-db man-pages
+```
+
+Then get dotfiles from GitHub.
+
 # Packages for desktop
+
+// TODO: pulseaudio and pamixer?
 
 ```
 $ sudo pacman -Syu swaybg swayidle swaylock rofi pamixer brightnessctl wl-clipboard grim slurp
