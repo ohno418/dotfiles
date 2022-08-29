@@ -27,13 +27,7 @@ $ sudo pacman -Syu swaybg swaylock swayidle rofi pamixer brightnessctl wl-clipbo
 - brightnessctl: backlight control
 - wl-clipboard: clipboard util
 - grim, slurp: screenshot
-
-# Environment variables
-
-```
-# for Firefox on Wayland
-export MOZ_ENABLE_WAYLAND=1
-```
+- pipewire, xdg-desktop-portal-wlr: screen-share for Firefox
 
 # Japanese IM
 
