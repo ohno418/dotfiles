@@ -80,7 +80,7 @@ datetime() {
   "
 }
 
-# header block
+# header
 echo '{ "version": 1 }'
 
 # infinit array

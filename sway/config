@@ -1,4 +1,4 @@
-# Default config for sway
+# Sway config
 # Read `man 5 sway` for a complete reference.
 
 #
@@ -6,13 +6,21 @@
 #
 font pango:Noto Sans 10
 
+# lock
+set $lock swaylock \
+              --daemonize \
+              --ignore-empty-password \
+              --image /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+# This will lock your screen after 180 seconds of inactivity, then turn off
+# your displays after 600 seconds, and turn your screens back on when resumed.
+# It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+         timeout 180 "$lock" \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep "$lock"
+
 # wallpaper
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output * bg /usr/share/backgrounds/wallpaper.png fill
-
-# lock on lid closed
-set $lock swaylock --daemonize --image /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png --ignore-empty-password
-bindswitch --reload --locked lid:on exec $lock
 
 # border style (hide title bar)
 default_border pixel 1
@@ -25,37 +33,24 @@ smart_borders on
 focus_follows_mouse no
 
 # Japanese IM
-exec fcitx5 &
+exec fcitx5
 
-# TODO
 # hide mouse cursor when unneeded
-exec unclutter &
+seat * hide_cursor 5000
 
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-#
-# input configuration
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
-input type:keyboard {
+# keyboard
+input "type:keyboard" {
+    # CapsLock as Ctrl
     xkb_options ctrl:nocaps
-    repeat_rate 40
+
+    # key repeat rate
     repeat_delay 250
+    repeat_rate 40
 }
 
-input type:touchpad {
+# touchpad
+input "type:touchpad" {
+    # tap click
     tap enabled
 }
 
@@ -65,11 +60,13 @@ input type:touchpad {
 set $mod Mod1
 
 # terminal emulator
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec foot
 
-# TODO: theme
+# browser
+bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox
+
 # app launcher
-bindsym $mod+m exec wofi --show=drun --allow-images
+bindsym $mod+m exec rofi -show drun
 
 # volume
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
@@ -147,10 +144,11 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
-# layout
+# split
 bindsym $mod+v splith
 bindsym $mod+s splitv
 
+# layout
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
@@ -185,7 +183,6 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# TODO
 #
 # color
 #
@@ -197,36 +194,19 @@ set $green #68DDC4
 client.focused $bg $bg $fg $green $green
 client.focused_inactive $bg $bg $fg $bg $bg
 
-# TODO
 #
 # status bar
 #
-# Read `man 5 sway-bar` for more information about this section.
 bar {
-    position bottom
-
+    status_command exec $HOME/.config/sway/bar.sh
     font pango:Noto Sans 10
-    # mode hide
-    # modifier $mod
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
+    position bottom
     # no tray icon
     tray_output none
 
-    # colors {
-    #     statusline #ffffff
-    #     background #323232
-    #     inactive_workspace #32323200 #32323200 #5c5c5c
-    # }
     colors {
         background $bg
         focused_workspace $green $green $bg
         inactive_workspace $bg $bg $fg
     }
 }
-
-# TODO
-include /etc/sway/config.d/*
