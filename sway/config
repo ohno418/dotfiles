@@ -29,6 +29,10 @@ smart_borders on
 # not focus by mouse over
 focus_follows_mouse no
 
+# screen sharing
+exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment WAYLAND_DISPLAY
+
 # Japanese IM
 exec fcitx5
 
@@ -60,7 +64,7 @@ set $mod Mod1
 bindsym $mod+Return exec foot
 
 # browser
-bindsym $mod+b exec MOZ_ENABLE_WAYLAND=1 firefox
+bindsym $mod+b exec firefox
 
 # app launcher
 bindsym $mod+m exec rofi -show drun

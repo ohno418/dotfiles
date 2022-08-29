@@ -8,7 +8,7 @@ $ sudo pacman -Syu sway xorg-xwayland foot
 
 # Start sway on login
 
-Add the following code to the beginning of `~/.bash_profile`.
+Add the following code to the end of `~/.bash_profile`.
 
 ```
 [ "$(tty)" = "/dev/tty1" ] && exec sway
@@ -17,17 +17,38 @@ Add the following code to the beginning of `~/.bash_profile`.
 # Packages for desktop
 
 ```
-$ sudo pacman -Syu swaybg swaylock swayidle rofi pamixer brightnessctl wl-clipboard grim slurp
+$ sudo pacman -Syu swaybg swayidle swaylock rofi pamixer brightnessctl wl-clipboard grim slurp
 ```
 
 - swaybg: wallpaper
-- swaylock, swayidle: lock screen
+- swayidle, swaylock: lock screen
 - rofi: app launcher
 - pamixer: sound control
 - brightnessctl: backlight control
 - wl-clipboard: clipboard util
 - grim, slurp: screenshot
-- pipewire, xdg-desktop-portal-wlr: screen-share for Firefox
+
+To enable Firefox on wayland, add the following code to `~/.bash_profile`.
+
+```
+# Firefox on Wayland
+export MOZ_ENABLE_WAYLAND=1
+```
+
+# Screen sharing
+
+https://elis.nu/blog/2021/02/detailed-setup-of-screen-sharing-in-sway/
+
+```
+$ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
+```
+
+Add the following code to `~/.bash_profile`.
+
+```
+# for screen sharing
+export XDG_CURRENT_DESKTOP=sway
+```
 
 # Japanese IM
 
@@ -37,7 +58,7 @@ https://wiki.archlinux.org/title/Fcitx5
 $ sudo pacman -Syu fcitx5-im fcitx5-mozc
 ```
 
-Add the following code to the end of `~/.bash_profile`.
+Add the following code to `~/.bash_profile`.
 
 ```
 # fcitx5
@@ -61,8 +82,3 @@ $ sudo systemctl start tlp.service
 ```
 $ sudo systemctl enable fstrim.timer
 ```
-
-# TODOs
-
-- Yank to clipboard on nvim.
-- Screen sharing.
