@@ -428,8 +428,8 @@ colors:
 #   - (Windows) powershell
 shell:
   program: /bin/bash
-  args:
-    - --login
+    #args:
+    #  - --login
 
 # Startup directory
 #
