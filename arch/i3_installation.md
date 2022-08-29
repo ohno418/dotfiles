@@ -27,14 +27,12 @@ Usage: https://wiki.archlinux.org/title/NetworkManager#Usage
 
 Reboot to login as a general user.
 
-# Install i3-gaps
+# Install i3-wm
 
-memo: Try i3-wm, not i3-gaps.
-
-Install i3-gaps with X.
+Install i3-wm with X.
 
 ```
-$ sudo pacman -Syu xorg-server i3-gaps
+$ sudo pacman -Syu xorg-server i3-wm
 ```
 
 Install a terminal emulator and fonts that are necessary for i3.
@@ -122,23 +120,11 @@ $ pamixer --default-source --set-volume 80
 
 # Backlight
 
-memo: `brightnessctl` is a much lighter package and works fine.
-
 https://wiki.archlinux.org/title/backlight
 
-(In my case,`xorg-xbacklight` couldn't handle backlight.)
-
 ```
-$ sudo pacman -Syu acpilight
+$ sudo pacman -Syu brightnessctl
 ```
-
-To allow a normal user to do `xbacklight`:
-
-```
-$ sudo usermod -a -G video <user-name>
-```
-
-Re-login to activate new group.
 
 # Launcher
 
@@ -166,7 +152,7 @@ $ sudo pacman -Syu i3lock xss-lock
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
-# Japanese input method
+# Japanese IME
 
 https://wiki.archlinux.org/title/Fcitx5
 
