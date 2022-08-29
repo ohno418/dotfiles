@@ -199,9 +199,11 @@ client.focused_inactive $bg $bg $fg $bg $bg
 # status bar
 #
 bar {
+    position bottom
     status_command exec $HOME/.config/sway/bar.sh
     font pango:Noto Sans 10
-    position bottom
+    mode hide
+    modifier $mod
     # no tray icon
     tray_output none
 
