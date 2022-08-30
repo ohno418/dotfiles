@@ -55,10 +55,8 @@ Then get dotfiles from GitHub.
 
 # Packages for desktop
 
-// TODO: fonts
-
 ```
-$ sudo pacman -Syu swaybg swayidle swaylock rofi pulseaudio pamixer brightnessctl wl-clipboard grim slurp
+$ sudo pacman -Syu swaybg swayidle swaylock rofi pulseaudio pamixer brightnessctl wl-clipboard grim slurp noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
 
 - swaybg: wallpaper
@@ -68,6 +66,7 @@ $ sudo pacman -Syu swaybg swayidle swaylock rofi pulseaudio pamixer brightnessct
 - brightnessctl: backlight control
 - wl-clipboard: clipboard util
 - grim, slurp: screenshot
+- noto-fonts, noto-fonts-cjk, noto-fonts-emoji: fonts
 
 To enable Firefox on wayland, add the following code to `~/.bash_profile`.
 
@@ -76,22 +75,9 @@ To enable Firefox on wayland, add the following code to `~/.bash_profile`.
 export MOZ_ENABLE_WAYLAND=1
 ```
 
-# Screen sharing
+# Emacs keybindings for GTK applications
 
-// TODO: Only xdg-desktop-portal-wlr is needed, pipewire is a dependency of it.
-
-https://elis.nu/blog/2021/02/detailed-setup-of-screen-sharing-in-sway/
-
-```
-$ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
-```
-
-Add the following code to `~/.bash_profile`.
-
-```
-# for screen sharing
-export XDG_CURRENT_DESKTOP=sway
-```
+https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
 # Japanese IM
 
@@ -108,6 +94,25 @@ Add the following code to `~/.bash_profile`.
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+```
+
+Add "Mozc" as an input method on Fcitx Configuration app.
+
+# Screen sharing
+
+// TODO: Only xdg-desktop-portal-wlr is needed, pipewire is a dependency of it.
+
+https://elis.nu/blog/2021/02/detailed-setup-of-screen-sharing-in-sway/
+
+```
+$ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
+```
+
+Add the following code to `~/.bash_profile`.
+
+```
+# for screen sharing
+export XDG_CURRENT_DESKTOP=sway
 ```
 
 # Battery saving
