@@ -35,6 +35,8 @@ With xwayland and a terminal emulator (`foot`).
 $ sudo pacman -Syu sway xorg-xwayland foot
 ```
 
+(Select Sway to use noto-fonts.)
+
 To automatically start Sway from virtual console, add the following code to the end of `~/.bash_profile`.
 
 ```
@@ -52,16 +54,16 @@ Then get dotfiles from GitHub.
 
 # Packages for desktop
 
-// TODO: pulseaudio and pamixer?
+// TODO: fonts
 
 ```
-$ sudo pacman -Syu swaybg swayidle swaylock rofi pamixer brightnessctl wl-clipboard grim slurp
+$ sudo pacman -Syu swaybg swayidle swaylock rofi pulseaudio pamixer brightnessctl wl-clipboard grim slurp
 ```
 
 - swaybg: wallpaper
 - swayidle, swaylock: lock screen
 - rofi: app launcher
-- pamixer: sound control
+- pulseaudio, pamixer: sound control
 - brightnessctl: backlight control
 - wl-clipboard: clipboard util
 - grim, slurp: screenshot
@@ -74,6 +76,8 @@ export MOZ_ENABLE_WAYLAND=1
 ```
 
 # Screen sharing
+
+// TODO: Only xdg-desktop-portal-wlr is needed, pipewire is a dependency of it.
 
 https://elis.nu/blog/2021/02/detailed-setup-of-screen-sharing-in-sway/
 
