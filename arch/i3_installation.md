@@ -1,5 +1,15 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
+# Network settings
+
+```
+# pacman -Syu networkmanager
+# systemctl enable NetworkManager
+# systemctl start NetworkManager
+```
+
+Use `nmtui` command for network settings.
+
 # Install base-devel
 
 base-devel includes `sudo`.
@@ -7,15 +17,6 @@ base-devel includes `sudo`.
 ```
 # pacman -Syu base-devel
 ```
-
-# Network settings
-
-```
-# pacman -Syu networkmanager
-# systemctl enable NetworkManager
-```
-
-Usage: https://wiki.archlinux.org/title/NetworkManager#Usage
 
 # Add a user
 
@@ -60,6 +61,8 @@ $ sudo pacman -Syu firefox tmux git openssh man-db man-pages xclip
 ### CapsLock as Ctrl
 
 https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files
+
+// TODO: key repeat settings here (https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_AutoRepeat_configuration_option)
 
 ```
 $ sudo nvim /etc/X11/xorg.conf.d/00-keyboard.conf

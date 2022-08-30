@@ -1,5 +1,15 @@
 After official [installation guilde](https://wiki.archlinux.org/title/installation_guide).
 
+# Network settings
+
+```
+# pacman -Syu networkmanager
+# systemctl enable NetworkManager
+# systemctl start NetworkManager
+```
+
+Use `nmtui` command for network settings.
+
 # Install base-devel
 
 Including `sudo`.
@@ -7,15 +17,6 @@ Including `sudo`.
 ```
 # pacman -Syu base-devel
 ```
-
-# Network settings
-
-```
-# pacman -Syu networkmanager
-# systemctl enable NetworkManager
-```
-
-Use `nmtui` command for network settings.
 
 # Add a user
 
