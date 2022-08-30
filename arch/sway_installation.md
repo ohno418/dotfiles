@@ -79,6 +79,8 @@ export MOZ_ENABLE_WAYLAND=1
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
 
+Only setting for GTK3 is fine.
+
 # Japanese IM
 
 https://wiki.archlinux.org/title/Fcitx5
