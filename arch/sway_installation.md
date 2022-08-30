@@ -106,6 +106,8 @@ Add "Mozc" as an input method on Fcitx Configuration app.
 
 https://elis.nu/blog/2021/02/detailed-setup-of-screen-sharing-in-sway/
 
+https://www.reddit.com/r/swaywm/comments/l4e55v/guide_how_to_screenshare_from_chromiumfirefox/
+
 ```
 $ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
 ```
