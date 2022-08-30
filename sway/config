@@ -213,3 +213,21 @@ bar {
         inactive_workspace $bg $bg $fg
     }
 }
+
+#
+# floating windows
+#
+# Google Meet
+for_window [app_id="firefox" title="Firefox — Sharing Indicator"] {
+  floating enable
+  sticky enable
+  move up 450px
+}
+
+# Kanbanflow alarm
+for_window [app_id="firefox" title="^$"] {
+  floating enable
+  sticky enable
+  move up 450px
+  move right 700px
+}
