@@ -38,6 +38,12 @@ $ sudo pacman -Syu sway xorg-xwayland foot
 
 (Select Sway to use noto-fonts.)
 
+```
+$ sudo systemctl enalbe seatd
+$ sudo systemctl start seatd
+$ usermod -a -G seat ohno
+```
+
 To automatically start Sway from virtual console, add the following code to the end of `~/.bash_profile`.
 
 ```
@@ -75,6 +81,8 @@ To enable Firefox on wayland, add the following code to `~/.bash_profile`.
 export MOZ_ENABLE_WAYLAND=1
 ```
 
+Reboot to start PulseAudio service, or just start it.
+
 # Emacs keybindings for GTK applications
 
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
@@ -102,12 +110,6 @@ Add "Mozc" as an input method on Fcitx Configuration app.
 
 # Screen sharing
 
-// TODO: Only xdg-desktop-portal-wlr is needed, pipewire is a dependency of it.
-
-https://elis.nu/blog/2021/02/detailed-setup-of-screen-sharing-in-sway/
-
-https://www.reddit.com/r/swaywm/comments/l4e55v/guide_how_to_screenshare_from_chromiumfirefox/
-
 ```
 $ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
 ```
@@ -118,6 +120,22 @@ Add the following code to `~/.bash_profile`.
 # for screen sharing
 export XDG_CURRENT_DESKTOP=sway
 ```
+
+Enable PipeWire services.
+
+```
+$ systemctl --user enable pipewire
+```
+
+Reboot to start following services:
+
+```
+$ systemctl --user status pipewire
+$ systemctl --user status xdg-desktop-portal
+$ systemctl --user status xdg-desktop-portal-wlr
+```
+
+Test [here](https://mozilla.github.io/webrtc-landing/gum_test.html) (Screen capture).
 
 # Battery saving
 
