@@ -68,7 +68,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+p exec firefox --private-window
 
 # app launcher
-bindsym $mod+m exec rofi -show drun
+bindsym $mod+m exec wofi --show=drun --allow-image
 
 # volume
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5

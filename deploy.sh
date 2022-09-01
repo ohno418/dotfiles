@@ -7,10 +7,10 @@ ln -sf $(pwd)/nvim/init.vim ~/.config/nvim/init.vim
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 
 # Sway
-mkdir -p ~/.config/sway ~/.config/rofi
+mkdir -p ~/.config/sway ~/.config/wofi
 ln -sf $(pwd)/sway/config ~/.config/sway/config
 ln -sf $(pwd)/sway/bar.sh ~/.config/sway/bar.sh
-ln -sf $(pwd)/sway/rofi-config.rasi ~/.config/rofi/config.rasi
+ln -sf $(pwd)/sway/wofi-style.css ~/.config/wofi/style.css
 
 # foot
 mkdir -p ~/.config/foot
