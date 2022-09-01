@@ -31,7 +31,9 @@ focus_follows_mouse no
 
 # screen sharing
 exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
-exec dbus-update-activation-environment WAYLAND_DISPLAY
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# GTK+ application start-up time
+# https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
 
 # Japanese IM
 exec fcitx5
