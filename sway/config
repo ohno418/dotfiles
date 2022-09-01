@@ -65,6 +65,7 @@ bindsym $mod+Return exec foot
 
 # browser
 bindsym $mod+b exec firefox
+bindsym $mod+Shift+p exec firefox --private-window
 
 # app launcher
 bindsym $mod+m exec rofi -show drun
