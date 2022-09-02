@@ -43,6 +43,9 @@ set visualbell
 set cursorline
 highlight CursorLine cterm=underline gui=underline ctermbg=NONE guibg=NONE
 
+" coc: selected color on menu
+highlight CocMenuSel guibg=DarkGreen
+
 " tab, indent
 set expandtab
 set tabstop=8
