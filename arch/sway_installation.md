@@ -36,7 +36,7 @@ With xwayland and a terminal emulator (`foot`).
 $ sudo pacman -Syu sway xorg-xwayland foot
 ```
 
-(Select Sway to use noto-fonts.)
+(Select noto-fonts to use in Sway.)
 
 ```
 $ sudo systemctl enalbe seatd
