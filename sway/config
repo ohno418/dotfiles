@@ -84,6 +84,8 @@ bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 
 # screenshot
 bindsym Print exec grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png
+# full screen
+bindsym Shift+Print exec grim -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png
 
 # floating mode
 floating_modifier $mod normal
