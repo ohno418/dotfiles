@@ -7,7 +7,7 @@ let mapleader=" "
 " Then run :PlugInstall to install plugins.
 call plug#begin('~/.vim/plugged')
     " Colorscheme
-    Plug 'ayu-theme/ayu-vim'
+    Plug 'NLKNguyen/papercolor-theme'
 
     " File explorer
     Plug 'scrooloose/nerdtree'
@@ -33,8 +33,10 @@ call plug#end()
 "=== Options ===
 " color
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+set background=dark
+colorscheme PaperColor
+" coc: selected color on menu
+highlight CocMenuSel guibg=DarkGreen
 
 " basics
 set number
@@ -42,9 +44,6 @@ set history=200
 set visualbell
 set cursorline
 highlight CursorLine cterm=underline gui=underline ctermbg=NONE guibg=NONE
-
-" coc: selected color on menu
-highlight CocMenuSel guibg=DarkGreen
 
 " tab, indent
 set expandtab
