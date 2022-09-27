@@ -32,7 +32,6 @@ call plug#end()
 
 "=== Options ===
 " color
-set termguicolors
 set background=dark
 colorscheme PaperColor
 " coc: selected color on menu
