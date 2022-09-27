@@ -34,8 +34,6 @@ call plug#end()
 " color
 set background=dark
 colorscheme PaperColor
-" coc: selected color on menu
-highlight CocMenuSel guibg=DarkGreen
 
 " basics
 set number
