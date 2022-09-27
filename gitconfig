@@ -12,7 +12,6 @@
 	co = checkout
 	b = branch
 	sw = switch
-	swc = switch -c
 	f = fetch
 	l = log
 	g = grep
