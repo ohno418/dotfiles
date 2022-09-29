@@ -51,7 +51,7 @@ battery() {
 
   if [ $CHARGE_STATUS = "Charging" ]; then
     BAT_COLOR="#d0d000"
-  elif [ $REMAIN -le 15 ]; then
+  elif [ $REMAIN -le 20 ]; then
     BAT_COLOR="#fa1e44"
   else
     BAT_COLOR="#ffffff"
