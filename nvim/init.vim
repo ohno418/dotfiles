@@ -27,7 +27,10 @@ call plug#begin('~/.vim/plugged')
     " LSP (Node.js require)
     " e.g. To install Rust server, `:CocInstall coc-rust-analyzer`.
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " use enter as confirm on coc menu
     inoremap <expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+    " jump to definition
+    nnoremap <silent> <Leader>d <Plug>(coc-definition)
 call plug#end()
 
 "=== Options ===
