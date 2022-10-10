@@ -16,8 +16,4 @@ ln -sf $(pwd)/sway/wofi-style.css ~/.config/wofi/style.css
 mkdir -p ~/.config/foot
 ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
 
-# Alacritty
-# mkdir -p ~/.config/alacritty
-# ln -sf $(pwd)/alacritty.yml ~/.config/alacritty/alacritty.yml
-
 echo OK
