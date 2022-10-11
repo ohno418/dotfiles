@@ -13,6 +13,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdtree'
     nnoremap <Leader>n :NERDTreeToggle<CR>
     nnoremap <Leader>N :NERDTree<CR>
+    " This is a temporary workaround. The issue here:
+    " https://github.com/preservim/nerdtree/issues/1321
+    let g:NERDTreeMinimalMenu=1
 
     " Fuzzy finder
     Plug 'nvim-lua/plenary.nvim'
