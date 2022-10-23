@@ -21,7 +21,7 @@ Including `sudo`.
 # Add a user
 
 ```
-# useradd -m -G wheel -s /bin/bash ohno
+# useradd -m -G wheel ohno
 # passwd ohno
 # EDITOR=nvim visudo /etc/sudoers
 ```
@@ -44,20 +44,28 @@ $ sudo systemctl start seatd
 $ usermod -a -G seat ohno
 ```
 
-To automatically start Sway from virtual console, add the following code to the end of `~/.bash_profile`.
+To automatically start Sway from virtual console, add the following code to the end of `~/.bash_profile` or `~/.zprofile`.
 
 ```
 # Start Sway from virtual console.
 [ "$(tty)" = "/dev/tty1" ] && exec sway
 ```
 
+Or just execute `sway` on console.
+
 # Essential packages
 
 ```
-$ sudo pacman -Syu firefox tmux git openssh man-db man-pages
+$ sudo pacman -Syu firefox zsh tmux git openssh man-db man-pages
 ```
 
-Then get dotfiles from GitHub.
+Then get dotfiles from GitHub and deploy them.
+
+### zsh as the default shell
+
+```
+$ chsh -s /bin/zsh
+```
 
 # Packages for desktop
 
@@ -74,7 +82,7 @@ $ sudo pacman -Syu swaybg swayidle swaylock wofi pulseaudio pamixer brightnessct
 - grim, slurp: screenshot
 - noto-fonts, noto-fonts-cjk, noto-fonts-emoji: fonts
 
-To enable Firefox on wayland, add the following code to `~/.bash_profile`.
+To enable Firefox on wayland, add the following code to `~/.bash_profile` or `~/.zshenv`.
 
 ```
 # Firefox on Wayland
@@ -97,7 +105,7 @@ https://wiki.archlinux.org/title/Fcitx5
 $ sudo pacman -Syu fcitx5-im fcitx5-mozc
 ```
 
-Add the following code to `~/.bash_profile`.
+Add the following code to `~/.bash_profile` or `~/.zshenv`.
 
 ```
 # fcitx5
@@ -114,7 +122,7 @@ Add "Mozc" as an input method on Fcitx Configuration app.
 $ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
 ```
 
-Add the following code to `~/.bash_profile`.
+Add the following code to `~/.bash_profile` or `~/.zshenv`.
 
 ```
 # for screen sharing

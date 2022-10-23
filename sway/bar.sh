@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # i3bar input protocol docs:
 # https://i3wm.org/docs/i3bar-protocol.html

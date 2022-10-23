@@ -1,0 +1,30 @@
+# history file
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Emacs key bindings
+bindkey -e
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+# autocompletion
+zstyle ':completion:*' menu select
+
+# prompt theme
+prompt adam1 green green
+
+# aliases
+alias ls='ls --color=auto'
+alias t='tmux'
+alias vi='nvim'
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gc='git commit'
+
+# Load nodenv
+eval "$(nodenv init -)"

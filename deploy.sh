@@ -1,5 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 set -e
+
+ln -sf $(pwd)/zsh/zshenv ~/.zshenv
+ln -sf $(pwd)/zsh/zprofile ~/.zprofile
+ln -sf $(pwd)/zsh/zshrc ~/.zshrc
 
 mkdir -p ~/.config/nvim ~/.config/tmux
 ln -sf $(pwd)/gitconfig ~/.gitconfig
