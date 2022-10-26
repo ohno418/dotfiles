@@ -14,7 +14,7 @@ promptinit
 zstyle ':completion:*' menu select
 
 # prompt theme
-prompt oliver green
+prompt oliver cyan
 
 # aliases
 alias ls='ls --color=auto'
