@@ -13,8 +13,8 @@ promptinit
 # autocompletion
 zstyle ':completion:*' menu select
 
-# prompt theme
-prompt oliver cyan
+# prompt
+PROMPT='%B%(?..[%?] )%b%n@%M:%~ $ '
 
 # aliases
 alias ls='ls --color=auto'
