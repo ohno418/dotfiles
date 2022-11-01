@@ -25,6 +25,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias ga='git add'
 alias gc='git commit'
+alias gg='git grep'
 
 # Load nodenv
 eval "$(nodenv init -)"
