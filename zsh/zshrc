@@ -28,6 +28,7 @@ alias gc='git commit'
 alias gg='git grep'
 alias gl='git log'
 alias gb='git branch'
+alias gco='git checkout'
 
 # Load nodenv
 eval "$(nodenv init -)"
