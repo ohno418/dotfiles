@@ -30,10 +30,10 @@ Reboot to login as a general user.
 
 # Install Sway
 
-With a terminal emulator (`foot`).
+With xwayland and a terminal emulator (`foot`).
 
 ```
-$ sudo pacman -Syu sway foot
+$ sudo pacman -Syu sway xorg-xwayland foot
 ```
 
 (Select noto-fonts to use in Sway.)
