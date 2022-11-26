@@ -16,9 +16,6 @@ exec swayidle -w \
          timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep "$lock"
 
-output eDP-1 pos 1920 0
-output HDMI-A-2 pos 0 0
-
 # wallpaper
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
@@ -59,6 +56,13 @@ input "type:touchpad" {
     # tap click
     tap enabled
 }
+
+# external display settings
+set $laptop_disp eDP-1
+set $external_disp HDMI-A-2
+output $laptop_disp pos 1920 0
+output $external_disp pos 0 0
+workspace 1 output $external_disp
 
 #
 # key bindings
