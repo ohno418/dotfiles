@@ -70,12 +70,11 @@ $ chsh -s /bin/zsh
 # Packages for desktop
 
 ```
-$ sudo pacman -Syu swaybg swayidle swaylock wofi pulseaudio pamixer brightnessctl wl-clipboard grim slurp noto-fonts noto-fonts-cjk noto-fonts-emoji
+$ sudo pacman -Syu swaybg swayidle swaylock pulseaudio pamixer brightnessctl wl-clipboard grim slurp noto-fonts noto-fonts-cjk noto-fonts-emoji
 ```
 
 - swaybg: wallpaper
 - swayidle, swaylock: lock screen
-- wofi: app launcher
 - pulseaudio, pamixer: sound control
 - brightnessctl: backlight control
 - wl-clipboard: clipboard util
