@@ -9,14 +9,6 @@ call plug#begin('~/.vim/plugged')
     " Colorscheme
     Plug 'NLKNguyen/papercolor-theme'
 
-    " File explorer
-    Plug 'scrooloose/nerdtree'
-    nnoremap <Leader>n :NERDTreeToggle<CR>
-    nnoremap <Leader>N :NERDTree<CR>
-    " This is a temporary workaround. The issue here:
-    " https://github.com/preservim/nerdtree/issues/1321
-    let g:NERDTreeMinimalMenu=1
-
     " Fuzzy finder
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
@@ -66,6 +58,22 @@ set noswapfile
 " yank to clipboard
 " Install xclip package with the following setting.
 set clipboard+=unnamedplus
+
+"=== File explorer (netrw) ===
+nnoremap <Leader>e :Lexplore<CR>
+" open in the directory of the current file
+nnoremap <Leader>w :Lexplore %:p:h<CR>
+let g:netrw_banner = 0
+let g:netrw_keepdir = 0
+let g:netrw_winsize = 15
+" tree style
+let g:netrw_liststyle = 3
+" hide dotfiles
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+" TODO: ctrl-l to move left.
+" TODO: o to open, instead of enter.
+" TODO: v to vertical open, instead of enter.
+" TODO: s to horizontal open, instead of enter.
 
 "=== Key mappings ===
 inoremap jj <ESC>
