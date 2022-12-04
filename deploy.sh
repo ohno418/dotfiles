@@ -7,7 +7,7 @@ ln -sf $(pwd)/zsh/zshrc ~/.zshrc
 
 mkdir -p ~/.config/nvim ~/.config/tmux
 ln -sf $(pwd)/gitconfig ~/.gitconfig
-ln -sf $(pwd)/nvim_init.vim ~/.config/nvim/init.vim
+ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 
 # Sway
