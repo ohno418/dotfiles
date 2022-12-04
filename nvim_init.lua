@@ -46,7 +46,7 @@ vim.keymap.set('n', '<Leader>c', ':tabclose<CR>')
 -- Plugins --
 -------------
 -- Using packer (https://aur.archlinux.org/packages/nvim-packer-git).
--- -- To install packages, run `PackerSync`.
+-- To install packages, run `PackerSync`.
 return require('packer').startup(function(use)
   -- TODO: Improve packer usage.
 
