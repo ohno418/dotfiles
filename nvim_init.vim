@@ -62,7 +62,7 @@ set clipboard+=unnamedplus
 "=== File explorer (netrw) ===
 nnoremap <Leader>e :Lexplore<CR>
 " open in the directory of the current file
-nnoremap <Leader>w :Lexplore %:p:h<CR>
+nnoremap <Leader>E :Lexplore %:p:h<CR>
 let g:netrw_banner = 0
 let g:netrw_keepdir = 0
 let g:netrw_winsize = 15
