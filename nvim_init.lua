@@ -1,6 +1,10 @@
 -------------
 -- Options --
 -------------
+-- disable netrw in favor of nvim-tree.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- basics
 vim.opt.number = true
 vim.opt.history = 200
@@ -53,9 +57,15 @@ require('packer').startup(function(use)
   vim.opt.background = 'dark'
   vim.cmd('colorscheme PaperColor')
 
+  -- File explorer
+  use 'nvim-tree/nvim-tree.lua'
+  vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>');
+
   -- Fuzzy finder
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
   vim.keymap.set('n', '<Leader>f', ':Telescope find_files<CR>')
   vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
 
@@ -71,3 +81,36 @@ require('packer').startup(function(use)
   -- jump to definition
   vim.keymap.set('n', '<Leader>d', '<Plug>(coc-definition)', {silent = true})
 end)
+
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+        { key = "<C-s>", action = "split" },
+        { key = "s", action = "split" },
+      },
+    },
+  },
+  renderer = {
+    add_trailing = true,
+    highlight_opened_files = "name",
+    indent_width = 2,
+    indent_markers = {
+      enable = true,
+    },
+    icons = {
+      show = {
+        file = false,
+        folder = false,
+        folder_arrow = false,
+        git = false,
+      },
+    },
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
