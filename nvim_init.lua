@@ -47,9 +47,7 @@ vim.keymap.set('n', '<Leader>c', ':tabclose<CR>')
 -------------
 -- Using packer (https://aur.archlinux.org/packages/nvim-packer-git).
 -- To install packages, run `PackerSync`.
-return require('packer').startup(function(use)
-  -- TODO: Improve packer usage.
-
+require('packer').startup(function(use)
   -- Colorscheme
   use 'NLKNguyen/papercolor-theme'
   vim.opt.background = 'dark'
@@ -67,13 +65,9 @@ return require('packer').startup(function(use)
 
   -- LSP (Node.js require)
   -- e.g. To install Rust server, `:CocInstall coc-rust-analyzer`.
-  use {
-    'neoclide/coc.nvim',
-    branch = 'release'
-  }
-  -- TODO
+  use {'neoclide/coc.nvim', branch = 'release'}
   -- use enter as confirm on coc menu
-  -- vim.keymap.set('i', '<expr>' <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+  vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "<CR>"', {expr = true})
   -- jump to definition
-  -- vim.keymap.set('n', '<silent>', '<Leader>d <Plug>(coc-definition)')
+  vim.keymap.set('n', '<Leader>d', '<Plug>(coc-definition)', {silent = true})
 end)
