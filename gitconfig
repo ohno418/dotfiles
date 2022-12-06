@@ -18,3 +18,4 @@
 	i = init
 	rs = reset
 	rb = rebase
+	cp = cherry-pick
