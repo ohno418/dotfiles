@@ -30,19 +30,15 @@ Reboot to login as a general user.
 
 # Install Sway
 
-With xwayland and a terminal emulator (`foot`).
+```
+$ sudo pacman -Syu sway polkit foot xorg-xwayland
+```
 
-```
-$ sudo pacman -Syu sway xorg-xwayland foot
-```
+- polkit: For Sway to get access to the seat.
+- foot: Terminal emulator.
+- xorg-xwayland: To enable X.
 
 (Select noto-fonts to use in Sway.)
-
-```
-$ sudo systemctl enalbe seatd
-$ sudo systemctl start seatd
-$ usermod -a -G seat ohno
-```
 
 To automatically start Sway from virtual console, add the following code to the end of `~/.bash_profile` or `~/.zprofile`.
 
@@ -52,6 +48,8 @@ To automatically start Sway from virtual console, add the following code to the 
 ```
 
 Or just execute `sway` on console.
+
+ref: https://wiki.archlinux.org/title/sway#Starting
 
 # Essential packages
 

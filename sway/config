@@ -16,9 +16,6 @@ exec swayidle -w \
          timeout 420 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
          before-sleep "$lock"
 
-# wallpaper
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-
 # border style (hide title bar)
 default_border pixel 1
 default_floating_border pixel 1
@@ -42,20 +39,23 @@ exec fcitx5
 seat * hide_cursor 5000
 
 # keyboard
-input "type:keyboard" {
+input type:keyboard {
     # CapsLock as Ctrl
     xkb_options ctrl:nocaps
-
     # key repeat rate
     repeat_delay 250
     repeat_rate 40
 }
 
 # touchpad
-input "type:touchpad" {
+input type:touchpad {
     # tap click
     tap enabled
+    natural_scroll enabled
 }
+
+# wallpaper
+output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 # external display settings
 set $laptop_disp eDP-1
@@ -171,6 +171,7 @@ bindsym $mod+s splitv
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+# fullscreen
 bindsym $mod+f fullscreen
 
 # focus parent/child container
