@@ -88,9 +88,10 @@ require("nvim-tree").setup({
     adaptive_size = true,
     mappings = {
       list = {
-        { key = "u", action = "dir_up" },
         { key = "<C-s>", action = "split" },
         { key = "s", action = "split" },
+        { key = "c", action = "cd" },
+        { key = "<C-c>", action = "collapse_all" },
       },
     },
   },
