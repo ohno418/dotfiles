@@ -91,7 +91,7 @@ require("nvim-tree").setup({
         { key = "<C-s>", action = "split" },
         { key = "s", action = "split" },
         { key = "c", action = "cd" },
-        { key = "<C-c>", action = "collapse_all" },
+        { key = "<C-r>", action = "collapse_all" },
       },
     },
   },
