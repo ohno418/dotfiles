@@ -49,9 +49,15 @@ input type:keyboard {
 
 # touchpad
 input type:touchpad {
-    # tap click
     tap enabled
     natural_scroll enabled
+    scroll_factor 0.5
+    pointer_accel 0.3
+}
+
+# track pointer
+input type:pointer {
+    scroll_factor 0.5
 }
 
 # wallpaper
