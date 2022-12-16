@@ -33,6 +33,28 @@ riverctl map normal Alt K focus-view previous
 riverctl map normal Alt+Shift J swap next
 riverctl map normal Alt+Shift K swap previous
 
+#
+# INPUT CONFIGURATION
+#
+
+#--- touchpad / trackpoint ---
+
+# Use device names that are listed by `riverctl list-inputs` here.
+touchpad="1267:47:Elan_Touchpad"
+trackpoint="1267:47:Elan_TrackPoint"
+# tap to click
+riverctl input $touchpad tap enabled
+# cursor speed
+riverctl input $touchpad pointer-accel 0.4
+riverctl input $trackpoint pointer-accel 0.2
+# natural scroll
+riverctl input $touchpad natural-scroll enabled
+riverctl input $trackpoint natural-scroll enabled
+
+#--- keyboard ---
+# repeat rate
+riverctl set-repeat 50 300
+
 ##############################
 
 # TODO: ???
@@ -147,9 +169,6 @@ done
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1
 riverctl border-color-unfocused 0x586e75
-
-# Set keyboard repeat rate
-riverctl set-repeat 50 300
 
 # Make certain views start floating
 riverctl float-filter-add app-id float
