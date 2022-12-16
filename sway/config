@@ -43,8 +43,8 @@ input type:keyboard {
     # CapsLock as Ctrl
     xkb_options ctrl:nocaps
     # key repeat rate
-    repeat_delay 250
-    repeat_rate 40
+    repeat_delay 300
+    repeat_rate 50
 }
 
 # touchpad
