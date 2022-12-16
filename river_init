@@ -56,14 +56,17 @@ riverctl input $trackpoint natural-scroll enabled
 # https://github.com/riverwm/river/pull/552
 
 #--- keyboard ---
-
 # NOTE: To use CapsLock as Ctrl, set `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier` when invoke river.
 
 # repeat rate
 riverctl set-repeat 50 300
 
+#
+# MISC
+#
+
 # Japanese IM
-fcitx5
+fcitx5 &
 
 ##############################
 
