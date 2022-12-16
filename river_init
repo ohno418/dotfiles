@@ -11,6 +11,9 @@ riverctl map normal Alt Return spawn foot
 riverctl map normal Alt b spawn firefox
 riverctl map normal Alt+Shift p spawn 'firefox --private-window'
 
+# app launcher
+riverctl map normal Alt m spawn 'foot sway-launcher-desktop'
+
 # close the focused view
 riverctl map normal Alt+Shift q close
 
@@ -22,16 +25,40 @@ riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
 
 # increment/decrement the main count of rivertile(1)
-riverctl map normal Alt+Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map normal Alt+Shift L send-layout-cmd rivertile "main-count -1"
+riverctl map normal Alt+Shift h send-layout-cmd rivertile "main-count +1"
+riverctl map normal Alt+Shift l send-layout-cmd rivertile "main-count -1"
 
 # focus the next/previous view in the layout stack
-riverctl map normal Alt J focus-view next
-riverctl map normal Alt K focus-view previous
+riverctl map normal Alt j focus-view next
+riverctl map normal Alt k focus-view previous
 
 # swap the focused view with the next/previous view in the layout stack
-riverctl map normal Alt+Shift J swap next
-riverctl map normal Alt+Shift K swap previous
+riverctl map normal Alt+Shift j swap next
+riverctl map normal Alt+Shift k swap previous
+
+# Various media key mapping examples for both normal and locked mode which do
+# not have a modifier
+for mode in normal locked
+do
+    # Eject the optical drive (well if you still have one that is)
+    riverctl map $mode None XF86Eject spawn 'eject -T'
+
+    # Control pulse audio volume with pamixer
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    riverctl map $mode None XF86AudioMicMute      spawn 'pamixer --default-source --toggle-mute'
+    riverctl map $mode None F12                   spawn 'pamixer -i 5'
+    riverctl map $mode None F11                   spawn 'pamixer -d 5'
+    riverctl map $mode None F10                   spawn 'pamixer --toggle-mute'
+    riverctl map $mode None F9                    spawn 'pamixer --default-source --toggle-mute'
+
+    # Control screen backlight brighness with light (https://github.com/haikarainen/light)
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set 5%+'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+    riverctl map $mode None F8                    spawn 'brightnessctl set 5%+'
+    riverctl map $mode None F7                    spawn 'brightnessctl set 5%-'
+done
 
 #
 # INPUT CONFIGURATION
@@ -155,29 +182,6 @@ riverctl map normal Super F11 enter-mode passthrough
 # Super+F11 to return to normal mode
 riverctl map passthrough Super F11 enter-mode normal
 
-# Various media key mapping examples for both normal and locked mode which do
-# not have a modifier
-for mode in normal locked
-do
-    # Eject the optical drive (well if you still have one that is)
-    riverctl map $mode None XF86Eject spawn 'eject -T'
-
-    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
-
-    # Control MPRIS aware media players with playerctl (https://github.com/altdesktop/playerctl)
-    riverctl map $mode None XF86AudioMedia spawn 'playerctl play-pause'
-    riverctl map $mode None XF86AudioPlay  spawn 'playerctl play-pause'
-    riverctl map $mode None XF86AudioPrev  spawn 'playerctl previous'
-    riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
-
-    # Control screen backlight brighness with light (https://github.com/haikarainen/light)
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'light -A 5'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'light -U 5'
-done
-
 # Set background and border color
 riverctl background-color 0x002b36
 riverctl border-color-focused 0x93a1a1
@@ -193,4 +197,4 @@ riverctl csd-filter-add app-id "gedit"
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-exec rivertile -view-padding 2 -outer-padding 2
+exec rivertile -view-padding 0 -outer-padding 0
