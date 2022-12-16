@@ -1,4 +1,5 @@
-# Start Sway if on tty1.
+# Start river if on tty1.
 if [ "$(tty)" = "/dev/tty1" ]; then
-  exec sway
+    # `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier` is to use CapsLock as Ctrl.
+    XKB_DEFAULT_OPTIONS=caps:ctrl_modifier river
 fi
