@@ -10,6 +10,9 @@ path=(
 )
 export PATH
 
+# Use CapsLock as Ctrl.
+export XKB_DEFAULT_OPTIONS=caps:ctrl_modifier
+
 # Firefox on Wayland
 export MOZ_ENABLE_WAYLAND=1
 

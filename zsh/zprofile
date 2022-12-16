@@ -1,5 +1,4 @@
 # Start river if on tty1.
 if [ "$(tty)" = "/dev/tty1" ]; then
-    # `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier` is to use CapsLock as Ctrl.
-    XKB_DEFAULT_OPTIONS=caps:ctrl_modifier river
+    river
 fi
