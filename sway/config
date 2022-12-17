@@ -40,8 +40,10 @@ seat * hide_cursor 5000
 
 # keyboard
 input type:keyboard {
+    # NOTE: Using `XKB_DEFAULT_OPTIONS` env instead of the following.
     # CapsLock as Ctrl
-    xkb_options ctrl:nocaps
+    # xkb_options ctrl:nocaps
+
     # key repeat rate
     repeat_delay 300
     repeat_rate 50
