@@ -39,6 +39,9 @@ riverctl map normal Alt+Shift k swap previous
 # bump the focused view to the top of the layout stack
 riverctl map normal Alt+Shift Return zoom
 
+# fullscreen
+riverctl map normal Alt f toggle-fullscreen
+
 # change layout orientation
 riverctl map normal Alt Up    send-layout-cmd rivertile "main-location top"
 riverctl map normal Alt Right send-layout-cmd rivertile "main-location right"
@@ -119,8 +122,11 @@ riverctl set-repeat 50 300
 # MISC
 #
 
-# fullscreen
-riverctl map normal Alt f toggle-fullscreen
+# color
+# TODO
+riverctl background-color 0x002b36
+riverctl border-color-focused 0x68DDC4
+riverctl border-color-unfocused 0x586e75
 
 # Japanese IM
 fcitx5 &
@@ -184,11 +190,6 @@ riverctl map normal Super F11 enter-mode passthrough
 
 # Super+F11 to return to normal mode
 riverctl map passthrough Super F11 enter-mode normal
-
-# Set background and border color
-riverctl background-color 0x002b36
-riverctl border-color-focused 0x93a1a1
-riverctl border-color-unfocused 0x586e75
 
 # Make certain views start floating
 riverctl float-filter-add app-id float
