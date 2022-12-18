@@ -36,6 +36,9 @@ riverctl map normal Alt k focus-view previous
 riverctl map normal Alt+Shift j swap next
 riverctl map normal Alt+Shift k swap previous
 
+# bump the focused view to the top of the layout stack
+riverctl map normal Alt+Shift Return zoom
+
 # tags
 for i in $(seq 1 9)
 do
@@ -44,6 +47,7 @@ do
     # focus
     riverctl map normal Alt $i set-focused-tags $tags
 
+    # TODO: What are these?
     # Alt+Shift+[1-9] to tag focused view with tag [0-8]
     riverctl map normal Alt+Shift $i set-view-tags $tags
 
@@ -95,8 +99,8 @@ riverctl input $trackpoint pointer-accel 0.2
 riverctl input $touchpad natural-scroll enabled
 riverctl input $trackpoint natural-scroll enabled
 
-# hide cursor
-# TODO: It doesn't seem to be released yet, but it has already been implemented.
+# TODO: hide cursor
+# It doesn't seem to be released yet, but it has already been implemented.
 # https://github.com/riverwm/river/pull/552
 
 #--- keyboard ---
@@ -119,10 +123,6 @@ fcitx5 &
 # exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 ##############################
-
-# TODO: ???
-# bump the focused view to the top of the layout stack
-riverctl map normal Alt+Shift Return zoom
 
 # TODO: output???
 

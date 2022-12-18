@@ -21,3 +21,5 @@ $ ln -sf $(pwd)/river_init ~/.config/river/init
 $ sudo systemctl enable seatd
 $ sudo systemctl start seatd
 ```
+
+Disabled later.
