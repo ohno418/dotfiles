@@ -36,8 +36,25 @@ riverctl map normal Alt k focus-view previous
 riverctl map normal Alt+Shift j swap next
 riverctl map normal Alt+Shift k swap previous
 
-# Various media key mapping examples for both normal and locked mode which do
-# not have a modifier
+# tags
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # focus
+    riverctl map normal Alt $i set-focused-tags $tags
+
+    # Alt+Shift+[1-9] to tag focused view with tag [0-8]
+    riverctl map normal Alt+Shift $i set-view-tags $tags
+
+    # Alt+Ctrl+[1-9] to toggle focus of tag [0-8]
+    riverctl map normal Alt+Control $i toggle-focused-tags $tags
+
+    # Alt+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
+    riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
+done
+
+# media keys
 for mode in normal locked
 do
     # Eject the optical drive (well if you still have one that is)
@@ -100,27 +117,6 @@ fcitx5 &
 
 # TODO: Improve startup time of gtk+ apps (including firefox).
 # exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-
-#
-# TAGS
-#
-
-for i in $(seq 1 9)
-do
-    tags=$((1 << ($i - 1)))
-
-    # focus
-    riverctl map normal Alt $i set-focused-tags $tags
-
-    # Alt+Shift+[1-9] to tag focused view with tag [0-8]
-    riverctl map normal Alt+Shift $i set-view-tags $tags
-
-    # Alt+Ctrl+[1-9] to toggle focus of tag [0-8]
-    riverctl map normal Alt+Control $i toggle-focused-tags $tags
-
-    # Alt+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
-    riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
-done
 
 ##############################
 
