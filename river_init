@@ -18,7 +18,7 @@ riverctl map normal Alt m spawn 'foot sway-launcher-desktop'
 riverctl map normal Alt+Shift q close
 
 # exit river
-riverctl map normal Alt+Shift e exit
+riverctl map normal Super+Shift e exit
 
 # decrease/increase the main ratio of rivertile
 riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
