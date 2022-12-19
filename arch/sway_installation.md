@@ -31,12 +31,11 @@ Reboot to login as a general user.
 # Install Sway
 
 ```
-$ sudo pacman -Syu sway polkit foot xorg-xwayland
+$ sudo pacman -Syu sway polkit foot
 ```
 
 - polkit: For Sway to get access to the seat.
 - foot: Terminal emulator.
-- xorg-xwayland: To enable X.
 
 (Select noto-fonts to use in Sway.)
 
