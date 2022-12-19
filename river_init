@@ -58,17 +58,21 @@ do
 
     # focus
     riverctl map normal Alt $i set-focused-tags $tags
-
-    # TODO: What are these?
-    # Alt+Shift+[1-9] to tag focused view with tag [0-8]
+    # tag focused view
     riverctl map normal Alt+Shift $i set-view-tags $tags
 
+    # TODO: Understand toggling tags.
     # Alt+Ctrl+[1-9] to toggle focus of tag [0-8]
     riverctl map normal Alt+Control $i toggle-focused-tags $tags
-
     # Alt+Shift+Ctrl+[1-9] to toggle tag [0-8] of focused view
     riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
 done
+
+all_tags=$(((1 << 32) - 1))
+# focus all tags
+riverctl map normal Alt 0 set-focused-tags $all_tags
+# tag focused view with all tags
+riverctl map normal Alt+Shift 0 set-view-tags $all_tags
 
 # media keys
 for mode in normal locked
@@ -114,6 +118,7 @@ riverctl input $trackpoint natural-scroll enabled
 # TODO: hide cursor
 # It doesn't seem to be released yet, but it has already been implemented.
 # https://github.com/riverwm/river/pull/552
+# riverctl hide-cursor timeout 5000
 
 #--- keyboard ---
 # NOTE: To use CapsLock as Ctrl, set `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier`.
@@ -126,16 +131,21 @@ riverctl set-repeat 50 300
 #
 
 # color
-# TODO
-riverctl background-color 0x002b36
+riverctl background-color 0x002b36 # TODO
 riverctl border-color-focused 0x68DDC4
 riverctl border-color-unfocused 0x586e75
 
 # Japanese IM
 fcitx5 &
 
-# TODO: Improve startup time of gtk+ apps (including firefox).
-# exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+# Improve startup time of gtk+ apps (including firefox).
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+
+# floating window
+# Google Meet
+riverctl float-filter-add title "Firefox — Sharing Indicator"
+# Kanbanflow
+riverctl float-filter-add title "^$"
 
 ##############################
 
@@ -175,12 +185,6 @@ riverctl map-pointer normal Alt BTN_LEFT move-view
 # Alt + Right Mouse Button to resize views
 riverctl map-pointer normal Alt BTN_RIGHT resize-view
 
-# Super+0 to focus all tags
-# Super+Shift+0 to tag focused view with all tags
-all_tags=$(((1 << 32) - 1))
-riverctl map normal Super 0 set-focused-tags $all_tags
-riverctl map normal Super+Shift 0 set-view-tags $all_tags
-
 # Declare a passthrough mode. This mode has only a single mapping to return to
 # normal mode. This makes it useful for testing a nested wayland compositor
 riverctl declare-mode passthrough
@@ -190,10 +194,6 @@ riverctl map normal Super F11 enter-mode passthrough
 
 # Super+F11 to return to normal mode
 riverctl map passthrough Super F11 enter-mode normal
-
-# Make certain views start floating
-riverctl float-filter-add app-id float
-riverctl float-filter-add title "popup title with spaces"
 
 # Set app-ids and titles of views which should use client side decorations
 riverctl csd-filter-add app-id "gedit"

@@ -10,14 +10,10 @@ ln -sf $(pwd)/gitconfig ~/.gitconfig
 ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 
-# river
-mkdir -p ~/.config/river
-ln -sf $(pwd)/river_init ~/.config/river/init
-
 # Sway
-# mkdir -p ~/.config/sway
-# ln -sf $(pwd)/sway/config ~/.config/sway/config
-# ln -sf $(pwd)/sway/bar.sh ~/.config/sway/bar.sh
+mkdir -p ~/.config/sway
+ln -sf $(pwd)/sway/config ~/.config/sway/config
+ln -sf $(pwd)/sway/bar.sh ~/.config/sway/bar.sh
 
 # foot
 mkdir -p ~/.config/foot
