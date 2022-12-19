@@ -17,8 +17,7 @@ volume() {
       \"separator\": false,
       \"separator_block_width\": 16,
       \"color\": \"#ffffff\"
-    }
-  "
+    }"
 }
 
 mic() {
@@ -35,8 +34,7 @@ mic() {
       \"separator\": false,
       \"separator_block_width\": 16,
       \"color\": \"#ffffff\"
-    }
-  "
+    }"
 }
 
 battery() {
@@ -64,8 +62,7 @@ battery() {
       \"separator\": false,
       \"separator_block_width\": 16,
       \"color\": \"$BAT_COLOR\"
-    }
-  "
+    }"
 }
 
 datetime() {
@@ -76,8 +73,7 @@ datetime() {
       \"separator\": false,
       \"separator_block_width\": 16,
       \"color\": \"#ffffff\"
-    }
-  "
+    }"
 }
 
 # header
@@ -87,6 +83,7 @@ echo '{ "version": 1 }'
 echo '['
 
 while true; do
-  echo "[$(volume),$(mic),$(battery),$(datetime)],"
+  echo "  [$(volume),$(mic),$(battery),$(datetime)"
+  echo "  ],"
   sleep 3
 done
