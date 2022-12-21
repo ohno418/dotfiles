@@ -13,7 +13,7 @@ volume() {
   echo "
     {
       \"name\": \"volume\",
-      \"full_text\": \"volume: $VOL%$MUTE_STATUS\",
+      \"full_text\": \"vol: $VOL%$MUTE_STATUS\",
       \"separator\": false,
       \"separator_block_width\": 16,
       \"color\": \"#ffffff\"
@@ -58,7 +58,7 @@ battery() {
   echo "
     {
       \"name\": \"battery\",
-      \"full_text\": \"battery: $REMAIN% ($CHARGE_STATUS)\",
+      \"full_text\": \"bat: $REMAIN% ($CHARGE_STATUS)\",
       \"separator\": false,
       \"separator_block_width\": 16,
       \"color\": \"$BAT_COLOR\"
