@@ -60,6 +60,7 @@ require('packer').startup(function(use)
   -- File explorer
   use 'nvim-tree/nvim-tree.lua'
   vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>');
+  vim.keymap.set('n', '<Leader>E', ':NvimTreeCollapse | NvimTreeRefresh | :NvimTreeOpen<CR>');
 
   -- Fuzzy finder
   use {
