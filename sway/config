@@ -92,15 +92,15 @@ bindsym $mod+m exec foot sway-launcher-desktop
 # volume
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 bindsym XF86AudioLowerVolume exec pamixer --decrease 5
-bindsym XF86AudioMute exec pamixer --toggle-mute
-bindsym XF86AudioMicMute exec pamixer --default-source --toggle-mute
+bindsym XF86AudioMute        exec pamixer --toggle-mute
+bindsym XF86AudioMicMute     exec pamixer --default-source --toggle-mute
 bindsym F12 exec pamixer --increase 5
 bindsym F11 exec pamixer --decrease 5
 bindsym F10 exec pamixer --toggle-mute
-bindsym F9 exec pamixer --default-source --toggle-mute
+bindsym F9  exec pamixer --default-source --toggle-mute
 
 # backlight
-bindsym XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym F8 exec brightnessctl set 5%+
 bindsym F7 exec brightnessctl set 5%-
