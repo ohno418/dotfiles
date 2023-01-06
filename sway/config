@@ -68,11 +68,11 @@ input type:pointer {
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 
 # external display settings
-set $laptop_disp eDP-1
-set $external_disp HDMI-A-2
 # put an external display left of the laptop
-output $laptop_disp pos 1920 0
-output $external_disp pos 0 0
+# set $laptop_disp eDP-1
+# set $external_disp HDMI-A-2
+# output $laptop_disp pos 1920 0
+# output $external_disp pos 0 0
 
 #
 # key bindings
