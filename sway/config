@@ -87,7 +87,7 @@ bindsym $mod+b exec firefox
 bindsym $mod+Shift+p exec firefox --private-window
 
 # app launcher
-bindsym $mod+m exec foot sway-launcher-desktop
+# bindsym $mod+m exec foot sway-launcher-desktop
 
 # volume
 bindsym XF86AudioRaiseVolume exec pamixer --increase 5
