@@ -41,8 +41,8 @@ riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
 
 # increment/decrement the main count of rivertile(1)
-riverctl map normal Alt+Shift h send-layout-cmd rivertile "main-count +1"
-riverctl map normal Alt+Shift l send-layout-cmd rivertile "main-count -1"
+riverctl map normal Alt+Shift i send-layout-cmd rivertile "main-count +1"
+riverctl map normal Alt+Shift d send-layout-cmd rivertile "main-count -1"
 
 # move views
 riverctl map normal Super+Alt h move left 100
@@ -145,13 +145,13 @@ done
 #--- touchpad / trackpoint ---
 
 # Use device names that are listed by `riverctl list-inputs` here.
-touchpad="1267:47:Elan_Touchpad"
-trackpoint="1267:47:Elan_TrackPoint"
+touchpad="pointer-1267-47-Elan_Touchpad"
+trackpoint="pointer-1267-47-Elan_TrackPoint"
 # tap to click
 riverctl input $touchpad tap enabled
 # cursor speed
-riverctl input $touchpad pointer-accel 0.5
-riverctl input $trackpoint pointer-accel 0.2
+riverctl input $touchpad pointer-accel 0.3
+riverctl input $trackpoint pointer-accel 0.5
 # natural scroll
 riverctl input $touchpad natural-scroll enabled
 riverctl input $trackpoint natural-scroll enabled
