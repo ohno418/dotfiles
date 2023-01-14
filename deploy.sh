@@ -17,7 +17,7 @@ ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
 # river
 mkdir -p ~/.config/river ~/.config/yambar
 ln -sf $(pwd)/river/river_init ~/.config/river/init
-ln -sf $(pwd)/rier/yambar_config.yml ~/.config/yambar/config.yml
+ln -sf $(pwd)/river/yambar_config.yml ~/.config/yambar/config.yml
 
 # Sway
 # mkdir -p ~/.config/sway
