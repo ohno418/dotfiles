@@ -1,4 +1,4 @@
-# Start sway if on tty1.
+# Start river if on tty1.
 if [ "$(tty)" = "/dev/tty1" ]; then
-    # sway
+    river
 fi

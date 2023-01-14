@@ -14,6 +14,10 @@ ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 mkdir -p ~/.config/foot
 ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
 
+# river
+mkdir -p ~/.config/river
+ln -sf $(pwd)/river_init ~/.config/river/init
+
 # Sway
 # mkdir -p ~/.config/sway
 # ln -sf $(pwd)/sway/config ~/.config/sway/config
