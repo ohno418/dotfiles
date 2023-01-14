@@ -26,6 +26,7 @@ smart_borders on
 # not focus by mouse over
 focus_follows_mouse no
 
+# TODO: unneeded?
 # screen sharing
 exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 

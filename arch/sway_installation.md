@@ -120,6 +120,7 @@ Add "Mozc" as an input method on Fcitx Configuration app.
 $ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
 ```
 
+// TODO: unneeded?
 Add the following code to `~/.bash_profile` or `~/.zshenv`.
 
 ```
