@@ -37,8 +37,8 @@ riverctl map normal Alt+Shift Comma send-to-output previous
 riverctl map normal Alt Return zoom
 
 # decrease/increase the main ratio of rivertile
-riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
+riverctl map normal Alt h send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Alt l send-layout-cmd rivertile "main-ratio +0.05"
 
 # increment/decrement the main count of rivertile(1)
 riverctl map normal Alt+Shift i send-layout-cmd rivertile "main-count +1"
@@ -56,11 +56,15 @@ riverctl map normal Alt+Control j snap down
 riverctl map normal Alt+Control k snap up
 riverctl map normal Alt+Control l snap right
 
+# lock
+lock="swaylock --daemonize --ignore-empty-password"
+riverctl map normal Alt+Shift x spawn $lock
+
 # resize views
-riverctl map normal Alt+Shift+Control H resize horizontal -50
-riverctl map normal Alt+Shift+Control J resize vertical 50
-riverctl map normal Alt+Shift+Control K resize vertical -50
-riverctl map normal Alt+Shift+Control L resize horizontal 50
+riverctl map normal Alt+Shift+Control h resize horizontal -50
+riverctl map normal Alt+Shift+Control j resize vertical 50
+riverctl map normal Alt+Shift+Control k resize vertical -50
+riverctl map normal Alt+Shift+Control l resize horizontal 50
 
 # move views with mouse
 riverctl map-pointer normal Alt BTN_LEFT move-view
@@ -184,7 +188,6 @@ fcitx5 &
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
 # lock
-lock="swaylock --daemonize --ignore-empty-password"
 swayidle -w timeout 300 "$lock" &
 
 #--- floating windows ---
