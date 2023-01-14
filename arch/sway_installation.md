@@ -114,6 +114,8 @@ Add "Mozc" as an input method on Fcitx Configuration app.
 
 # Screen sharing
 
+// TODO: `pipewire` seems to be a dependency of `xdg-desktop-portal-wlr`
+
 ```
 $ sudo pacman -Syu pipewire xdg-desktop-portal-wlr
 ```
