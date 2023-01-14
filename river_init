@@ -58,7 +58,7 @@ riverctl map normal Alt+Control l snap right
 
 # lock
 lock="swaylock --daemonize --ignore-empty-password"
-riverctl map normal Alt+Shift x spawn $lock
+riverctl map normal Alt+Shift x spawn "$lock"
 
 # resize views
 riverctl map normal Alt+Shift+Control h resize horizontal -50
