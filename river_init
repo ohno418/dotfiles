@@ -170,8 +170,8 @@ riverctl set-repeat 50 300
 #
 
 # color
-riverctl background-color 0x002b36 # TODO
-riverctl border-color-focused 0x68DDC4
+riverctl background-color 0x002b36
+riverctl border-color-focused 0x66ff66
 riverctl border-color-unfocused 0x586e75
 
 # Japanese IM
@@ -198,4 +198,4 @@ riverctl csd-filter-add app-id "gedit"
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-exec rivertile -view-padding 0 -outer-padding 0
+exec rivertile -view-padding 2 -outer-padding 2
