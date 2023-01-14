@@ -138,6 +138,9 @@ do
     riverctl map $mode None F7                    spawn 'brightnessctl set 5%-'
 done
 
+# screenshot
+riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png'
+
 #
 # INPUT CONFIGURATION
 #
