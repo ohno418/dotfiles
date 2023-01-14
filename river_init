@@ -180,6 +180,10 @@ fcitx5 &
 # Improve startup time of gtk+ apps (including firefox).
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
+# lock
+lock="swaylock --daemonize --ignore-empty-password"
+swayidle -w timeout 300 "$lock" &
+
 #--- floating windows ---
 
 # Google Meet
