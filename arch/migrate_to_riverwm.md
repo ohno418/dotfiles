@@ -23,3 +23,7 @@ $ sudo systemctl start seatd
 ```
 
 Disabled later.
+
+# status bar
+
+Installed `yambar`: https://codeberg.org/dnkl/yambar
