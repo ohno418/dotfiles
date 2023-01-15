@@ -57,7 +57,7 @@ riverctl map normal Alt+Control k snap up
 riverctl map normal Alt+Control l snap right
 
 # lock
-lock="swaylock --daemonize --ignore-empty-password"
+lock="swaylock --daemonize --ignore-empty-password --image ~/.config/river/wallpaper.jpg"
 riverctl map normal Alt+Shift x spawn "$lock"
 
 # resize views
@@ -176,8 +176,8 @@ riverctl set-repeat 50 300
 # MISC
 #
 
-# color
-riverctl background-color 0x002b36
+# wallpaper & color
+swaybg --image ~/.config/river/wallpaper.jpg &
 riverctl border-color-focused 0x66ff66
 riverctl border-color-unfocused 0x586e75
 
