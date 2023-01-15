@@ -27,3 +27,13 @@ Disabled later.
 # status bar
 
 Installed `yambar-git`: https://codeberg.org/dnkl/yambar
+
+# To build from the source
+
+got zig 0.10.0 from aur:
+
+https://aur.archlinux.org/packages/zig-static
+
+```
+$ zig build
+```
