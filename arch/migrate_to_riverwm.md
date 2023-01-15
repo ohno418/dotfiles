@@ -26,4 +26,4 @@ Disabled later.
 
 # status bar
 
-Installed `yambar`: https://codeberg.org/dnkl/yambar
+Installed `yambar-git`: https://codeberg.org/dnkl/yambar

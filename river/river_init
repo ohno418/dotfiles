@@ -190,6 +190,9 @@ dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 # lock
 swayidle -w timeout 300 "$lock" &
 
+# status bar
+yambar --backend=wayland &
+
 #--- floating windows ---
 
 # Google Meet
