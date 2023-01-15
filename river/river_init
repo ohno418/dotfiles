@@ -201,12 +201,6 @@ swayidle -w timeout 300 "$lock" &
 
 # Google Meet
 riverctl float-filter-add title "Firefox — Sharing Indicator"
-# Kanbanflow
-riverctl float-filter-add title "^$"
-
-# TODO: ??
-# Set app-ids and titles of views which should use client side decorations
-riverctl csd-filter-add app-id "gedit"
 
 #
 # EXEC
