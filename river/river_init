@@ -1,6 +1,18 @@
 #!/bin/sh
 
 #
+# THEME
+#
+
+# wallpaper & color
+swaybg --image ~/.config/river/wallpaper.jpg &
+riverctl border-color-focused 0x66ff66
+riverctl border-color-unfocused 0x586e75
+
+# status bar
+yambar --backend=wayland &
+
+#
 # MAPPINGS
 #
 
@@ -176,22 +188,14 @@ riverctl set-repeat 50 300
 # MISC
 #
 
-# wallpaper & color
-swaybg --image ~/.config/river/wallpaper.jpg &
-riverctl border-color-focused 0x66ff66
-riverctl border-color-unfocused 0x586e75
+# Improve startup time of gtk+ apps (including firefox).
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
 # Japanese IM
 fcitx5 &
 
-# Improve startup time of gtk+ apps (including firefox).
-dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
-
 # lock
 swayidle -w timeout 300 "$lock" &
-
-# status bar
-yambar --backend=wayland &
 
 #--- floating windows ---
 
