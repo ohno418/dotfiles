@@ -55,8 +55,20 @@ bar:
   right:
     - pulse:
         content:
-          - string: {text: "vol: {sink_percent}% (muted: {sink_muted})", right-margin: 2}
-          - string: {text: "mic: {source_percent}% (muted: {source_muted})"}
+          map:
+            conditions:
+              ~sink_muted && ~source_muted:
+                - string: {text: "vol: {sink_percent}%", right-margin: 8}
+                - string: {text: "mic: {source_percent}%"}
+              ~sink_muted && source_muted:
+                - string: {text: "vol: {sink_percent}%", right-margin: 8}
+                - string: {text: "mic: {source_percent}% (muted)"}
+              sink_muted && ~source_muted:
+                - string: {text: "vol: {sink_percent}% (muted)", right-margin: 8}
+                - string: {text: "mic: {source_percent}%"}
+              sink_muted && source_muted:
+                - string: {text: "vol: {sink_percent}% (muted)", right-margin: 8}
+                - string: {text: "mic: {source_percent}% (muted)"}
     - battery:
         name: BAT0
         poll-interval: 60000
