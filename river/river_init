@@ -92,14 +92,14 @@ for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
 
-    # focus tag
+    # focus tag [1-9]
     riverctl map normal Alt $i set-focused-tags $tags
-    # tag focused view with tag
+    # tag focused view with tag [1-9]
     riverctl map normal Alt+Shift $i set-view-tags $tags
 
-    # toggle focus of tag
+    # toggle focus of tag [1-9]
     riverctl map normal Alt+Control $i toggle-focused-tags $tags
-    # toggle tag of focused view
+    # toggle tag [1-9] of focused view
     riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
 done
 
