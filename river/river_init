@@ -27,7 +27,7 @@ riverctl map normal Alt+Shift p spawn 'firefox --private-window'
 riverctl map normal Alt+Shift q close
 
 # exit river
-riverctl map normal Super+Shift e exit
+riverctl map normal Super+Alt+Shift e exit
 
 # focus the next/previous view in the layout stack
 riverctl map normal Alt j focus-view next
