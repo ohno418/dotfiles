@@ -81,6 +81,9 @@ require('packer').startup(function(use)
   vim.keymap.set('i', '<CR>', 'coc#pum#visible() ? coc#pum#confirm() : "<CR>"', {expr = true})
   -- jump to definition
   vim.keymap.set('n', '<Leader>d', '<Plug>(coc-definition)', {silent = true})
+
+  -- zig
+  use 'ziglang/zig.vim'
 end)
 
 require("nvim-tree").setup({
