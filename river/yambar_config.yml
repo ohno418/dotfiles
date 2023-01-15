@@ -71,9 +71,11 @@ bar:
                 - string: {text: "mic: {source_percent}% (muted)"}
     - battery:
         name: BAT0
-        poll-interval: 60000
         content:
-          string: {text: "bat: {capacity}% ({estimate})"}
+          map:
+            default: {string: {text: "bat: {capacity}%"}}
+            conditions:
+              state == charging: {string: {text: "bat: {capacity}% (charging)"}}
     - clock:
         date-format: "%Y-%m-%d"
         content:
