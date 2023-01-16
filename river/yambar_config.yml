@@ -75,7 +75,8 @@ bar:
           map:
             default: {string: {text: "bat: {capacity}%"}}
             conditions:
-              state == charging: {string: {text: "bat: {capacity}% (charging)"}}
+              state == charging: {string: {text: "bat: {capacity}% (charging)", foreground: ffa600ff}}
+              capacity <= 20: {string: {text: "bat: {capacity}%", foreground: ff0000ff}}
     - clock:
         date-format: "%Y-%m-%d"
         content:
