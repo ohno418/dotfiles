@@ -32,6 +32,10 @@ Installed `yambar-git`: https://codeberg.org/dnkl/yambar
 
 Installed `wbg`: https://codeberg.org/dnkl/wbg
 
+# lock
+
+Installed `waylock` from pacman.
+
 # To build from the source
 
 got zig 0.10.0 from aur:

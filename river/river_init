@@ -69,7 +69,7 @@ riverctl map normal Alt+Control k snap up
 riverctl map normal Alt+Control l snap right
 
 # lock
-lock="swaylock --daemonize --ignore-empty-password --image ~/.config/river/wallpaper.jpg"
+lock="waylock"
 riverctl map normal Alt+Shift x spawn "$lock"
 
 # resize views
