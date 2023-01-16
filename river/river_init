@@ -5,7 +5,7 @@
 #
 
 # wallpaper & color
-swaybg --image ~/.config/river/wallpaper.jpg &
+wbg ~/.config/river/wallpaper.jpg &
 riverctl border-color-focused 0x66ff66
 riverctl border-color-unfocused 0x586e75
 

@@ -28,6 +28,10 @@ Disabled later.
 
 Installed `yambar-git`: https://codeberg.org/dnkl/yambar
 
+# wallpaper
+
+Installed `wbg`: https://codeberg.org/dnkl/wbg
+
 # To build from the source
 
 got zig 0.10.0 from aur:
