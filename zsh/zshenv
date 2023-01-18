@@ -7,6 +7,9 @@ path=(
   # nodenv
   $HOME/.nodenv/bin
   $path
+
+  # Just to test riverwm!
+  $HOME/dev/river/zig-out/bin
 )
 export PATH
 
