@@ -26,10 +26,6 @@ smart_borders on
 # not focus by mouse over
 focus_follows_mouse no
 
-# TODO: unneeded?
-# screen sharing
-exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
-
 # GTK+ application start-up time
 # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
