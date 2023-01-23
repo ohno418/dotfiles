@@ -162,6 +162,7 @@ bindsym $mod+n workspace next
 bindsym $mod+p workspace prev
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+o workspace back_and_forth
 
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2
