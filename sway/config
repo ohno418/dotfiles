@@ -125,7 +125,7 @@ bindsym $mod+Shift+x exec $lock
 bindsym $mod+Shift+c reload
 
 # exit sway
-bindsym $mod+Shift+e exec swaynag -t warning -m 'Really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Mod4+Shift+e exec swaymsg exit
 
 # moving around
 bindsym $mod+h focus left
