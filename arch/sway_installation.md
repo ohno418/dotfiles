@@ -67,7 +67,7 @@ $ chsh -s /bin/zsh
 # Packages for desktop
 
 ```
-$ sudo pacman -Syu swaybg swayidle swaylock pulseaudio pamixer brightnessctl wl-clipboard grim slurp noto-fonts noto-fonts-cjk noto-fonts-emoji
+$ sudo pacman -Syu swaybg swayidle swaylock pulseaudio pamixer brightnessctl wl-clipboard grim slurp noto-fonts noto-fonts-emoji otf-ipaexfont
 ```
 
 - swaybg: wallpaper
@@ -76,7 +76,7 @@ $ sudo pacman -Syu swaybg swayidle swaylock pulseaudio pamixer brightnessctl wl-
 - brightnessctl: backlight control
 - wl-clipboard: clipboard util
 - grim, slurp: screenshot
-- noto-fonts, noto-fonts-cjk, noto-fonts-emoji: fonts
+- noto-fonts, noto-fonts-emoji, otf-ipaexfont: fonts
 
 To enable Firefox on wayland, add the following code to `~/.bash_profile` or `~/.zshenv`.
 
