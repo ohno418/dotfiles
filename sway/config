@@ -219,8 +219,8 @@ bindsym $mod+r mode "resize"
 # color
 #
 set $bg #1C1E27
-set $fg #cacacc
-set $green #68DDC4
+set $fg #CACACC
+set $green #66FFAA
 
 # focus colors
 client.focused $bg $bg $fg $green $green
