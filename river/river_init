@@ -109,6 +109,10 @@ riverctl map normal Alt 0 set-focused-tags $all_tags
 # tag focused view with all tags
 riverctl map normal Alt+Shift 0 set-view-tags $all_tags
 
+# focus previous tags
+riverctl map normal Alt n focus-previous-tags
+riverctl map normal Alt p focus-previous-tags
+
 # toggle float
 riverctl map normal Alt Space toggle-float
 
