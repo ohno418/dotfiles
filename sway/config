@@ -17,8 +17,8 @@ exec swayidle -w \
          before-sleep "$lock"
 
 # border style (hide title bar)
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 # no border when only one window
 smart_borders on
