@@ -81,10 +81,10 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 set $mod Mod1
 
 # terminal emulator
-bindsym $mod+Return exec foot
+bindsym $mod+Shift+Return exec foot
 
 # browser
-bindsym $mod+b exec firefox
+bindsym $mod+Shift+b exec firefox
 bindsym $mod+Shift+p exec firefox --private-window
 
 # app launcher
