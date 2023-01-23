@@ -180,7 +180,7 @@ bindsym $mod+v splith
 bindsym $mod+s splitv
 
 # layout
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # fullscreen
