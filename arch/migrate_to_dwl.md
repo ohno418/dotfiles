@@ -8,6 +8,10 @@ $ make
 $ ./dwl
 ```
 
+# packages
+
+- waylock
+
 # Issues
 
 - Firefox cannot start. `glxtest: VA-API test failed to initialise VAAPI connection.`

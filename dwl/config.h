@@ -114,6 +114,7 @@ static const char *mutemiccmd[] = { "pamixer", "--default-source", "--toggle-mut
 // backlight
 static const char *blupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *bldowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+static const char *lockcmd[] = { "waylock", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -143,19 +144,18 @@ static const Key keys[] = {
 	{ MODKEY,                    XKB_KEY_period,     focusmon,         {.i = WLR_DIRECTION_RIGHT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,       tagmon,           {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,    tagmon,           {.i = WLR_DIRECTION_RIGHT} },
-
 	// audio
 	{ 0, XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
 	{ 0, XF86XK_AudioMute,        spawn, {.v = mutecmd } },
 	{ 0, XF86XK_AudioMicMute,     spawn, {.v = mutemiccmd } },
-
 	// backlight
 	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = blupcmd } },
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = bldowncmd } },
-
 	// screenshot
 	{ 0, XKB_KEY_Print, spawn, SHCMD("grim -g \"$(slurp -d)\" -t png ~/Downloads/$(date '+%Y%m%d-%H%M%S').png") },
+	// lock
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_X, spawn, {.v = lockcmd} },
 
 	TAGKEYS(          XKB_KEY_1, XKB_KEY_exclam,                       0),
 	TAGKEYS(          XKB_KEY_2, XKB_KEY_at,                           1),
