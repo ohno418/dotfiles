@@ -3,7 +3,7 @@
 ```
 $ git clone git@github.com:ohno418/dwl.git
 $ cd dwl
-$ ln -f ../dotfiles/dwl/config.h ./config.h
+$ ln -sf ../dotfiles/dwl/config.h ./config.h
 $ make
 $ ./dwl
 ```
