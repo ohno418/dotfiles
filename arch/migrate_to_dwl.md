@@ -1,16 +1,11 @@
 # Run
 
-exec:
 ```
-$ git clone
+$ git clone git@github.com:ohno418/dwl.git
 $ cd dwl
+$ ln -f ../dotfiles/dwl_config.h ./config.h
 $ make
 $ ./dwl
-```
-
-config:
-```
-$ ln -f ../dotfiles/dwl_config.h ./config.h
 ```
 
 # Issues
