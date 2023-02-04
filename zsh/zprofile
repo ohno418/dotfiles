@@ -1,4 +1,4 @@
-# Start Sway if on tty1.
+# Start the window manager if on tty1.
 if [ "$(tty)" = "/dev/tty1" ]; then
-    sway
+    ~/dev/dwl/dwl -s "fcitx5"
 fi
