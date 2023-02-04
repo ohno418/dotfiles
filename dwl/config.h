@@ -103,9 +103,9 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 /* commands */
 // terminal
 static const char *termcmd[] = { "foot", NULL };
-// FIXME: browser
-static const char *browsercmd[] = { "firefox", NULL };
-static const char *browserprivatecmd[] = { "firefox", "--private-window", NULL };
+// browser
+static const char *ffcmd[] = { "firefox", NULL };
+static const char *ffprivatecmd[] = { "firefox", "--private-window", NULL };
 // audio
 static const char *volupcmd[] = { "pamixer", "--increase", "5", NULL };
 static const char *voldowncmd[] = { "pamixer", "--decrease", "5", NULL };
@@ -119,9 +119,8 @@ static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
     /* modifier                  key                 function        argument */
     { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Return,     spawn,          {.v = termcmd} },
-    // FIXME: browser
-    { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_b,          spawn,          {.v = browsercmd} },
-    { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_p,          spawn,          {.v = browserprivatecmd} },
+    { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_B,          spawn,          {.v = ffcmd} },
+    { MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,          spawn,          {.v = ffprivatecmd} },
 
     { MODKEY,                    XKB_KEY_j,          focusstack,       {.i = +1} },
     { MODKEY,                    XKB_KEY_k,          focusstack,       {.i = -1} },
