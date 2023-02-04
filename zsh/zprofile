@@ -1,6 +1,10 @@
 # Start the window manager if on tty1.
 if [ "$(tty)" = "/dev/tty1" ]; then
-    # The second command in the option is for GTK+ applications to improve start-up time.
+    repodir="$HOME/dev"
+    startup_cmd="fcitx5 -d;"
+    startup_cmd="$startup_cmd swaybg -i $repodir/dotfiles/dwl/wallpaper.jpg -m fill &"
+    # This is for GTK+ applications to improve start-up time.
     # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
-    ~/dev/dwl/dwl -s "fcitx5 -d; dbus-update-activation-environment --systemd WAYLAND_DISPLAY"
+    startup_cmd="$startup_cmd dbus-update-activation-environment --systemd WAYLAND_DISPLAY"
+    $repodir/dwl/dwl -s $startup_cmd
 fi
