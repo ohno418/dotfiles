@@ -103,7 +103,7 @@ bindsym F8 exec brightnessctl set 5%+
 bindsym F7 exec brightnessctl set 5%-
 
 # screenshot
-bindsym Print exec grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png
+bindsym Print exec grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H%M%S')".png
 # full screen
 bindsym Shift+Print exec grim -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png
 
