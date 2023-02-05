@@ -14,6 +14,12 @@ $ ./dwl
 - wbg
 - yambar
 
+dependencies:
+
+- wlroots
+- wayland-protocols
+- (maybe) polkit
+
 # Issues
 
 - Firefox cannot start. `glxtest: VA-API test failed to initialise VAAPI connection.`
