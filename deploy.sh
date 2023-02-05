@@ -14,6 +14,10 @@ ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 mkdir -p ~/.config/foot
 ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
 
+# dwl
+mkdir -p ~/.config/yambar
+ln -sf $(pwd)/dwl/yambar_config.yml ~/.config/yambar/config.yml
+
 # Sway
 # mkdir -p ~/.config/sway
 # ln -sf $(pwd)/sway/config ~/.config/sway/config
