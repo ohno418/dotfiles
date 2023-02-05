@@ -4,7 +4,7 @@
 $ git clone git@github.com:ohno418/dwl.git
 $ cd dwl
 $ ln -sf ../dotfiles/dwl/config.h ./config.h
-$ make
+$ sudo make install
 $ ./dwl
 ```
 

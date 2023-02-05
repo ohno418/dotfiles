@@ -1,5 +1,5 @@
 # Start the window manager if on tty1.
 if [ "$(tty)" = "/dev/tty1" ]; then
     # The emitted logs are used by the status bar.
-    $HOME/dev/dwl/dwl >$HOME/.cache/dwl/taginfo
+    dwl >$HOME/.cache/dwl/taginfo
 fi
