@@ -6,5 +6,5 @@ if [ "$(tty)" = "/dev/tty1" ]; then
     # This is for GTK+ applications to improve start-up time.
     # https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
     startup_cmd="$startup_cmd dbus-update-activation-environment --systemd WAYLAND_DISPLAY"
-    $repodir/dwl/dwl -s $startup_cmd
+    $repodir/dwl/dwl -s "$startup_cmd <&-"
 fi
