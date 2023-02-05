@@ -10,6 +10,17 @@ static const float focuscolor[]            = {0.2, 1.0, 0.5, 1.0};
 /* To conform the xdg-protocol, set the alpha to zero to restore the old behavior */
 static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0};
 
+/* autostart */
+static const char *const autostart[] = {
+	"swaybg", "-i", "/home/ohno/dev/dotfiles/dwl/wallpaper.jpg", "-m", "fill", NULL,
+	"yambar", NULL,
+	"fcitx5", NULL,
+	// This is for GTK+ applications to improve start-up time.
+	// https://github.com/swaywm/sway/wiki#gtk-applications-take-20-seconds-to-start
+	"dbus-update-activation-environment", "--systemd", "WAYLAND_DISPLAY", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
