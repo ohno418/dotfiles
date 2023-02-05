@@ -12,7 +12,7 @@ static const float fullscreen_bg[]         = {0.1, 0.1, 0.1, 1.0};
 
 /* autostart */
 static const char *const autostart[] = {
-	"swaybg", "-i", "/home/ohno/dev/dotfiles/dwl/wallpaper.jpg", "-m", "fill", NULL,
+	"wbg", "/home/ohno/dev/dotfiles/dwl/wallpaper.jpg", NULL,
 	"yambar", NULL,
 	"fcitx5", NULL,
 	// This is for GTK+ applications to improve start-up time.

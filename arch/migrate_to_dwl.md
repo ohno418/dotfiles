@@ -11,6 +11,8 @@ $ ./dwl
 # packages
 
 - waylock
+- wbg
+- yambar
 
 # Issues
 
