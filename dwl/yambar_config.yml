@@ -3,7 +3,7 @@ bar:
   location: top
   font: Noto Sans:pixelsize=14
   foreground: eeeeeeff
-  background: 2e3440dd
+  background: 2e3440aa
   margin: 8
   spacing: 8
 
