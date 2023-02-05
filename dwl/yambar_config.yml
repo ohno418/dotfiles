@@ -45,7 +45,7 @@ bar:
               # default tag
               id == 0 && floating:
                 - string: {text: "{layout}", left-margin: 10}
-                - string: {text: "(floating)", left-margin: 10}
+                - string: {text: "floating", left-margin: 10}
               id == 0 && ~floating:
                 - string: {text: "{layout}", left-margin: 10}
 
