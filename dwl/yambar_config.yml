@@ -11,8 +11,7 @@ bar:
     - dwl:
         anchors:
           - base: &dwl_base
-              left-margin: 10
-              right-margin: 12
+              margin: 10
               conditions:
                 id == 1: {string: {text: 1}}
                 id == 2: {string: {text: 2}}
