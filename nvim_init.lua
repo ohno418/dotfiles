@@ -43,8 +43,6 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-n>', 'gt')
 vim.keymap.set('n', '<C-p>', 'gT')
-vim.keymap.set('n', '<C-j>', 'gt')
-vim.keymap.set('n', '<C-k>', 'gT')
 vim.keymap.set('n', '<Leader>t', ':tabnew<CR>')
 vim.keymap.set('n', '<Leader>c', ':tabclose<CR>')
 
