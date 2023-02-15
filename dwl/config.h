@@ -38,7 +38,6 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 };
 
-// TODO: Set up monitors
 /* monitors */
 static const MonitorRule monrules[] = {
 	/* name       mfact nmaster scale layout       rotate/reflect */
