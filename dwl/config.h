@@ -162,9 +162,15 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
 	{ 0, XF86XK_AudioMute,        spawn, {.v = mutecmd } },
 	{ 0, XF86XK_AudioMicMute,     spawn, {.v = mutemiccmd } },
+	{ 0, XKB_KEY_F12,             spawn, {.v = volupcmd } },
+	{ 0, XKB_KEY_F11,             spawn, {.v = voldowncmd } },
+	{ 0, XKB_KEY_F10,             spawn, {.v = mutecmd } },
+	{ 0, XKB_KEY_F9,              spawn, {.v = mutemiccmd } },
 	// backlight
 	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = blupcmd } },
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = bldowncmd } },
+	{ 0, XKB_KEY_F8,               spawn, {.v = blupcmd } },
+	{ 0, XKB_KEY_F7,               spawn, {.v = bldowncmd } },
 	// screenshot
 	{ 0, XKB_KEY_Print, spawn, SHCMD("grim -g \"$(slurp -d)\" -t png ~/Downloads/$(date '+%Y%m%d-%H%M%S').png") },
 	// lock
