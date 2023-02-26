@@ -1,7 +1,6 @@
 # Installed
 
-game itself:
-- veloren (aur)
+game and its launcher:
 - airshipper (aur)
 
 others:
