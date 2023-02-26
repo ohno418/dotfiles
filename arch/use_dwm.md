@@ -32,9 +32,24 @@ $ pacman -S alacritty
 ```
 $ cat /etc/X11/xorg.conf.d/00-keyboard.conf
 Section "InputClass"
-        Identifier "Keyboard Setting"
-        MatchIsKeyboard "yes"
-        Option "XkbOptions" "ctrl:nocaps"
+    Identifier "Keyboard Setting"
+    MatchIsKeyboard "yes"
+    Option "XkbOptions" "ctrl:nocaps"
+EndSection
+```
+
+### Touchpad settings
+
+```
+$ cat /etc/X11/xorg.conf.d/01-touchpad.conf
+Section "InputClass"
+    Identifier "touchpad"
+    MatchIsTouchpad "on"
+    Option "Tapping" "on"
+    Option "ClickMethod" "clickfinger"
+    Option "DisableWhileTyping" "on"
+    Option "MiddleEmulation" "on"
+    Option "NaturalScrolling" "on"
 EndSection
 ```
 
