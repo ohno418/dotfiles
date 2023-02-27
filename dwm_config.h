@@ -56,7 +56,9 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[]  = { "alacritty", NULL };
+// terminal
+static const char *termcmd[]  = { "alacritty", "--option", "font.size=7.0", NULL };
+// browser
 static const char *ffcmd[] = { "firefox", NULL };
 static const char *ffprivatecmd[] = { "firefox", "--private-window", NULL };
 // audio
@@ -67,6 +69,8 @@ static const char *mutemiccmd[] = { "pamixer", "--default-source", "--toggle-mut
 // backlight
 static const char *blupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *bldowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+// lock screen
+static const char *lockcmd[] = { "xsecurelock", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -103,6 +107,10 @@ static const Key keys[] = {
 	// backlight
 	{ 0, XF86XK_MonBrightnessUp,   spawn, {.v = blupcmd } },
 	{ 0, XF86XK_MonBrightnessDown, spawn, {.v = bldowncmd } },
+	// screenshot
+	{ 0, XK_Print, spawn, SHCMD("flameshot gui --path ~/Downloads/ --clipboard") },
+	// lock
+	{ MODKEY|ShiftMask, XK_x, spawn, {.v = lockcmd} },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
