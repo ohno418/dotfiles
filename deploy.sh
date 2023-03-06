@@ -11,11 +11,11 @@ ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 
 # foot
-# mkdir -p ~/.config/foot
-# ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
+mkdir -p ~/.config/foot
+ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
 
 # dwl
-# mkdir -p ~/.config/yambar
-# ln -sf $(pwd)/dwl/yambar_config.yml ~/.config/yambar/config.yml
+mkdir -p ~/.config/yambar
+ln -sf $(pwd)/dwl/yambar_config.yml ~/.config/yambar/config.yml
 
 echo OK
