@@ -22,33 +22,27 @@ bar:
                 id == 7: {string: {text: 7}}
                 id == 8: {string: {text: 8}}
                 id == 9: {string: {text: 9}}
-          - bg_default: &bg_default {stack: [{background: {color: 81a1c1ff}}, {underline: {size: 4, color: d8dee9ff}}]}
         content:
           map:
             conditions:
-              state == urgent:
+              urgent:
                 map:
                   <<: *river_base
                   deco: {background: {color: d08770ff}}
-              state == focused:
+              focused || visible:
                 map:
                   <<: *river_base
-                  deco: *bg_default
-              state == visible && occupied:
-                map:
-                  <<: *river_base
-                  deco: *bg_default
-              state == visible && ~occupied:
-                map:
-                  <<: *river_base
-              state == unfocused:
-                map:
-                  <<: *river_base
-              state == invisible && occupied:
+                  deco: {
+                    stack: [
+                      {background: {color: 81a1c1ff}},
+                      {underline: {size: 4, color: d8dee9ff}}
+                    ]
+                  }
+              ~visible && occupied:
                 map:
                   <<: *river_base
                   deco: {underline: {size: 4, color: ea6962ff}}
-              state == invisible && ~occupied:
+              ~visible:
                 map:
                   <<: *river_base
 
