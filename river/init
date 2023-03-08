@@ -6,8 +6,8 @@
 
 # wallpaper & color
 wbg ~/.config/river/wallpaper.jpg &
-riverctl border-color-focused 0x66ff66
-riverctl border-color-unfocused 0x586e75
+riverctl border-color-focused 0x22ffaa
+riverctl border-color-unfocused 0x222222
 
 # status bar
 yambar --backend=wayland &
@@ -16,19 +16,15 @@ yambar --backend=wayland &
 # MAPPINGS
 #
 
+#--- apps ---
 # terminal
 riverctl map normal Alt+Shift Return spawn foot
 
 # browser
 riverctl map normal Alt+Shift b spawn firefox
-riverctl map normal Alt+Shift p spawn 'firefox --private-window'
+riverctl map normal Alt+Shift p spawn "firefox --private-window"
 
-# close the focused view
-riverctl map normal Alt+Shift q close
-
-# exit river
-riverctl map normal Super+Alt+Shift e exit
-
+#--- window operations ---
 # focus the next/previous view in the layout stack
 riverctl map normal Alt j focus-view next
 riverctl map normal Alt k focus-view previous
@@ -37,6 +33,18 @@ riverctl map normal Alt k focus-view previous
 riverctl map normal Alt+Shift j swap next
 riverctl map normal Alt+Shift k swap previous
 
+# bump the focused view to the top of the layout stack
+riverctl map normal Alt Return zoom
+
+# decrease/increase the main ratio of rivertile
+riverctl map normal Alt h send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Alt l send-layout-cmd rivertile "main-ratio +0.05"
+
+# increment/decrement the main count of rivertile
+riverctl map normal Alt i send-layout-cmd rivertile "main-count +1"
+riverctl map normal Alt d send-layout-cmd rivertile "main-count -1"
+
+#--- outputs ---
 # focus the next/previous output
 riverctl map normal Alt Period focus-output next
 riverctl map normal Alt Comma focus-output previous
@@ -45,45 +53,42 @@ riverctl map normal Alt Comma focus-output previous
 riverctl map normal Alt+Shift Period send-to-output next
 riverctl map normal Alt+Shift Comma send-to-output previous
 
-# bump the focused view to the top of the layout stack
-riverctl map normal Alt Return zoom
+# close the focused view
+riverctl map normal Alt+Shift q close
 
-# decrease/increase the main ratio of rivertile
-riverctl map normal Alt h send-layout-cmd rivertile "main-ratio -0.05"
-riverctl map normal Alt l send-layout-cmd rivertile "main-ratio +0.05"
-
-# increment/decrement the main count of rivertile(1)
-riverctl map normal Alt+Shift i send-layout-cmd rivertile "main-count +1"
-riverctl map normal Alt+Shift d send-layout-cmd rivertile "main-count -1"
-
-# move views
-riverctl map normal Super+Alt h move left 50
-riverctl map normal Super+Alt j move down 50
-riverctl map normal Super+Alt k move up 50
-riverctl map normal Super+Alt l move right 50
-
-# snap views to screen edges
-riverctl map normal Alt+Control h snap left
-riverctl map normal Alt+Control j snap down
-riverctl map normal Alt+Control k snap up
-riverctl map normal Alt+Control l snap right
+# exit river
+riverctl map normal Alt+Super+Shift q exit
 
 # lock
 lock="waylock"
 riverctl map normal Alt+Shift x spawn "$lock"
 
+# TODO
+# move views
+riverctl map normal Alt+Control h move left 50
+riverctl map normal Alt+Control j move down 50
+riverctl map normal Alt+Control k move up 50
+riverctl map normal Alt+Control l move right 50
+
+# TODO
+# snap views to screen edges
+riverctl map normal Alt+Shift h snap left
+riverctl map normal Alt+Shift j snap down
+riverctl map normal Alt+Shift k snap up
+riverctl map normal Alt+Shift l snap right
+
+# TODO
 # resize views
 riverctl map normal Alt+Shift+Control h resize horizontal -50
 riverctl map normal Alt+Shift+Control j resize vertical 50
 riverctl map normal Alt+Shift+Control k resize vertical -50
 riverctl map normal Alt+Shift+Control l resize horizontal 50
 
+# TODO
 # move views with mouse
 riverctl map-pointer normal Alt BTN_LEFT move-view
-
 # resize views with mouse
 riverctl map-pointer normal Alt BTN_RIGHT resize-view
-
 # toggle float with mouse
 riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
 
@@ -103,15 +108,15 @@ do
     riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
 done
 
-all_tags=$(((1 << 32) - 1))
+all_tags=$(((1 << 9) - 1))
 # focus all tags
 riverctl map normal Alt 0 set-focused-tags $all_tags
 # tag focused view with all tags
 riverctl map normal Alt+Shift 0 set-view-tags $all_tags
 
 # focus previous tags
-riverctl map normal Alt n focus-previous-tags
-riverctl map normal Alt p focus-previous-tags
+riverctl map normal Alt o focus-previous-tags
+riverctl map normal Alt Tab focus-previous-tags
 
 # toggle float
 riverctl map normal Alt Space toggle-float
@@ -135,7 +140,7 @@ riverctl map normal Alt F11 enter-mode passthrough
 # return to normal mode
 riverctl map passthrough Alt F11 enter-mode normal
 
-# media keys
+#--- media keys ---
 for mode in normal locked
 do
     # Eject the optical drive (well if you still have one that is)
@@ -192,14 +197,13 @@ riverctl set-repeat 50 300
 # MISC
 #
 
-# Improve startup time of gtk+ apps (including firefox).
+# Enable xdg-desktop-portal-wlr,
+# (ref: https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables)
+# and improve startup time of gtk+ apps, e.g., firefox.
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
-# Japanese IM
+# IM
 fcitx5 &
-
-# lock
-swayidle -w timeout 300 "$lock" &
 
 #--- floating windows ---
 
@@ -213,4 +217,4 @@ riverctl float-filter-add title "Firefox — Sharing Indicator"
 # Set and exec into the default layout generator, rivertile.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
-exec rivertile -view-padding 2 -outer-padding 2
+exec rivertile -view-padding 0 -outer-padding 0
