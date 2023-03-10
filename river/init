@@ -44,6 +44,34 @@ riverctl map normal Alt l send-layout-cmd rivertile "main-ratio +0.05"
 riverctl map normal Alt i send-layout-cmd rivertile "main-count +1"
 riverctl map normal Alt d send-layout-cmd rivertile "main-count -1"
 
+# close the focused view
+riverctl map normal Alt+Shift q close
+
+#--- floating window operations ---
+# snap views to screen edges
+riverctl map normal Alt+Control h snap left
+riverctl map normal Alt+Control j snap down
+riverctl map normal Alt+Control k snap up
+riverctl map normal Alt+Control l snap right
+
+# resize views
+riverctl map normal Alt+Shift+Control h resize horizontal -50
+riverctl map normal Alt+Shift+Control j resize vertical 50
+riverctl map normal Alt+Shift+Control k resize vertical -50
+riverctl map normal Alt+Shift+Control l resize horizontal 50
+
+# move views with mouse
+riverctl map-pointer normal Alt BTN_LEFT move-view
+
+# resize views with mouse
+riverctl map-pointer normal Alt BTN_RIGHT resize-view
+
+# toggle float with mouse
+riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
+
+# toggle float
+riverctl map normal Alt Space toggle-float
+
 #--- outputs ---
 # focus the next/previous output
 riverctl map normal Alt Period focus-output next
@@ -53,76 +81,11 @@ riverctl map normal Alt Comma focus-output previous
 riverctl map normal Alt+Shift Period send-to-output next
 riverctl map normal Alt+Shift Comma send-to-output previous
 
-# close the focused view
-riverctl map normal Alt+Shift q close
+# lock
+riverctl map normal Alt+Shift x spawn waylock
 
 # exit river
 riverctl map normal Alt+Super+Shift q exit
-
-# lock
-lock="waylock"
-riverctl map normal Alt+Shift x spawn "$lock"
-
-# TODO
-# move views
-riverctl map normal Alt+Control h move left 50
-riverctl map normal Alt+Control j move down 50
-riverctl map normal Alt+Control k move up 50
-riverctl map normal Alt+Control l move right 50
-
-# TODO
-# snap views to screen edges
-riverctl map normal Alt+Shift h snap left
-riverctl map normal Alt+Shift j snap down
-riverctl map normal Alt+Shift k snap up
-riverctl map normal Alt+Shift l snap right
-
-# TODO
-# resize views
-riverctl map normal Alt+Shift+Control h resize horizontal -50
-riverctl map normal Alt+Shift+Control j resize vertical 50
-riverctl map normal Alt+Shift+Control k resize vertical -50
-riverctl map normal Alt+Shift+Control l resize horizontal 50
-
-# TODO
-# move views with mouse
-riverctl map-pointer normal Alt BTN_LEFT move-view
-# resize views with mouse
-riverctl map-pointer normal Alt BTN_RIGHT resize-view
-# toggle float with mouse
-riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
-
-# tags
-for i in $(seq 1 9)
-do
-    tags=$((1 << ($i - 1)))
-
-    # focus tag [1-9]
-    riverctl map normal Alt $i set-focused-tags $tags
-    # tag focused view with tag [1-9]
-    riverctl map normal Alt+Shift $i set-view-tags $tags
-
-    # toggle focus of tag [1-9]
-    riverctl map normal Alt+Control $i toggle-focused-tags $tags
-    # toggle tag [1-9] of focused view
-    riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
-done
-
-all_tags=$(((1 << 9) - 1))
-# focus all tags
-riverctl map normal Alt 0 set-focused-tags $all_tags
-# tag focused view with all tags
-riverctl map normal Alt+Shift 0 set-view-tags $all_tags
-
-# focus previous tags
-riverctl map normal Alt o focus-previous-tags
-riverctl map normal Alt Tab focus-previous-tags
-
-# toggle float
-riverctl map normal Alt Space toggle-float
-
-# toggle fullscreen
-riverctl map normal Alt f toggle-fullscreen
 
 # change layout orientation
 riverctl map normal Alt Up    send-layout-cmd rivertile "main-location top"
@@ -167,11 +130,41 @@ done
 riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png'
 
 #
-# INPUT CONFIGURATION
+# TAGS
+#
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+
+    # focus tag [1-9]
+    riverctl map normal Alt $i set-focused-tags $tags
+    # tag focused view with tag [1-9]
+    riverctl map normal Alt+Shift $i set-view-tags $tags
+
+    # toggle focus of tag [1-9]
+    riverctl map normal Alt+Control $i toggle-focused-tags $tags
+    # toggle tag [1-9] of focused view
+    riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 9) - 1))
+# focus all tags
+riverctl map normal Alt 0 set-focused-tags $all_tags
+# tag focused view with all tags
+riverctl map normal Alt+Shift 0 set-view-tags $all_tags
+
+# focus previous tags
+riverctl map normal Alt o focus-previous-tags
+riverctl map normal Alt Tab focus-previous-tags
+
+# toggle fullscreen
+riverctl map normal Alt f toggle-fullscreen
+
+#
+# INPUT
 #
 
 #--- touchpad / trackpoint ---
-
 # Use device names that are listed by `riverctl list-inputs` here.
 touchpad="pointer-1267-47-Elan_Touchpad"
 trackpoint="pointer-1267-47-Elan_TrackPoint"
