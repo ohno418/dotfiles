@@ -12,7 +12,11 @@ insert = "bar"
 [keys.normal]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
-C-n = "repeat_last_motion"
+";" = "repeat_last_motion"
+"'" = "collapse_selection"
 
 [keys.insert]
 j = { j = "normal_mode" }
+
+[keys.select]
+"'" = "collapse_selection"
