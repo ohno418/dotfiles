@@ -2,7 +2,7 @@
 	name = Yutaro Ohno
 	email = yutaro.ono.418@gmail.com
 [core]
-	editor = nvim
+	editor = helix
 [alias]
 	s = status
 	a = add
