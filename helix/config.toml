@@ -1,0 +1,18 @@
+theme = "bogster"
+
+[editor]
+mouse = false
+cursorline = true
+auto-format = false
+auto-pairs = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal]
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+C-n = "repeat_last_motion"
+
+[keys.insert]
+j = { j = "normal_mode" }

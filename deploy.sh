@@ -5,6 +5,7 @@ ln -sf $(pwd)/zsh/zshenv ~/.zshenv
 ln -sf $(pwd)/zsh/zprofile ~/.zprofile
 ln -sf $(pwd)/zsh/zshrc ~/.zshrc
 
+# TODO: remove nvim?
 mkdir -p ~/.config/git ~/.config/nvim ~/.config/tmux
 ln -sf $(pwd)/gitconfig ~/.config/git/config
 ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
@@ -13,6 +14,11 @@ ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 # foot
 mkdir -p ~/.config/foot
 ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
+
+# helix
+mkdir -p ~/.config/helix
+ln -sf $(pwd)/helix/config.toml ~/.config/helix/config.toml
+ln -sf $(pwd)/helix/languages.toml ~/.config/helix/languages.toml
 
 # river
 mkdir -p ~/.config/river ~/.config/yambar

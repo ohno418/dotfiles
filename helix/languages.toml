@@ -1,0 +1,8 @@
+[[language]]
+# Install rust-analyzer first.
+# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers#rust_analyzer
+name = "rust"
+
+[language.language-server]
+command = "rustup"
+args = ["run", "stable", "rust-analyzer"]
