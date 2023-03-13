@@ -9,6 +9,9 @@ auto-pairs = false
 [editor.cursor-shape]
 insert = "bar"
 
+[editor.lsp]
+display-inlay-hints = true
+
 [keys.normal]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
