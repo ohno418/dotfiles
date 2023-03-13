@@ -4,3 +4,8 @@
 name = "rust"
 file-types = ["rs"]
 language-server = { command = "rustup", args = ["run", "stable", "rust-analyzer"] }
+
+[[language]]
+name = "typescript"
+file-types = ["ts"]
+language-server = { command = "typescript-language-server", args = ["--stdio"], language-id = "typescript"}
