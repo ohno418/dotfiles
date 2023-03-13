@@ -1,10 +1,13 @@
-theme = "bogster"
+theme = "ayu_dark"
 
 [editor]
+scrolloff = 0
 mouse = false
 cursorline = true
 auto-format = false
 auto-pairs = false
+true-color = true
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
