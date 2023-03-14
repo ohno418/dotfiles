@@ -23,9 +23,14 @@ enable = true
 "}" = "goto_next_paragraph"
 ";" = "repeat_last_motion"
 "'" = "collapse_selection"
+# move betweeen windows
+C-h = "jump_view_left"
+C-j = "jump_view_down"
+C-k = "jump_view_up"
+C-l = "jump_view_right"
 # buffer operations
-C-j = "goto_next_buffer"
-C-k = "goto_previous_buffer"
+C-n = "goto_next_buffer"
+C-p = "goto_previous_buffer"
 C-o = "goto_last_accessed_file"
 
 [keys.insert]
