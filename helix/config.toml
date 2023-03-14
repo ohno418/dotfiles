@@ -31,10 +31,10 @@ C-l = "jump_view_right"
 # buffer operations
 C-n = "goto_next_buffer"
 C-p = "goto_previous_buffer"
-C-o = "goto_last_accessed_file"
 
 [keys.insert]
 j = { j = "normal_mode" }
 
 [keys.select]
 "'" = "collapse_selection"
+o = "flip_selections"
