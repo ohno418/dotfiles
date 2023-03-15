@@ -15,9 +15,6 @@ insert = "bar"
 [editor.lsp]
 display-inlay-hints = false
 
-[editor.soft-wrap]
-enable = true
-
 [keys.normal]
 "{" = "goto_prev_paragraph"
 "}" = "goto_next_paragraph"
