@@ -37,3 +37,5 @@ j = { j = "normal_mode" }
 [keys.select]
 "'" = "collapse_selection"
 o = "flip_selections"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
