@@ -28,6 +28,8 @@ C-l = "jump_view_right"
 # buffer operations
 C-n = "goto_next_buffer"
 C-p = "goto_previous_buffer"
+# Vim compatibility
+0 = "goto_line_start"
 
 [keys.insert]
 j = { j = "normal_mode" }
