@@ -1,4 +1,4 @@
-theme = "ayu_dark"
+theme = "autumn_night"
 
 [editor]
 scrolloff = 0
@@ -13,7 +13,7 @@ bufferline = "multiple"
 insert = "bar"
 
 [editor.lsp]
-display-inlay-hints = false
+display-inlay-hints = true
 
 [keys.normal]
 "{" = "goto_prev_paragraph"
