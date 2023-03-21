@@ -1,4 +1,4 @@
-theme = "adwaita-dark"
+theme = "ayu_dark"
 
 [editor]
 scrolloff = 0
