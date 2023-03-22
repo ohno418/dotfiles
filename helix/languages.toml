@@ -7,7 +7,7 @@ language-server = { command = "rustup", args = ["run", "stable", "rust-analyzer"
 
 [[language]]
 name = "c"
-file-types = ["c"]
+file-types = ["c", "h"]
 indent = { tab-width = 4, unit = "    " }
 
 [[language]]
