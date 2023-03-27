@@ -23,12 +23,6 @@ ln -sf $(pwd)/helix/languages.toml ~/.config/helix/languages.toml
 mkdir -p ~/.config/yambar
 ln -sf $(pwd)/dwl/yambar_config.yml ~/.config/yambar/config.yml
 
-# river
-# mkdir -p ~/.config/river ~/.config/yambar
-# ln -sf $(pwd)/river/init ~/.config/river/init
-# ln -sf $(pwd)/river/wallpaper.jpg ~/.config/river/wallpaper.jpg
-# ln -sf $(pwd)/river/yambar_config.yml ~/.config/yambar/config.yml
-
 # foot
 mkdir -p ~/.config/foot
 ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
