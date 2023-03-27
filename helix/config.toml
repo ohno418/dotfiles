@@ -1,7 +1,6 @@
 theme = "ayu_dark"
 
 [editor]
-scrolloff = 0
 mouse = false
 auto-format = false
 auto-pairs = false
