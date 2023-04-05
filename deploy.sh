@@ -14,6 +14,11 @@ ln -sf $(pwd)/gitconfig ~/.config/git/config
 mkdir -p ~/.config/tmux
 ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 
+# helix
+mkdir -p ~/.config/helix
+ln -sf $(pwd)/helix/config.toml ~/.config/helix/config.toml
+ln -sf $(pwd)/helix/languages.toml ~/.config/helix/languages.toml
+
 # nvim
 mkdir -p ~/.config/nvim
 ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
