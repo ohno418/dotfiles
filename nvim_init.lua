@@ -147,3 +147,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<Leader>k', vim.lsp.buf.hover, opts)
   end,
 })
+
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(
+    vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+      underline = false,
+      virtual_text = false,
+    }
+  )
