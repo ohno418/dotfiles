@@ -18,6 +18,7 @@ PROMPT='%B%(?..[%?] )%b%n@%M:%~ $ '
 
 # aliases
 alias ls='ls --color=auto'
+alias vi='nvim'
 alias t='tmux'
 alias gs='git status'
 alias gd='git diff'
