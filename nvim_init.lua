@@ -75,10 +75,10 @@ require('packer').startup(function(use)
 
   -- Fuzzy finder
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  vim.keymap.set('n', '<Leader>f', ':Telescope find_files<CR>')
+  vim.keymap.set('n', '<Leader>f', ':Telescope git_files<CR>')
   vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
 
   -- Bufferline
