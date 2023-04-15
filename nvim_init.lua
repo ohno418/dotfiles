@@ -43,6 +43,7 @@ vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-n>', ':bnext<CR>')
 vim.keymap.set('n', '<C-p>', ':bprev<CR>')
+vim.keymap.set('n', '<Leader>r', ':edit%<CR>') -- Reload current file.
 vim.keymap.set('n', '<Leader>w', ':set wrap!<CR>')
 -- match mode
 vim.keymap.set('n', 'mm', '%')
