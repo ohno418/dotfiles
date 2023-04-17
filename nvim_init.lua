@@ -83,6 +83,7 @@ require('packer').startup(function(use)
   }
   vim.keymap.set('n', '<Leader>f', ':Telescope git_files<CR>')
   vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
+  vim.keymap.set('n', '<Leader>d', ':Telescope diagnostics<CR>')
 
   -- Bufferline
   use 'bling/vim-bufferline'
