@@ -53,9 +53,11 @@ vim.keymap.set('n', 'ma', 'va')
 vim.keymap.set('n', 'gh', '0')
 vim.keymap.set('n', 'gs', '_')
 vim.keymap.set('n', 'gl', '$')
+vim.keymap.set('n', 'ge', 'G')
 vim.keymap.set('v', 'gh', '0')
 vim.keymap.set('v', 'gs', '_')
 vim.keymap.set('v', 'gl', '$h')
+vim.keymap.set('v', 'ge', 'G')
 
 -------------
 -- Plugins --
