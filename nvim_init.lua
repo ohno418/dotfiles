@@ -82,6 +82,7 @@ require('packer').startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   vim.keymap.set('n', '<Leader>f', ':Telescope git_files<CR>')
+  vim.keymap.set('n', '<Leader>F', ':Telescope find_files<CR>')
   vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
   vim.keymap.set('n', '<Leader>d', ':Telescope diagnostics<CR>')
 
