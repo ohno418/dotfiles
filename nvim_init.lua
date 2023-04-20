@@ -10,7 +10,6 @@ vim.opt.number = true
 vim.opt.history = 200
 vim.opt.visualbell = true
 vim.opt.cursorline = true
-vim.opt.wrap = false
 
 -- tab, indent
 vim.opt.expandtab = true
