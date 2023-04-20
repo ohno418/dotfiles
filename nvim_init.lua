@@ -93,13 +93,6 @@ require('packer').startup(function(use)
   vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
   vim.keymap.set('n', '<Leader>d', ':Telescope diagnostics<CR>')
 
-  -- Bufferline
-  use 'bling/vim-bufferline'
-
-  -- Window resizing
-  use 'simeji/winresizer'
-  vim.g['winresizer_vert_resize'] = 3
-
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
