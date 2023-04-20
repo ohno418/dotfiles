@@ -61,9 +61,17 @@ vim.keymap.set('v', 'ge', 'G')
 -------------
 -- Plugins --
 -------------
--- Using packer (https://aur.archlinux.org/packages/nvim-packer-git).
+-- Using packer as the package manager.
+--
+-- To install packer, run:
+-- `git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`.
+-- (https://github.com/wbthomason/packer.nvim#quickstart)
+--
 -- To install packages, run `PackerSync`.
 require('packer').startup(function(use)
+  -- Packer itself
+  use 'wbthomason/packer.nvim'
+
   -- Colorscheme
   use 'ayu-theme/ayu-vim'
   vim.opt.termguicolors = true
