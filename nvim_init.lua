@@ -44,19 +44,13 @@ vim.keymap.set('n', '<C-n>', ':bnext<CR>')
 vim.keymap.set('n', '<C-p>', ':bprev<CR>')
 vim.keymap.set('n', '<Leader>r', ':edit%<CR>') -- Reload current file.
 vim.keymap.set('n', '<Leader>w', ':set wrap!<CR>')
--- match mode
-vim.keymap.set('n', 'mm', '%')
-vim.keymap.set('n', 'mi', 'vi')
-vim.keymap.set('n', 'ma', 'va')
 -- goto mode
 vim.keymap.set('n', 'gh', '0')
 vim.keymap.set('n', 'gs', '_')
 vim.keymap.set('n', 'gl', '$')
-vim.keymap.set('n', 'ge', 'G')
 vim.keymap.set('v', 'gh', '0')
 vim.keymap.set('v', 'gs', '_')
-vim.keymap.set('v', 'gl', '$h')
-vim.keymap.set('v', 'ge', 'G')
+vim.keymap.set('v', 'gl', '$')
 
 -------------
 -- Plugins --
