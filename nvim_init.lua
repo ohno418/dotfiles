@@ -87,6 +87,9 @@ require('packer').startup(function(use)
   vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
   vim.keymap.set('n', '<Leader>d', ':Telescope diagnostics<CR>')
 
+  -- bufferline
+  use {'akinsho/bufferline.nvim', tag = '*'}
+
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
@@ -172,15 +175,22 @@ require('nvim-tree').setup({
   },
 })
 
+-- bufferline
+local bufferline = require('bufferline')
+bufferline.setup({
+  options = {
+    show_buffer_close_icons = false,
+    always_show_bufferline = false,
+  },
+})
+
 -- LSP
 -- To install a language server, run `:LspInstall` and restart nvim.
 local lsp = require('lsp-zero').preset({})
-
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
 
   -- custom keybindings
   vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
 end)
-
 lsp.setup()
