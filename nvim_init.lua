@@ -74,8 +74,10 @@ require('packer').startup(function(use)
   vim.cmd('colorscheme ayu')
 
   -- File explorer
-  use 'nvim-tree/nvim-tree.lua'
-  vim.keymap.set('n', '<Leader>e', ':NvimTreeToggle<CR>');
+  use {
+    'stevearc/oil.nvim',
+    config = function() require('oil').setup() end
+  }
 
   -- Fuzzy finder
   use {
@@ -112,68 +114,6 @@ require('packer').startup(function(use)
     }
   }
 end)
-
--- File explorer settings
-local function on_attach_nvim_tree(bufnr)
-  local api = require('nvim-tree.api')
-
-  local function opts(desc)
-    return {
-      desc = 'nvim-tree: ' .. desc,
-      buffer = bufnr,
-      noremap = true,
-      silent = true,
-      nowait = true,
-    }
-  end
-
-  vim.keymap.set('n', 'o',     api.node.open.edit, opts('Open'))
-  vim.keymap.set('n', '<C-v>', api.node.open.vertical, opts('Open: Vertical Split'))
-  vim.keymap.set('n', '<C-s>', api.node.open.horizontal, opts('Open: Horizontal Split'))
-  vim.keymap.set('n', 'c', api.tree.change_root_to_node, opts('CD'))
-  vim.keymap.set('n', '<C-r>', api.tree.collapse_all, opts('Collapse'))
-  vim.keymap.set('n', 'a', api.fs.create, opts('Create'))
-  vim.keymap.set('n', 'd', api.fs.remove, opts('Delete'))
-  vim.keymap.set('n', 'r', api.fs.rename, opts('Rename'))
-  vim.keymap.set('n', 'R', api.tree.reload, opts('Refresh'))
-  vim.keymap.set('n', 'H', api.tree.toggle_hidden_filter, opts('Toggle Dotfiles'))
-  vim.keymap.set('n', 'I', api.tree.toggle_gitignore_filter, opts('Toggle Git Ignore'))
-  vim.keymap.set('n', 'q', api.tree.close, opts('Close'))
-end
-
-require('nvim-tree').setup({
-  on_attach = on_attach_nvim_tree,
-  sort_by = "case_sensitive",
-  view = {
-    adaptive_size = true,
-  },
-  renderer = {
-    add_trailing = true,
-    highlight_opened_files = 'name',
-    indent_width = 2,
-    indent_markers = {
-      enable = true,
-    },
-    icons = {
-      show = {
-        file = false,
-        folder = false,
-        folder_arrow = false,
-        git = false,
-      },
-    },
-  },
-  filters = {
-    dotfiles = true,
-  },
-  actions = {
-    open_file = {
-      window_picker = {
-        enable = false,
-      },
-    },
-  },
-})
 
 -- bufferline
 local bufferline = require('bufferline')
