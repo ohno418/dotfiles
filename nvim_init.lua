@@ -90,6 +90,10 @@ require('packer').startup(function(use)
   -- bufferline
   use {'akinsho/bufferline.nvim', tag = '*'}
 
+  -- Window resizing
+  use 'simeji/winresizer'
+  vim.g['winresizer_vert_resize'] = 3
+
   -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
