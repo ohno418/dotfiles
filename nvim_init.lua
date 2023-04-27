@@ -49,12 +49,14 @@ vim.keymap.set('v', 'gh', '0')
 vim.keymap.set('v', 'gs', '_')
 vim.keymap.set('v', 'gl', '$')
 
--- Netrw file explorer
+-------------------------
+-- Netrw file explorer --
+-------------------------
 vim.keymap.set('n', '<Leader>e', ':Lexplore<CR>')
 vim.g.netrw_liststyle = 3 -- treeview
-vim.g.netrw_browser_split=4 -- open in a prior window
-vim.g.netrw_altv=1 -- open splits to the right
-vim.g.netrw_banner=0
+vim.g.netrw_browser_split = 4 -- open in a prior window
+vim.g.netrw_altv = 1 -- open splits to the right
+vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
 
 -------------
