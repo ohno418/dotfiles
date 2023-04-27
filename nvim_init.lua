@@ -1,10 +1,6 @@
 -------------
 -- Options --
 -------------
--- disable netrw in favor of nvim-tree.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- basics
 vim.opt.number = true
 vim.opt.history = 200
@@ -53,6 +49,11 @@ vim.keymap.set('v', 'gh', '0')
 vim.keymap.set('v', 'gs', '_')
 vim.keymap.set('v', 'gl', '$')
 
+-- Netrw file explorer
+vim.keymap.set('n', '<Leader>e', ':Lexplore<CR>')
+vim.g.netrw_liststyle = 3
+vim.g.netrw_winsize = 25
+
 -------------
 -- Plugins --
 -------------
@@ -72,12 +73,6 @@ require('packer').startup(function(use)
   vim.opt.termguicolors = true
   vim.g['ayucolor'] = 'dark'
   vim.cmd('colorscheme ayu')
-
-  -- File explorer
-  use {
-    'stevearc/oil.nvim',
-    config = function() require('oil').setup() end
-  }
 
   -- Fuzzy finder
   use {
