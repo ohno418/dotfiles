@@ -53,7 +53,7 @@ vim.g.netrw_liststyle = 3 -- treeview
 vim.g.netrw_browser_split = 4 -- open in a prior window
 vim.g.netrw_altv = 1 -- open splits to the right
 vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+vim.g.netrw_winsize = 20
 
 -------------
 -- Plugins --
