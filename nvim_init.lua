@@ -50,7 +50,6 @@ vim.keymap.set('v', 'gl', '$')
 -------------------------
 vim.keymap.set('n', '<Leader>e', ':Lexplore<CR>')
 vim.keymap.set('n', '<Leader>E', ':Sexplore<CR>') -- open current dir
-vim.g.netrw_liststyle = 3     -- treeview
 vim.g.netrw_browser_split = 4 -- open in a prior window
 vim.g.netrw_altv = 1          -- open splits to the right
 vim.g.netrw_banner = 0
