@@ -31,12 +31,12 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 ----------------
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
-vim.keymap.set('n', '<Esc><Esc>', ':nohlsearch<CR><Esc>')
-vim.keymap.set('n', '<C-n>', ':bnext<CR>')
-vim.keymap.set('n', '<C-p>', ':bprev<CR>')
-vim.keymap.set('n', '<Leader><BS>', ':%bd|e#|bd#<CR>') -- Delete all buffers except current one.
-vim.keymap.set('n', '<Leader>r', ':edit%<CR>') -- Reload current file.
-vim.keymap.set('n', '<Leader>w', ':set wrap!<CR>')
+vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
+vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
+vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
+vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 -- goto mode
 vim.keymap.set('n', 'gh', '0')
 vim.keymap.set('n', 'gs', '_')
@@ -48,8 +48,8 @@ vim.keymap.set('v', 'gl', '$')
 -------------------------
 -- Netrw file explorer --
 -------------------------
-vim.keymap.set('n', '<Leader>e', ':Lexplore<CR>')
-vim.keymap.set('n', '<Leader>E', ':Sexplore<CR>') -- open current dir
+vim.keymap.set('n', '<Leader>e', '<cmd>Lexplore<CR>')
+vim.keymap.set('n', '<Leader>E', '<cmd>Sexplore<CR>') -- open current dir
 vim.g.netrw_browser_split = 4 -- open in a prior window
 vim.g.netrw_altv = 1          -- open splits to the right
 vim.g.netrw_banner = 0
@@ -80,10 +80,10 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  vim.keymap.set('n', '<Leader>f', ':Telescope git_files<CR>')
-  vim.keymap.set('n', '<Leader>F', ':Telescope find_files<CR>')
-  vim.keymap.set('n', '<Leader>b', ':Telescope buffers<CR>')
-  vim.keymap.set('n', '<Leader>d', ':Telescope diagnostics<CR>')
+  vim.keymap.set('n', '<Leader>f', '<cmd>Telescope git_files<CR>')
+  vim.keymap.set('n', '<Leader>F', '<cmd>Telescope find_files<CR>')
+  vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
+  vim.keymap.set('n', '<Leader>d', '<cmd>Telescope diagnostics<CR>')
 
   -- bufferline
   use {'akinsho/bufferline.nvim', tag = '*'}
