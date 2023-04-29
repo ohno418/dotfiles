@@ -32,12 +32,18 @@ vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
+-- buffer
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
 vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
 vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
--- window resizing
+-- move window
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+-- resize window
 vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
