@@ -37,6 +37,11 @@ vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
 vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
+-- window resizing
+vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
+vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
+vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
+vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
 -- goto mode
 vim.keymap.set('n', 'gh', '0')
 vim.keymap.set('n', 'gs', '_')
@@ -87,10 +92,6 @@ require('packer').startup(function(use)
 
   -- bufferline
   use {'akinsho/bufferline.nvim', tag = '*'}
-
-  -- Window resizing
-  use 'simeji/winresizer'
-  vim.g['winresizer_vert_resize'] = 3
 
   -- LSP
   use {
