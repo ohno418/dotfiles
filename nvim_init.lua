@@ -91,10 +91,6 @@ require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
-  vim.keymap.set('n', '<Leader>f', '<cmd>Telescope git_files<CR>')
-  vim.keymap.set('n', '<Leader>F', '<cmd>Telescope find_files<CR>')
-  vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
-  vim.keymap.set('n', '<Leader>d', '<cmd>Telescope diagnostics<CR>')
 
   -- bufferline
   use {'akinsho/bufferline.nvim', tag = '*'}
@@ -121,6 +117,21 @@ require('packer').startup(function(use)
     }
   }
 end)
+
+-- fuzzy finder
+require('telescope').setup({
+  defaults = {
+    mappings = {
+      i = {
+        ['<C-r>'] = 'delete_buffer',
+      },
+    },
+  },
+})
+vim.keymap.set('n', '<Leader>f', '<cmd>Telescope git_files<CR>')
+vim.keymap.set('n', '<Leader>F', '<cmd>Telescope find_files<CR>')
+vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
+vim.keymap.set('n', '<Leader>d', '<cmd>Telescope diagnostics<CR>')
 
 -- bufferline
 local bufferline = require('bufferline')
