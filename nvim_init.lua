@@ -123,7 +123,7 @@ require('telescope').setup({
   defaults = {
     mappings = {
       i = {
-        ['<C-x>'] = 'delete_buffer',
+        ['<C-r>'] = 'delete_buffer',
       },
     },
   },
