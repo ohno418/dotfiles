@@ -131,7 +131,6 @@ require('telescope').setup({
 vim.keymap.set('n', '<Leader>f', '<cmd>Telescope git_files<CR>')
 vim.keymap.set('n', '<Leader>F', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
-vim.keymap.set('n', '<Leader>d', '<cmd>Telescope diagnostics<CR>')
 
 -- bufferline
 local bufferline = require('bufferline')
