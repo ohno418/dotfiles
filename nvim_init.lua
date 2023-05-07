@@ -23,7 +23,7 @@ vim.opt.confirm = true
 vim.opt.swapfile = false
 
 -- yank to clipboard
--- Install xclip package with the following setting.
+-- wl-clipboard package is required.
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
 
 ----------------
