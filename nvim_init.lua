@@ -65,6 +65,19 @@ vim.g.netrw_browser_split = 4 -- open in a prior window
 vim.g.netrw_altv = 1          -- open splits to the right
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 20
+vim.api.nvim_create_autocmd('filetype', {
+  pattern = 'netrw',
+  callback = function()
+    local bind = function(lhs, rhs)
+      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
+    end
+
+    bind('a', '%')          -- Add a new file.
+    bind('r', 'R')          -- Rename a file.
+    bind('o', '<CR>')       -- Open a file.
+    bind('<C-l>', '<C-w>l') -- Move to left window.
+  end
+})
 
 -------------
 -- Plugins --
