@@ -76,6 +76,7 @@ vim.api.nvim_create_autocmd('filetype', {
     bind('r', 'R')          -- Rename a file.
     bind('o', '<CR>')       -- Open a file.
     bind('<C-l>', '<C-w>l') -- Move to left window.
+    bind('-', '<cmd>vertical resize -5<CR>')
   end
 })
 
