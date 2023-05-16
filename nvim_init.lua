@@ -6,22 +6,19 @@ vim.opt.number = true
 vim.opt.history = 200
 vim.opt.visualbell = true
 vim.opt.cursorline = true
-
+vim.opt.wrap = false
 -- tab, indent
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.smartindent = true
-
 -- searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
 -- file handling
 vim.opt.confirm = true
 vim.opt.swapfile = false
-
 -- yank to clipboard
 -- wl-clipboard package is required.
 vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
