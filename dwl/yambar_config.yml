@@ -34,10 +34,14 @@ bar:
                 map:
                   <<: *dwl_base
                   deco: {background: {color: d08770ff}}
-              selected:
+              selected && ~empty:
                 map:
                   <<: *dwl_base
                   deco: {stack: [{background: {color: 81a1c1ff}}, {underline: {size: 4, color: d8dee9ff}}]}
+              selected:
+                map:
+                  <<: *dwl_base
+                  deco: {stack: [{background: {color: 81a1c1ff}}]}
               ~empty:
                 map:
                   <<: *dwl_base
