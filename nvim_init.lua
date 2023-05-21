@@ -112,25 +112,50 @@ require('lazy').setup({
   -- Bufferline
   {'akinsho/bufferline.nvim', version = "*"},
   -- LSP
+  -- (ref: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/guides/lazy-loading-with-lazy-nvim.md)
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    dependencies = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
-        'williamboman/mason.nvim',
-        build = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
+    {
+      'VonHeikemen/lsp-zero.nvim',
+      branch = 'v2.x',
+      lazy = true,
+      config = function()
+        require('lsp-zero.settings').preset({})
+      end
+    },
+    -- Autocompletion
+    {
+      'hrsh7th/nvim-cmp',
+      event = 'InsertEnter',
+      dependencies = {
+        {'L3MON4D3/LuaSnip'},
       },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
-    }
+      config = function()
+        require('lsp-zero.cmp').extend()
+      end
+    },
+    -- LSP
+    {
+      'neovim/nvim-lspconfig',
+      cmd = 'LspInfo',
+      event = {'BufReadPre', 'BufNewFile'},
+      dependencies = {
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'williamboman/mason-lspconfig.nvim'},
+        {
+          'williamboman/mason.nvim',
+          build = function()
+            pcall(vim.cmd, 'MasonUpdate')
+          end,
+        },
+      },
+      config = function()
+        local lsp = require('lsp-zero')
+        lsp.on_attach(function(client, bufnr)
+          lsp.default_keymaps({buffer = bufnr})
+        end)
+        lsp.setup()
+      end
+    },
   }
 })
 
@@ -154,13 +179,3 @@ bufferline.setup({
     always_show_bufferline = false,
   },
 })
-
--- To install a language server, run `:LspInstall` and restart nvim.
-local lsp = require('lsp-zero').preset({})
-lsp.on_attach(function(client, bufnr)
-  lsp.default_keymaps({buffer = bufnr})
-
-  -- custom keybindings
-  vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
-end)
-lsp.setup()
