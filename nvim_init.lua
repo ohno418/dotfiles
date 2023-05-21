@@ -162,7 +162,9 @@ require('telescope').setup({
   defaults = {
     mappings = {
       i = {
-        ['<C-r>'] = 'delete_buffer',
+        ['<C-r>'] = 'delete_buffer',                    -- Delete buffer with Ctrl-r.
+        ['<C-u>'] = false,                              -- Delete input with Ctrl-u.
+        ['<esc>'] = require('telescope.actions').close, -- Immediately close with Esc.
       },
     },
   },
