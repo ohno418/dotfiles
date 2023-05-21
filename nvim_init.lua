@@ -99,7 +99,6 @@ require('lazy').setup({
   -- Colorscheme
   {
     'Shatur/neovim-ayu',
-    lazy = false,
     config = function()
       vim.cmd('colorscheme ayu-dark')
     end
