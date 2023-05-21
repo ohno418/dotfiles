@@ -80,42 +80,47 @@ vim.api.nvim_create_autocmd('filetype', {
 -------------
 -- Plugins --
 -------------
--- Using packer as the package manager.
---
--- To install packer, run:
--- `git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim`.
--- (https://github.com/wbthomason/packer.nvim#quickstart)
---
--- To install packages, run `PackerSync`.
-require('packer').startup(function(use)
-  -- Packer itself
-  use 'wbthomason/packer.nvim'
+-- Using lazy.nvim as the package manager.
+-- (ref: https://github.com/folke/lazy.nvim#-installation)
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    'git',
+    'clone',
+    '--filter=blob:none',
+    'https://github.com/folke/lazy.nvim.git',
+    '--branch=stable', -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
+require('lazy').setup({
   -- Colorscheme
-  use 'ayu-theme/ayu-vim'
-  vim.opt.termguicolors = true
-  vim.g['ayucolor'] = 'dark'
-  vim.cmd('colorscheme ayu')
-
+  {
+    'Shatur/neovim-ayu',
+    lazy = false,
+    config = function()
+      vim.cmd('colorscheme ayu-dark')
+    end
+  },
   -- Fuzzy finder
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
-  -- bufferline
-  use {'akinsho/bufferline.nvim', tag = '*'}
-
+  {
+    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+  -- Bufferline
+  {'akinsho/bufferline.nvim', version = "*"},
   -- LSP
-  use {
+  {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
-    requires = {
+    dependencies = {
       -- LSP Support
       {'neovim/nvim-lspconfig'},             -- Required
       {                                      -- Optional
         'williamboman/mason.nvim',
-        run = function()
+        build = function()
           pcall(vim.cmd, 'MasonUpdate')
         end,
       },
@@ -127,9 +132,8 @@ require('packer').startup(function(use)
       {'L3MON4D3/LuaSnip'},     -- Required
     }
   }
-end)
+})
 
--- fuzzy finder
 require('telescope').setup({
   defaults = {
     mappings = {
@@ -143,7 +147,6 @@ vim.keymap.set('n', '<Leader>f', '<cmd>Telescope git_files<CR>')
 vim.keymap.set('n', '<Leader>F', '<cmd>Telescope find_files<CR>')
 vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
 
--- bufferline
 local bufferline = require('bufferline')
 bufferline.setup({
   options = {
@@ -152,7 +155,6 @@ bufferline.setup({
   },
 })
 
--- LSP
 -- To install a language server, run `:LspInstall` and restart nvim.
 local lsp = require('lsp-zero').preset({})
 lsp.on_attach(function(client, bufnr)
