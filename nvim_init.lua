@@ -109,7 +109,7 @@ require('lazy').setup({
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   -- Bufferline
-  {'akinsho/bufferline.nvim', version = "*"},
+  {'akinsho/bufferline.nvim', version = '*'},
   -- LSP
   -- (ref: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/guides/lazy-loading-with-lazy-nvim.md)
   {
