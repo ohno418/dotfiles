@@ -103,13 +103,45 @@ require('lazy').setup({
       vim.cmd('colorscheme ayu-dark')
     end
   },
+
   -- Fuzzy finder
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    keys = {
+      { '<Leader>f', '<cmd>Telescope git_files<CR>' },
+      { '<Leader>F', '<cmd>Telescope find_files<CR>' },
+      { '<Leader>b', '<cmd>Telescope buffers<CR>' },
+    },
+    config = function()
+      require('telescope').setup({
+        defaults = {
+          mappings = {
+            i = {
+              ['<C-r>'] = 'delete_buffer',                    -- Delete buffer with Ctrl-r.
+              ['<C-u>'] = false,                              -- Delete input with Ctrl-u.
+              ['<esc>'] = require('telescope.actions').close, -- Immediately close with Esc.
+            },
+          },
+        },
+      })
+    end
   },
+
   -- Bufferline
-  {'akinsho/bufferline.nvim', version = '*'},
+  {
+    'akinsho/bufferline.nvim',
+    version = '*',
+    config = function()
+      require('bufferline').setup({
+        options = {
+          show_buffer_close_icons = false,
+          always_show_bufferline = false,
+        },
+      })
+    end
+  },
+
   -- LSP
   -- (ref: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/guides/lazy-loading-with-lazy-nvim.md)
   {
@@ -156,27 +188,4 @@ require('lazy').setup({
       end
     },
   }
-})
-
-require('telescope').setup({
-  defaults = {
-    mappings = {
-      i = {
-        ['<C-r>'] = 'delete_buffer',                    -- Delete buffer with Ctrl-r.
-        ['<C-u>'] = false,                              -- Delete input with Ctrl-u.
-        ['<esc>'] = require('telescope.actions').close, -- Immediately close with Esc.
-      },
-    },
-  },
-})
-vim.keymap.set('n', '<Leader>f', '<cmd>Telescope git_files<CR>')
-vim.keymap.set('n', '<Leader>F', '<cmd>Telescope find_files<CR>')
-vim.keymap.set('n', '<Leader>b', '<cmd>Telescope buffers<CR>')
-
-local bufferline = require('bufferline')
-bufferline.setup({
-  options = {
-    show_buffer_close_icons = false,
-    always_show_bufferline = false,
-  },
 })
