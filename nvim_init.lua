@@ -187,5 +187,5 @@ require('lazy').setup({
         lsp.setup()
       end
     },
-  }
+  },
 })
