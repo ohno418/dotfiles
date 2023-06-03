@@ -127,6 +127,7 @@ static const char *mutemiccmd[] = { "pamixer", "--default-source", "--toggle-mut
 // backlight
 static const char *blupcmd[] = { "brightnessctl", "set", "5%+", NULL };
 static const char *bldowncmd[] = { "brightnessctl", "set", "5%-", NULL };
+// screen lock
 static const char *lockcmd[] = { "waylock", NULL };
 
 static const Key keys[] = {
