@@ -98,9 +98,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'Shatur/neovim-ayu',
+    'projekt0n/github-nvim-theme',
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd('colorscheme ayu-dark')
+      vim.cmd('colorscheme github_dark_colorblind')
     end
   },
 
