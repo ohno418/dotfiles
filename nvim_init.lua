@@ -34,6 +34,7 @@ vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
 -- buffer
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR><cmd>ls<CR>')
 vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR><cmd>ls<CR>')
+vim.keymap.set('n', '<C-]>', '<cmd>bdelete%<CR>')          -- Delete current buffer.
 vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
