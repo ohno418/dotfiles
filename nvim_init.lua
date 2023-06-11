@@ -30,10 +30,10 @@ vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
--- buffer
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
+-- buffer
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR><cmd>ls<CR>')
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR><cmd>ls<CR>')
 vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
@@ -125,20 +125,6 @@ require('lazy').setup({
               ['<esc>'] = require('telescope.actions').close, -- Immediately close with Esc.
             },
           },
-        },
-      })
-    end
-  },
-
-  -- Bufferline
-  {
-    'akinsho/bufferline.nvim',
-    version = '*',
-    config = function()
-      require('bufferline').setup({
-        options = {
-          show_buffer_close_icons = false,
-          always_show_bufferline = false,
         },
       })
     end
