@@ -100,10 +100,6 @@ riverctl map normal Alt+Shift Comma send-to-output previous
 #
 for mode in normal locked
 do
-    # TODO
-    # Eject the optical drive (well if you still have one that is)
-    riverctl map $mode None XF86Eject spawn 'eject -T'
-
     # audio volume
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
