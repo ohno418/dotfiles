@@ -175,6 +175,13 @@ riverctl map normal Alt+Shift x spawn waylock
 # exit
 riverctl map normal Alt+Super+Shift E exit
 
+# passthrough mode
+# This mode has only a single mapping to return to normal mode. This makes it
+# useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+riverctl map normal Super F11 enter-mode passthrough
+riverctl map passthrough Super F11 enter-mode normal
+
 #
 # EXEC
 #
