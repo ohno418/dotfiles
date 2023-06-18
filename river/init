@@ -179,4 +179,4 @@ riverctl map normal Alt+Super+Shift E exit
 # EXEC
 #
 riverctl default-layout rivertile
-rivertile -view-padding 2 -outer-padding 2 &
+rivertile -view-padding 3 -outer-padding 3 &
