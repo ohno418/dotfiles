@@ -30,8 +30,8 @@ riverctl map normal Alt Return zoom
 riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
 
-riverctl map normal Alt+Shift H send-layout-cmd rivertile "main-count +1"
-riverctl map normal Alt+Shift L send-layout-cmd rivertile "main-count -1"
+riverctl map normal Alt I send-layout-cmd rivertile "main-count +1"
+riverctl map normal Alt D send-layout-cmd rivertile "main-count -1"
 
 riverctl map normal Alt+Shift Q close
 
