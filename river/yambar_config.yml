@@ -29,7 +29,7 @@ bar:
                 map:
                   <<: *river_base
                   deco: {background: {color: d08770ff}}
-              focused || visible:
+              visible && occupied:
                 map:
                   <<: *river_base
                   deco: {
@@ -38,11 +38,19 @@ bar:
                       {underline: {size: 4, color: d8dee9ff}}
                     ]
                   }
+              visible && ~occupied:
+                map:
+                  <<: *river_base
+                  deco: {
+                    stack: [
+                      {background: {color: 81a1c1ff}},
+                    ]
+                  }
               ~visible && occupied:
                 map:
                   <<: *river_base
                   deco: {underline: {size: 4, color: ea6962ff}}
-              ~visible:
+              ~visible && ~occupied:
                 map:
                   <<: *river_base
 

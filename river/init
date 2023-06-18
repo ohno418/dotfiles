@@ -1,0 +1,213 @@
+#!/bin/sh
+
+# This is the example configuration file for river.
+#
+# If you wish to edit this, you will probably want to copy it to
+# $XDG_CONFIG_HOME/river/init or $HOME/.config/river/init first.
+#
+# See the river(1), riverctl(1), and rivertile(1) man pages for complete
+# documentation.
+
+#
+# THEME
+#
+wbg ~/.config/river/wallpaper.jpg &
+yambar &
+riverctl border-color-focused 0x22ffaa
+riverctl border-color-unfocused 0x222222
+
+#
+# VIEWS
+#
+riverctl map normal Alt J focus-view next
+riverctl map normal Alt K focus-view previous
+
+riverctl map normal Alt+Shift J swap next
+riverctl map normal Alt+Shift K swap previous
+
+riverctl map normal Alt Return zoom
+
+riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
+riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
+
+riverctl map normal Alt+Shift H send-layout-cmd rivertile "main-count +1"
+riverctl map normal Alt+Shift L send-layout-cmd rivertile "main-count -1"
+
+riverctl map normal Alt+Shift Q close
+
+#
+# FLOAT VIEWS
+#
+riverctl map normal Alt Space toggle-float
+
+# move views
+riverctl map normal Super+Alt H move left 100
+riverctl map normal Super+Alt J move down 100
+riverctl map normal Super+Alt K move up 100
+riverctl map normal Super+Alt L move right 100
+
+# snap views to screen edges
+riverctl map normal Super+Alt+Control H snap left
+riverctl map normal Super+Alt+Control J snap down
+riverctl map normal Super+Alt+Control K snap up
+riverctl map normal Super+Alt+Control L snap right
+
+# resize views
+riverctl map normal Super+Alt+Shift H resize horizontal -100
+riverctl map normal Super+Alt+Shift J resize vertical 100
+riverctl map normal Super+Alt+Shift K resize vertical -100
+riverctl map normal Super+Alt+Shift L resize horizontal 100
+
+riverctl map-pointer normal Alt BTN_LEFT move-view
+riverctl map-pointer normal Alt BTN_RIGHT resize-view
+riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
+
+#
+# TAGS
+#
+for i in $(seq 1 9)
+do
+    tags=$((1 << ($i - 1)))
+    # focus tag [0-8]
+    riverctl map normal Alt $i set-focused-tags $tags
+    # tag focused view with tag [0-8]
+    riverctl map normal Alt+Shift $i set-view-tags $tags
+    # toggle focus of tag [0-8]
+    riverctl map normal Alt+Control $i toggle-focused-tags $tags
+    # toggle tag [0-8] of focused view
+    riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
+done
+
+all_tags=$(((1 << 32) - 1))
+riverctl map normal Alt 0 set-focused-tags $all_tags
+riverctl map normal Alt+Shift 0 set-view-tags $all_tags
+
+# focus previous tags
+riverctl map normal Alt o focus-previous-tags
+riverctl map normal Alt Tab focus-previous-tags
+
+#
+# OUTPUTS
+#
+riverctl map normal Alt Period focus-output next
+riverctl map normal Alt Comma focus-output previous
+
+riverctl map normal Alt+Shift Period send-to-output next
+riverctl map normal Alt+Shift Comma send-to-output previous
+
+#
+# MEDIA KEYS
+#
+for mode in normal locked
+do
+    # TODO
+    # Eject the optical drive (well if you still have one that is)
+    riverctl map $mode None XF86Eject spawn 'eject -T'
+
+    # audio volume
+    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
+    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
+    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
+    riverctl map $mode None XF86AudioMicMute      spawn 'pamixer --default-source --toggle-mute'
+    riverctl map $mode None F12                   spawn 'pamixer -i 5'
+    riverctl map $mode None F11                   spawn 'pamixer -d 5'
+    riverctl map $mode None F10                   spawn 'pamixer --toggle-mute'
+    riverctl map $mode None F9                    spawn 'pamixer --default-source --toggle-mute'
+
+    # backlight brightness
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set 5%+'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+    riverctl map $mode None F8                    spawn 'brightnessctl set 5%+'
+    riverctl map $mode None F7                    spawn 'brightnessctl set 5%-'
+done
+
+#
+# INPUT
+#
+# Use device names that are listed by `riverctl list-inputs` here.
+touchpad="pointer-1267-47-Elan_Touchpad"
+trackpoint="pointer-1267-47-Elan_TrackPoint"
+
+# tap to click
+riverctl input $touchpad tap enabled
+
+# cursor speed
+riverctl input $touchpad pointer-accel 0.3
+riverctl input $trackpoint pointer-accel 0.5
+
+# natural scroll
+riverctl input $touchpad natural-scroll enabled
+riverctl input $trackpoint natural-scroll enabled
+
+# NOTE: To use CapsLock as Ctrl, set `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier`.
+
+# key repeat rate
+riverctl set-repeat 50 300
+
+# hide cursor
+riverctl hide-cursor timeout 5000
+
+#
+# MISC
+#
+riverctl map normal Alt+Shift Return spawn foot
+riverctl map normal Alt+Shift b spawn firefox
+riverctl map normal Alt+Shift p spawn 'firefox --private-window'
+
+# input method
+fcitx5 &
+
+# screenshot
+riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png'
+
+riverctl map normal Alt F toggle-fullscreen
+
+# Enable xdg-desktop-portal-wlr,
+# (ref: https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables)
+# and improve startup time of gtk+ apps, e.g., firefox.
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+
+# change layout orientation
+riverctl map normal Alt Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal Alt Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Alt Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Alt Left  send-layout-cmd rivertile "main-location left"
+
+# lock
+riverctl map normal Alt+Shift x spawn waylock
+
+# exit
+riverctl map normal Alt+Super+Shift E exit
+
+
+
+
+# TODO: ???
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor
+riverctl declare-mode passthrough
+
+# TODO: ???
+# Super+F11 to enter passthrough mode
+riverctl map normal Super F11 enter-mode passthrough
+
+# TODO: ???
+# Super+F11 to return to normal mode
+riverctl map passthrough Super F11 enter-mode normal
+
+# TODO
+# Make all views with an app-id that starts with "float" and title "foo" start floating.
+riverctl rule-add float -app-id 'float*' -title 'foo'
+
+# TODO
+# Make all views with app-id "bar" and any title use client-side decorations
+riverctl rule-add csd -app-id "bar"
+
+
+
+
+#
+# EXEC
+#
+riverctl default-layout rivertile
+rivertile -view-padding 2 -outer-padding 2 &

@@ -18,9 +18,11 @@ ln -sf $(pwd)/tmux.conf ~/.config/tmux/tmux.conf
 mkdir -p ~/.config/nvim
 ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
 
-# dwl
-mkdir -p ~/.config/yambar
-ln -sf $(pwd)/dwl/yambar_config.yml ~/.config/yambar/config.yml
+# river
+mkdir -p ~/.config/river ~/.config/yambar
+ln -sf $(pwd)/river/init ~/.config/river/init
+ln -sf $(pwd)/river/wallpaper.jpg ~/.config/river/wallpaper.jpg
+ln -sf $(pwd)/river/yambar_config.yml ~/.config/yambar/config.yml
 
 # foot
 mkdir -p ~/.config/foot

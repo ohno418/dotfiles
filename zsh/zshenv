@@ -2,6 +2,8 @@
 # ref: https://zsh.sourceforge.io/Guide/zshguide02.html#l24
 typeset -U path
 path=(
+  # river
+  $HOME/.local/bin
   # cargo
   $HOME/.cargo/bin
   # nodenv
