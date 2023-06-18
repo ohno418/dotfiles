@@ -179,33 +179,6 @@ riverctl map normal Alt+Shift x spawn waylock
 # exit
 riverctl map normal Alt+Super+Shift E exit
 
-
-
-
-# TODO: ???
-# Declare a passthrough mode. This mode has only a single mapping to return to
-# normal mode. This makes it useful for testing a nested wayland compositor
-riverctl declare-mode passthrough
-
-# TODO: ???
-# Super+F11 to enter passthrough mode
-riverctl map normal Super F11 enter-mode passthrough
-
-# TODO: ???
-# Super+F11 to return to normal mode
-riverctl map passthrough Super F11 enter-mode normal
-
-# TODO
-# Make all views with an app-id that starts with "float" and title "foo" start floating.
-riverctl rule-add float -app-id 'float*' -title 'foo'
-
-# TODO
-# Make all views with app-id "bar" and any title use client-side decorations
-riverctl rule-add csd -app-id "bar"
-
-
-
-
 #
 # EXEC
 #
