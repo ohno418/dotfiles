@@ -58,9 +58,9 @@ riverctl map normal Super+Alt+Shift J resize vertical 100
 riverctl map normal Super+Alt+Shift K resize vertical -100
 riverctl map normal Super+Alt+Shift L resize horizontal 100
 
-riverctl map-pointer normal Alt BTN_LEFT move-view
-riverctl map-pointer normal Alt BTN_RIGHT resize-view
-riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
+riverctl map-pointer normal Super BTN_LEFT move-view
+riverctl map-pointer normal Super BTN_RIGHT resize-view
+riverctl map-pointer normal Super BTN_MIDDLE toggle-float
 
 #
 # TAGS
