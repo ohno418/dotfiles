@@ -15,6 +15,9 @@ wbg ~/.config/river/wallpaper.jpg &
 yambar &
 riverctl border-color-focused 0x22ffaa
 riverctl border-color-unfocused 0x222222
+# Display borders for all apps.
+# Without this, borders not displayed for Firefox for example.
+riverctl rule-add ssd
 
 #
 # VIEWS
