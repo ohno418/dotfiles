@@ -111,6 +111,23 @@ require('lazy').setup({
     end
   },
 
+  -- tree-sitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { "rust", "typescript" },
+        highlight = {
+          enable = true,
+        },
+        indent = {
+          enable = true,
+        },
+      })
+    end
+  },
+
   -- Fuzzy finder
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.1',
