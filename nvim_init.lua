@@ -103,11 +103,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'projekt0n/github-nvim-theme',
+    'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd('colorscheme github_dark_colorblind')
+      vim.cmd('colorscheme carbonfox')
     end
   },
 
