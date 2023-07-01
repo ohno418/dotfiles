@@ -103,11 +103,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'EdenEast/nightfox.nvim',
+    'bluz71/vim-moonfly-colors',
+    name = 'moonfly',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd('colorscheme carbonfox')
+      vim.cmd('colorscheme moonfly')
     end
   },
 
