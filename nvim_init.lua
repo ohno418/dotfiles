@@ -78,6 +78,7 @@ vim.api.nvim_create_autocmd('filetype', {
     bind('a', '%')          -- Add a new file.
     bind('r', 'R')          -- Rename a file.
     bind('o', '<CR>')       -- Open a file.
+    bind('q', '<cmd>q<CR>') -- Close netrw window.
     bind('<C-l>', '<C-w>l') -- Move to left window.
     bind('-', '<cmd>vertical resize -5<CR>')
   end
