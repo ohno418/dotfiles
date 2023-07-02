@@ -38,6 +38,7 @@ vim.keymap.set('n', '<C-]>', '<cmd>bdelete%<CR>')          -- Delete current buf
 vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
 -- tab
 vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
+vim.keymap.set('n', '<Leader>c', '<cmd>tabclose<CR>')
 vim.keymap.set('n', '<Leader>n', 'gt')
 vim.keymap.set('n', '<Leader>p', 'gT')
 -- move window
