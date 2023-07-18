@@ -2,26 +2,26 @@
 -- Options --
 -------------
 -- basics
-vim.opt.number = true
-vim.opt.history = 200
-vim.opt.visualbell = true
-vim.opt.cursorline = true
-vim.opt.wrap = false
+vim.o.number = true
+vim.o.history = 200
+vim.o.visualbell = true
+vim.o.cursorline = true
+vim.o.wrap = false
 -- tab, indent
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.smartindent = true
+vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.smartindent = true
 -- searching
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
 -- file handling
-vim.opt.confirm = true
-vim.opt.swapfile = false
+vim.o.confirm = true
+vim.o.swapfile = false
 -- yank to clipboard
 -- wl-clipboard package is required.
-vim.opt.clipboard = vim.opt.clipboard + 'unnamedplus'
+vim.o.clipboard = 'unnamedplus'
 
 ----------------
 -- Keymapping --
