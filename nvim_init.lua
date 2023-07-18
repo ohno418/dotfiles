@@ -23,9 +23,9 @@ vim.o.swapfile = false
 -- wl-clipboard package is required.
 vim.o.clipboard = 'unnamedplus'
 
-----------------
--- Keymapping --
-----------------
+-----------------
+-- Keymappings --
+-----------------
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
@@ -120,7 +120,7 @@ require('lazy').setup({
     build = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup({
-        ensure_installed = { "rust", "typescript" },
+        ensure_installed = { 'rust', 'typescript' },
         highlight = {
           enable = true,
         },
