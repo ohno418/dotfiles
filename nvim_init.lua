@@ -155,50 +155,79 @@ require('lazy').setup({
     end
   },
 
-  -- LSP
-  -- (ref: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/guides/lazy-loading-with-lazy-nvim.md)
+  -- LSP server management
   {
-    {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v2.x',
-      lazy = true,
-      config = function()
-        require('lsp-zero.settings').preset({})
-      end
-    },
-    -- Autocompletion
-    {
-      'hrsh7th/nvim-cmp',
-      event = 'InsertEnter',
-      dependencies = {
-        {'L3MON4D3/LuaSnip'},
-      },
-      config = function()
-        require('lsp-zero.cmp').extend()
-      end
-    },
-    -- LSP
-    {
-      'neovim/nvim-lspconfig',
-      cmd = 'LspInfo',
-      event = {'BufReadPre', 'BufNewFile'},
-      dependencies = {
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'williamboman/mason-lspconfig.nvim'},
-        {
-          'williamboman/mason.nvim',
-          build = function()
-            pcall(vim.cmd, 'MasonUpdate')
-          end,
-        },
-      },
-      config = function()
-        local lsp = require('lsp-zero')
-        lsp.on_attach(function(client, bufnr)
-          lsp.default_keymaps({buffer = bufnr})
-        end)
-        lsp.setup()
-      end
-    },
+    'williamboman/mason.nvim',
+    build = ':MasonUpdate',
+    config = function()
+      require('mason').setup()
+    end
   },
+  -- Autocompletion
+  {
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+    },
+    config = function()
+      local cmp = require('cmp')
+      cmp.setup({
+        mapping = {
+          ['<C-n>'] = cmp.mapping.select_next_item(),
+          ['<C-p>'] = cmp.mapping.select_prev_item(),
+          ['<C-d>'] = cmp.mapping.scroll_docs(4),
+          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+          ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        },
+        sources = {
+          { name = 'nvim_lsp' },
+        },
+      })
+    end
+  },
+})
+
+---------
+-- LSP --
+---------
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = args.buf })
+    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = args.buf })
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = args.buf })
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = args.buf })
+  end,
+})
+
+-- List of LSP servers --
+-- Rust
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'rust',
+  callback = function()
+    vim.lsp.start({
+      name = 'rust-analyzer',
+      cmd = {'rust-analyzer'},
+      root_dir = vim.fs.dirname(vim.fs.find({'Cargo.toml'}, { upward = true })[1]),
+    })
+  end
+})
+-- TypeScript
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {
+    'javascript',
+    'javascriptreact',
+    'javascript.jsx',
+    'typescript',
+    'typescriptreact',
+    'typescript.tsx',
+  },
+  callback = function()
+    vim.lsp.start({
+      name = 'tsserver',
+      cmd = {'typescript-language-server', '--stdio'},
+      root_dir = vim.fn.getcwd(),
+    })
+  end
 })
