@@ -138,6 +138,7 @@ require('lazy').setup({
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
       { '<Leader>b', '<cmd>Telescope buffers<CR>' },
+      { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
     },
     config = function()
       require('telescope').setup({
