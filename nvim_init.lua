@@ -157,6 +157,14 @@ require('lazy').setup({
     end
   },
 
+  -- indent lines
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('indent_blankline').setup()
+    end
+  },
+
   -- LSP server management
   {
     'williamboman/mason.nvim',
