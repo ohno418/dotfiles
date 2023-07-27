@@ -33,15 +33,11 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
--- buffer
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR><cmd>ls<CR>')
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR><cmd>ls<CR>')
-vim.keymap.set('n', '<Leader><BS>', '<cmd>%bd|e#|bd#<CR>') -- Delete all buffers except current one.
--- tab
+-- tabs
 vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
 vim.keymap.set('n', '<Leader>c', '<cmd>tabclose<CR>')
-vim.keymap.set('n', '<Leader>n', 'gt')
-vim.keymap.set('n', '<Leader>p', 'gT')
+vim.keymap.set('n', '<C-n>', 'gt')
+vim.keymap.set('n', '<C-p>', 'gT')
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
