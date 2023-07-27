@@ -18,6 +18,7 @@ vim.o.smartindent = true
 -- searching
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.shortmess = vim.o.shortmess .. 'S' -- Display "search hit BOTTOM" message.
 -- file handling
 vim.o.confirm = true
 vim.o.swapfile = false
