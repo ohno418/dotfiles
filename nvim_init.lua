@@ -1,30 +1,38 @@
 -------------
 -- Options --
 -------------
--- basics
-vim.o.number = true
-vim.o.history = 200
-vim.o.visualbell = true
-vim.o.cursorline = true
--- softwrap
-vim.o.wrap = false
-vim.o.breakindent = true
--- tab, indent
-vim.o.expandtab = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.smartindent = true
--- searching
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.shortmess = vim.o.shortmess .. 'S' -- Display "search hit BOTTOM" message.
--- file handling
-vim.o.confirm = true
-vim.o.swapfile = false
--- yank to clipboard
--- wl-clipboard package is required.
-vim.o.clipboard = 'unnamedplus'
+local options = {
+  -- basics
+  number = true,
+  history = 200,
+  visualbell = true,
+  cursorline = true,
+  -- softwrap
+  wrap = false,
+  breakindent = true,
+  -- tab, indent
+  expandtab = true,
+  tabstop = 4,
+  shiftwidth = 2,
+  softtabstop = 2,
+  smartindent = true,
+  -- searching
+  ignorecase = true,
+  smartcase = true,
+  -- file handling
+  confirm = true,
+  swapfile = false,
+  -- yank to clipboard
+  -- wl-clipboard package is required.
+  clipboard = 'unnamedplus',
+}
+
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
+
+-- Display "search hit BOTTOM" message on searching.
+vim.opt.shortmess:append('S')
 
 -----------------
 -- Keymappings --
