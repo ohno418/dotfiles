@@ -61,9 +61,11 @@ vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
 vim.keymap.set('n', 'gh', '0')
 vim.keymap.set('n', 'gs', '_')
 vim.keymap.set('n', 'gl', '$')
+vim.keymap.set('n', 'gm', '%')
 vim.keymap.set('v', 'gh', '0')
 vim.keymap.set('v', 'gs', '_')
 vim.keymap.set('v', 'gl', '$')
+vim.keymap.set('v', 'gm', '%')
 
 -------------------------
 -- Netrw file explorer --
