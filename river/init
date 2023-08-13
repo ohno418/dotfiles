@@ -151,6 +151,7 @@ fcitx5 &
 # screenshot
 riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png'
 
+# fullscreen
 riverctl map normal Alt F toggle-fullscreen
 
 # Enable xdg-desktop-portal-wlr,
