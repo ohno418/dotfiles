@@ -19,10 +19,3 @@
 	rs = reset
 	rb = rebase
 	cp = cherry-pick
-[sendemail]
-	smtpEncryption = tls
-	smtpServer = smtp.gmail.com
-	smtpUser = yutaro.ono.418@gmail.com
-	smtpServerPort = 587
-	smtpPass = <app-password>
-	smtpDomain = ohno
