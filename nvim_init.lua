@@ -42,6 +42,7 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
+vim.keymap.set('c', 'fmt<CR>', '!go fmt %<CR>')
 -- tabs
 vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
 vim.keymap.set('n', '<Leader>c', '<cmd>tabclose<CR>')
@@ -242,6 +243,17 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.lsp.start({
       name = 'tsserver',
       cmd = {'typescript-language-server', '--stdio'},
+      root_dir = vim.fn.getcwd(),
+    })
+  end
+})
+-- Go
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'go',
+  callback = function()
+    vim.lsp.start({
+      name = 'gopls',
+      cmd = {'gopls'},
       root_dir = vim.fn.getcwd(),
     })
   end
