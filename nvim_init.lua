@@ -42,7 +42,7 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
-vim.keymap.set('c', 'fmt<CR>', '!go fmt %<CR>')
+vim.keymap.set('c', 'fmt<CR>', '!go fmt %<CR><CR>')
 -- tabs
 vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
 vim.keymap.set('n', '<Leader>c', '<cmd>tabclose<CR>')
