@@ -7,6 +7,7 @@ local options = {
   history = 200,
   visualbell = true,
   cursorline = true,
+  mouse = '',
   -- softwrap
   wrap = false,
   breakindent = true,
