@@ -248,14 +248,3 @@ vim.api.nvim_create_autocmd('FileType', {
     })
   end
 })
--- Go
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'go',
-  callback = function()
-    vim.lsp.start({
-      name = 'gopls',
-      cmd = {'gopls'},
-      root_dir = vim.fn.getcwd(),
-    })
-  end
-})
