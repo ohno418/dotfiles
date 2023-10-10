@@ -131,7 +131,7 @@ require('lazy').setup({
 
   -- Fuzzy finder
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    'nvim-telescope/telescope.nvim', tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
@@ -158,7 +158,7 @@ require('lazy').setup({
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('indent_blankline').setup()
+      require('ibl').setup()
     end
   },
 
