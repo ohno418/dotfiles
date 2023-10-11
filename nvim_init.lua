@@ -106,12 +106,20 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'bluz71/vim-moonfly-colors',
-    name = 'moonfly',
+    'Shatur/neovim-ayu',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd('colorscheme moonfly')
+      local ayu = require('ayu')
+      local colors = require('ayu.colors')
+      ayu.setup({
+        dark = true,
+        overrides = {
+          VertSplit = { fg = colors.fg },
+          CursorLine = { underline = true },
+        },
+      })
+      ayu.colorscheme()
     end
   },
 
