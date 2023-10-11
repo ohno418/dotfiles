@@ -60,31 +60,6 @@ vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
 vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
 
--------------------------
--- Netrw file explorer --
--------------------------
-vim.keymap.set('n', '<Leader>e', '<cmd>Lexplore<CR>')
-vim.keymap.set('n', '<Leader>E', '<cmd>Lexplore %:p:h<CR>') -- open current dir
-vim.g.netrw_browser_split = 4 -- open in a prior window
-vim.g.netrw_altv = 1          -- open splits to the right
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 20
-vim.api.nvim_create_autocmd('filetype', {
-  pattern = 'netrw',
-  callback = function()
-    local bind = function(lhs, rhs)
-      vim.keymap.set('n', lhs, rhs, {remap = true, buffer = true})
-    end
-
-    bind('a', '%')          -- Add a new file.
-    bind('r', 'R')          -- Rename a file.
-    bind('o', '<CR>')       -- Open a file.
-    bind('q', '<cmd>q<CR>') -- Close netrw window.
-    bind('<C-l>', '<C-w>l') -- Move to left window.
-    bind('-', '<cmd>vertical resize -5<CR>')
-  end
-})
-
 -------------
 -- Plugins --
 -------------
@@ -134,6 +109,24 @@ require('lazy').setup({
           enable = true,
         },
       })
+    end
+  },
+
+  -- File explorer
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    config = function()
+      require('oil').setup({
+        keymaps = {
+          ["<C-v>"] = "actions.select_vsplit",
+          ["<C-s>"] = "actions.select_split",
+          -- Disable in favor of moving window.
+          ["<C-h>"] = false,
+          ["<C-l>"] = false,
+        },
+      })
+      vim.keymap.set('n', '<Leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
     end
   },
 
