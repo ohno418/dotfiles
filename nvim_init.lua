@@ -216,11 +216,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 
--- Disable inline error messages.
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = false
-    }
+  vim.lsp.diagnostic.on_publish_diagnostics, {
+    -- Disable inline error messages.
+    virtual_text = false,
+    -- Disable underline.
+    underline = false,
+  }
 )
 
 -- List of LSP servers --
