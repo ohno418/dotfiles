@@ -115,7 +115,6 @@ require('lazy').setup({
   -- File explorer
   {
     'stevearc/oil.nvim',
-    opts = {},
     config = function()
       require('oil').setup({
         keymaps = {
