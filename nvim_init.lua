@@ -179,6 +179,8 @@ require('lazy').setup({
     config = function()
       local cmp = require('cmp')
       cmp.setup({
+        -- Select nothing at first.
+        preselect = cmp.PreselectMode.None,
         mapping = {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
