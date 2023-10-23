@@ -134,10 +134,10 @@ require('lazy').setup({
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-      { '<Leader>f', '<cmd>Telescope git_files<CR>' },
-      { '<Leader>F', '<cmd>Telescope find_files<CR>' },
-      { '<Leader>b', '<cmd>Telescope buffers<CR>' },
-      { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
+      { '<Leader>f', '<cmd>Telescope git_files theme=ivy<CR>' },
+      { '<Leader>F', '<cmd>Telescope find_files theme=ivy<CR>' },
+      { '<Leader>b', '<cmd>Telescope buffers theme=ivy<CR>' },
+      { '<Leader>d', '<cmd>Telescope diagnostics theme=ivy<CR>' },
     },
     config = function()
       require('telescope').setup({
