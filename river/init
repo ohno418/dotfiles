@@ -3,7 +3,6 @@
 #
 # THEME
 #
-wbg ~/.config/river/wallpaper.jpg &
 yambar &
 riverctl border-color-focused 0x22ffaa
 riverctl border-color-unfocused 0x222222
