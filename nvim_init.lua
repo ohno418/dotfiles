@@ -219,6 +219,13 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   }
 )
 
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, {
+    -- Border for hover window.
+    border = "rounded",
+  }
+)
+
 -- List of LSP servers --
 -- Rust
 vim.api.nvim_create_autocmd('FileType', {
