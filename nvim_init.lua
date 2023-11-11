@@ -158,7 +158,10 @@ require('lazy').setup({
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('ibl').setup()
+      require('ibl').setup({
+        -- Disable underline for current scope.
+        scope = { enabled = false },
+      })
     end
   },
 
