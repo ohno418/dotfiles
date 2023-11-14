@@ -4,6 +4,7 @@
 # THEME
 #
 yambar &
+riverctl background-color 0x002800
 riverctl border-color-focused 0x22ffaa
 riverctl border-color-unfocused 0x222222
 # Display borders for all apps.
