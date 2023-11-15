@@ -117,11 +117,11 @@ require('lazy').setup({
     config = function()
       require('oil').setup({
         keymaps = {
-          ["<C-v>"] = "actions.select_vsplit",
-          ["<C-s>"] = "actions.select_split",
+          ['<C-v>'] = 'actions.select_vsplit',
+          ['<C-s>'] = 'actions.select_split',
           -- Disable in favor of moving window.
-          ["<C-h>"] = false,
-          ["<C-l>"] = false,
+          ['<C-h>'] = false,
+          ['<C-l>'] = false,
         },
       })
       vim.keymap.set('n', '<Leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
