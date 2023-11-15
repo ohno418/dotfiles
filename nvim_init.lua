@@ -164,6 +164,41 @@ require('lazy').setup({
     end
   },
 
+  -- LSP
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      local lspconfig = require('lspconfig')
+
+      -- language servers
+      lspconfig.rust_analyzer.setup({})
+      lspconfig.tsserver.setup({})
+
+      -- keymappings
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover)
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+      vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition)
+      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+      vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+
+      -- See `:help vim.diagnostic.config`.
+      vim.diagnostic.config({
+        underline = true,
+        virtual_text = false,
+        signs = true,
+        update_in_insert = false,
+        severity_sort = true,
+        float = { border = 'rounded' },
+      })
+
+      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+        vim.lsp.handlers.hover, {
+          -- Border for hover window.
+          border = 'rounded',
+        }
+      )
+    end
+  },
   -- LSP server management
   {
     'williamboman/mason.nvim',
@@ -181,8 +216,10 @@ require('lazy').setup({
     config = function()
       local cmp = require('cmp')
       cmp.setup({
-        -- Select nothing at first.
-        preselect = cmp.PreselectMode.None,
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
         mapping = {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -194,67 +231,9 @@ require('lazy').setup({
         sources = {
           { name = 'nvim_lsp' },
         },
+        -- Select nothing at first.
+        preselect = cmp.PreselectMode.None,
       })
     end
   },
-})
-
----------
--- LSP --
----------
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(args)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = args.buf })
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = args.buf })
-    vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition, { buffer = args.buf })
-    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = args.buf })
-    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = args.buf })
-  end,
-})
-
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- Disable inline error messages.
-    virtual_text = false,
-    -- Disable underline.
-    underline = false,
-  }
-)
-
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, {
-    -- Border for hover window.
-    border = "rounded",
-  }
-)
-
--- List of LSP servers --
--- Rust
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'rust',
-  callback = function()
-    vim.lsp.start({
-      name = 'rust-analyzer',
-      cmd = {'rust-analyzer'},
-      root_dir = vim.fs.dirname(vim.fs.find({'Cargo.toml'}, { upward = true })[1]),
-    })
-  end
-})
--- TypeScript
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = {
-    'javascript',
-    'javascriptreact',
-    'javascript.jsx',
-    'typescript',
-    'typescriptreact',
-    'typescript.tsx',
-  },
-  callback = function()
-    vim.lsp.start({
-      name = 'tsserver',
-      cmd = {'typescript-language-server', '--stdio'},
-      root_dir = vim.fn.getcwd(),
-    })
-  end
 })
