@@ -124,7 +124,7 @@ require('lazy').setup({
           ['<C-l>'] = false,
         },
       })
-      vim.keymap.set('n', '<Leader>e', '<cmd>Oil --float<CR>', { desc = 'Open parent directory' })
+      vim.keymap.set('n', '<Leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
     end
   },
 
