@@ -7,6 +7,7 @@ local options = {
   history = 200,
   visualbell = true,
   cursorline = true,
+  termguicolors = true,
   mouse = '',
   -- softwrap
   wrap = false,
@@ -113,18 +114,12 @@ require('lazy').setup({
 
   -- File explorer
   {
-    'stevearc/oil.nvim',
+    'nvim-tree/nvim-tree.lua',
     config = function()
-      require('oil').setup({
-        keymaps = {
-          ['<C-v>'] = 'actions.select_vsplit',
-          ['<C-s>'] = 'actions.select_split',
-          -- Disable in favor of moving window.
-          ['<C-h>'] = false,
-          ['<C-l>'] = false,
-        },
+      -- TODO: https://github.com/nvim-tree/nvim-tree.lua
+      require('nvim-tree').setup({
       })
-      vim.keymap.set('n', '<Leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
+      vim.keymap.set('n', '<Leader>e', '<cmd>NvimTreeOpen<CR>')
     end
   },
 
