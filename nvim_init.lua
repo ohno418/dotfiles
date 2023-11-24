@@ -7,7 +7,6 @@ local options = {
   history = 200,
   visualbell = true,
   cursorline = true,
-  termguicolors = true,
   mouse = '',
   -- softwrap
   wrap = false,
