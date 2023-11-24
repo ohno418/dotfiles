@@ -116,10 +116,19 @@ require('lazy').setup({
   {
     'nvim-tree/nvim-tree.lua',
     config = function()
-      -- TODO: https://github.com/nvim-tree/nvim-tree.lua
       require('nvim-tree').setup({
+        renderer = {
+          add_trailing = true,
+          icons = {
+            show = {
+              file = false,
+              folder = false,
+              folder_arrow = false,
+            },
+          },
+        },
       })
-      vim.keymap.set('n', '<Leader>e', '<cmd>NvimTreeOpen<CR>')
+      vim.keymap.set('n', '<Leader>e', '<cmd>NvimTreeToggle<CR>')
     end
   },
 
