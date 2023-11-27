@@ -27,8 +27,10 @@ grim
 noto-fonts-emoji
 otf-ipaexfont
 polkit
+
 pamixer
 pulseaudio
+
 slurp
 waylock
 wl-clipboard
@@ -36,11 +38,9 @@ xdg-desktop-portal-wlr
 zsh
 
 ### AUR
-nvim-packer-git
-wbg
 yambar
 
 # others
 docker
 docker-compose
-nodenv
+nodenv (aur)
