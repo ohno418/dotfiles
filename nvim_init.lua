@@ -227,7 +227,6 @@ require('lazy').setup({
 -------------------------
 vim.keymap.set('n', '<Leader>e', '<cmd>Lexplore<CR>')
 vim.keymap.set('n', '<Leader>E', '<cmd>Lexplore %:p:h<CR>') -- open current dir
-vim.g.netrw_liststyle = 3     -- tree style
 vim.g.netrw_browser_split = 4 -- open in a prior window
 vim.g.netrw_altv = 1          -- open splits to the right
 vim.g.netrw_banner = 0
