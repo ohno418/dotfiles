@@ -36,9 +36,7 @@ waylock
 wl-clipboard
 xdg-desktop-portal-wlr
 zsh
-
-### AUR
-yambar
+yambar (aur)
 
 # others
 docker
