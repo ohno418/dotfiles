@@ -59,6 +59,11 @@ vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
 vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
+-- goto mode
+vim.keymap.set('n', 'gs', '^')
+vim.keymap.set('n', 'gh', '0')
+vim.keymap.set('n', 'gl', '$')
+vim.keymap.set('n', 'gm', '%')
 
 -------------
 -- Plugins --
