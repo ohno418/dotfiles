@@ -182,4 +182,4 @@ riverctl map passthrough Super F11 enter-mode normal
 # EXEC
 #
 riverctl default-layout rivertile
-rivertile -view-padding 3 -outer-padding 3 &
+rivertile -view-padding 0 -outer-padding 0 &
