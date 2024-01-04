@@ -145,3 +145,50 @@ Net Upgrade Size:      0.00 MiB
 (1/2) Reloading user manager configuration...
 (2/2) Arming ConditionNeedsUpdate...
 ```
+
+# 5. Replace pipewire-media-session with WirePlumber.
+
+> ["Note that we recommend the use of WirePlumber instead."](https://gitlab.freedesktop.org/pipewire/media-session/-/tree/5b008c9d21ffecba9de5ccc79afda86b4c14b6a6#pipewire-media-session)
+
+```
+$ sudo pacman -S wireplumber
+[sudo] password for ohno:
+resolving dependencies...
+looking for conflicting packages...
+:: wireplumber and pipewire-media-session are in conflict. Remove pipewire-media-session? [y/N] y
+
+Package (4)             Old Version  New Version  Net Change  Download Size
+
+extra/libwireplumber                 0.4.17-1       1.33 MiB       0.22 MiB
+extra/lua                            5.4.6-3        1.50 MiB       0.35 MiB
+pipewire-media-session  1:0.4.2-2                  -0.46 MiB
+extra/wireplumber                    0.4.17-1       0.87 MiB       0.21 MiB
+
+Total Download Size:   0.78 MiB
+Total Installed Size:  3.70 MiB
+Net Upgrade Size:      3.25 MiB
+
+:: Proceed with installation? [Y/n]
+:: Retrieving packages...
+ wireplumber-0.4.17-1-x86_64  210.9 KiB   986 KiB/s 00:00 [------------------------------] 100%
+ libwireplumber-0.4.17-1...   222.6 KiB  44.0 KiB/s 00:05 [------------------------------] 100%
+ lua-5.4.6-3-x86_64           362.2 KiB  44.9 KiB/s 00:08 [------------------------------] 100%
+ Total (3/3)                  795.6 KiB  98.4 KiB/s 00:08 [------------------------------] 100%
+(3/3) checking keys in keyring                            [------------------------------] 100%
+(3/3) checking package integrity                          [------------------------------] 100%
+(3/3) loading package files                               [------------------------------] 100%
+(3/3) checking for file conflicts                         [------------------------------] 100%
+(4/4) checking available disk space                       [------------------------------] 100%
+:: Processing package changes...
+Removed "/etc/systemd/user/pipewire.service.wants/pipewire-media-session.service".
+Removed "/etc/systemd/user/pipewire-session-manager.service".
+(1/1) removing pipewire-media-session                     [------------------------------] 100%
+(1/3) installing libwireplumber                           [------------------------------] 100%
+(2/3) installing lua                                      [------------------------------] 100%
+(3/3) installing wireplumber                              [------------------------------] 100%
+Created symlink /etc/systemd/user/pipewire-session-manager.service → /usr/lib/systemd/user/wireplumber.service.
+Created symlink /etc/systemd/user/pipewire.service.wants/wireplumber.service → /usr/lib/systemd/user/wireplumber.service.
+:: Running post-transaction hooks...
+(1/2) Reloading user manager configuration...
+(2/2) Arming ConditionNeedsUpdate...
+```
