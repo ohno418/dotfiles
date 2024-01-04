@@ -1,5 +1,7 @@
 Migrate from PulseAudio to PipeWire.
 
+# 1. Remove PulseAudio.
+
 ```
 $ systemctl status --user pulseaudio
 ● pulseaudio.service - Sound Service
@@ -18,7 +20,7 @@ Jan 04 18:38:00 ohnotp systemd[469]: Starting Sound Service...
 Jan 04 18:38:00 ohnotp systemd[469]: Started Sound Service.
 ```
 
-# 1. Remove PulseAudio.
+Now, remove PulseAudio.
 
 ```
 $ sudo pacman -Rsu pulseaudio
@@ -42,7 +44,7 @@ Jan 04 18:38:00 ohnotp systemd[469]: Started Sound Service.
 $ ls /usr/lib/systemd/user | grep -i pulse
 ```
 
-Rebooted.
+Reboot.
 
 ```
 $ systemctl status --user pulseaudio
@@ -58,7 +60,7 @@ can't find PulseAudio (and it no longer exists).
 $ sudo pacman -S pipewire-pulse
 ```
 
-Rebooted to enable pipewire-pulse
+Reboot to enable pipewire-pulse.
 
 ```
 $ ls /usr/lib/systemd/user | grep -i pulse
