@@ -18,8 +18,6 @@ Jan 04 18:38:00 ohnotp systemd[469]: Starting Sound Service...
 Jan 04 18:38:00 ohnotp systemd[469]: Started Sound Service.
 ```
 
-TODO: Make pipewire "explicitly installed" on Arch Linux.
-
 # 1. Remove PulseAudio.
 
 ```
@@ -82,4 +80,68 @@ TriggeredBy: ● pipewire-pulse.socket
              └─593 /usr/bin/pipewire-pulse
 
 Jan 04 19:12:04 ohnotp systemd[449]: Started PipeWire PulseAudio.
+```
+
+# 3. Remove Jack.
+
+```
+$ sudo pacman -S pipewire-jack
+resolving dependencies...
+looking for conflicting packages...
+:: pipewire-jack and jack2 are in conflict (jack). Remove jack2? [y/N] y
+
+Package (2)          Old Version  New Version  Net Change  Download Size
+
+jack2                1.9.22-1                   -1.89 MiB
+extra/pipewire-jack               1:1.0.0-2      0.70 MiB       0.15 MiB
+
+Total Download Size:    0.15 MiB
+Total Installed Size:   0.70 MiB
+Net Upgrade Size:      -1.18 MiB
+
+:: Proceed with installation? [Y/n]
+:: Retrieving packages...
+ pipewire-jack-1:1.0.0-2-x86_64                                                         156.9 KiB   839 KiB/s 00:00 [---------------------------------------------------------------------] 100%
+(1/1) checking keys in keyring                                                                                      [---------------------------------------------------------------------] 100%
+(1/1) checking package integrity                                                                                    [---------------------------------------------------------------------] 100%
+(1/1) loading package files                                                                                         [---------------------------------------------------------------------] 100%
+(1/1) checking for file conflicts                                                                                   [---------------------------------------------------------------------] 100%
+(2/2) checking available disk space                                                                                 [---------------------------------------------------------------------] 100%
+:: Processing package changes...
+(1/1) removing jack2                                                                                                [---------------------------------------------------------------------] 100%
+(1/1) installing pipewire-jack                                                                                      [---------------------------------------------------------------------] 100%
+Optional dependencies for pipewire-jack
+    jack-example-tools: for official JACK example-clients and tools
+:: Running post-transaction hooks...
+(1/2) Reloading user manager configuration...
+(2/2) Arming ConditionNeedsUpdate...
+```
+
+# 4. Reinstall pipewire as explicitly-installed.
+
+```
+$ sudo pacman -S --asexplicit pipewire
+[sudo] password for ohno:
+warning: pipewire-1:1.0.0-2 is up to date -- reinstalling
+resolving dependencies...
+looking for conflicting packages...
+
+Package (1)     Old Version  New Version  Net Change
+
+extra/pipewire  1:1.0.0-2    1:1.0.0-2      0.00 MiB
+
+Total Installed Size:  3.16 MiB
+Net Upgrade Size:      0.00 MiB
+
+:: Proceed with installation? [Y/n]
+(1/1) checking keys in keyring                            [-------------------------------] 100%
+(1/1) checking package integrity                          [-------------------------------] 100%
+(1/1) loading package files                               [-------------------------------] 100%
+(1/1) checking for file conflicts                         [-------------------------------] 100%
+(1/1) checking available disk space                       [-------------------------------] 100%
+:: Processing package changes...
+(1/1) reinstalling pipewire                               [-------------------------------] 100%
+:: Running post-transaction hooks...
+(1/2) Reloading user manager configuration...
+(2/2) Arming ConditionNeedsUpdate...
 ```
