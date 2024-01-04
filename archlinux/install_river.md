@@ -28,8 +28,10 @@ noto-fonts-emoji
 otf-ipaexfont
 polkit
 
+pipewire
+pipewire-pulse
 pamixer
-pulseaudio
+(Use pipewire-jack and wireplumber for dependencies of other packages.)
 
 slurp
 waylock
