@@ -27,4 +27,10 @@ ln -sf $(pwd)/river/yambar_config.yml ~/.config/yambar/config.yml
 mkdir -p ~/.config/foot
 ln -sf $(pwd)/foot.ini ~/.config/foot/foot.ini
 
+# mutt
+mkdir -p ~/.mutt/cache/headers
+mkdir -p ~/.mutt/cache/bodies
+touch ~/.mutt/certificates
+ln -sf $(pwd)/muttrc ~/.mutt/muttrc
+
 echo OK
