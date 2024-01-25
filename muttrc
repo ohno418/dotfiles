@@ -10,6 +10,10 @@ set charset = UTF-8
 set use_domain = no
 set use_from = yes
 
+#--- Status bar ---
+set status_chars  = " *%A"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
 #--- IMAP ---
 set imap_user = "yutaro.ono.418@gmail.com"
 set imap_pass = $my_gmail_password
