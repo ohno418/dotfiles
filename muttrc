@@ -14,6 +14,12 @@ set use_from = yes
 set status_chars  = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
+#--- Index ---
+set date_format = "%m/%d"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+
 #--- IMAP ---
 set imap_user = "yutaro.ono.418@gmail.com"
 set imap_pass = $my_gmail_password
