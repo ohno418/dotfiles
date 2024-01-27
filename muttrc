@@ -345,3 +345,7 @@ bind pager R group-reply
 bind generic,index,pager / search
 bind generic,index,pager n search-next
 bind generic,index,pager N search-opposite
+
+# Compose
+bind compose y noop
+bind compose Y send-message
