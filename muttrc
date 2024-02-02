@@ -308,8 +308,8 @@ bind generic,pager,editor,index <Esc>) noop
 bind generic,index,pager q exit
 
 # Index
-bind index k previous-entry
-bind index j next-entry
+bind generic,index k previous-entry
+bind generic,index j next-entry
 bind index K previous-subthread
 bind index J next-subthread
 
