@@ -9,6 +9,8 @@ set edit_headers = yes
 set charset = UTF-8
 set use_domain = no
 set use_from = yes
+# Don't append FCC header.
+set copy = no
 
 #--- Status bar ---
 set status_chars  = " *%A"
