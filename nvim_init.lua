@@ -161,6 +161,7 @@ require('lazy').setup({
 
       -- language servers
       lspconfig.rust_analyzer.setup({})
+      lspconfig.clangd.setup({})
       lspconfig.tsserver.setup({})
 
       -- keymappings
