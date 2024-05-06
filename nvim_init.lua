@@ -159,10 +159,10 @@ require('lazy').setup({
         },
         sections = {
           lualine_a = { 'filename' },
-          lualine_b = {},
+          lualine_b = { 'searchcount' },
           lualine_c = {},
           lualine_x = {},
-          lualine_y = { 'searchcount' },
+          lualine_y = { 'progress' },
           lualine_z = {},
         },
         inactive_sections = {
