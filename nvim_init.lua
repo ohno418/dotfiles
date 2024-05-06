@@ -122,20 +122,6 @@ require('lazy').setup({
     end
   },
 
-  -- tree-sitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    config = function()
-      require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'rust', 'typescript' },
-        highlight = {
-          enable = true,
-        },
-      })
-    end
-  },
-
   -- Fuzzy finder
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.3',
@@ -160,6 +146,37 @@ require('lazy').setup({
     end
   },
 
+  -- Status line
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          icons_enabled = false,
+          theme = 'auto',
+          component_separators = { left = '|', right = '|'},
+          section_separators = { left = '', right = ''},
+        },
+        sections = {
+          lualine_a = { 'filename' },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = { 'searchcount' },
+          lualine_z = {},
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = { 'filename' },
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        },
+      }
+    end
+  },
+
   -- indent lines
   {
     'lukas-reineke/indent-blankline.nvim',
@@ -167,6 +184,20 @@ require('lazy').setup({
       require('ibl').setup({
         -- Disable underline for current scope.
         scope = { enabled = false },
+      })
+    end
+  },
+
+  -- tree-sitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { 'rust', 'typescript' },
+        highlight = {
+          enable = true,
+        },
       })
     end
   },
@@ -243,37 +274,6 @@ require('lazy').setup({
         -- Select nothing at first.
         preselect = cmp.PreselectMode.None,
       })
-    end
-  },
-
-  -- Status line
-  {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup {
-        options = {
-          icons_enabled = false,
-          theme = 'auto',
-          component_separators = { left = '|', right = '|'},
-          section_separators = { left = '', right = ''},
-        },
-        sections = {
-          lualine_a = { 'filename' },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = { 'searchcount' },
-          lualine_z = {},
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = { 'filename' },
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {},
-        },
-      }
     end
   },
 })
