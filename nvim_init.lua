@@ -1,6 +1,4 @@
--------------
--- Options --
--------------
+-- OPTIONS --
 local options = {
   -- basics
   number = true,
@@ -36,9 +34,7 @@ end
 -- Display "search hit BOTTOM" message on searching.
 vim.opt.shortmess:append('S')
 
------------------
--- Keymappings --
------------------
+-- KEYMAPPINGS --
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
@@ -65,9 +61,7 @@ vim.keymap.set('n', 'gh', '0')
 vim.keymap.set('n', 'gl', '$')
 vim.keymap.set('n', 'gm', '%')
 
--------------
--- Plugins --
--------------
+-- PLUGINS --
 -- Using lazy.nvim as the package manager.
 -- (ref: https://github.com/folke/lazy.nvim#-installation)
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
@@ -260,9 +254,7 @@ require('lazy').setup({
   },
 })
 
--------------------------
--- Netrw file explorer --
--------------------------
+-- Netrw file explorer
 vim.keymap.set('n', '<Leader>e', '<cmd>Lexplore<CR>')
 vim.keymap.set('n', '<Leader>E', '<cmd>Lexplore %:p:h<CR>') -- open current dir
 vim.g.netrw_browser_split = 4 -- open in a prior window
