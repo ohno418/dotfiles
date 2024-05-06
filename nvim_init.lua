@@ -39,12 +39,9 @@ vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
-vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current file.
--- tabs
-vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
-vim.keymap.set('n', '<Leader>c', '<cmd>tabclose<CR>')
-vim.keymap.set('n', '<C-n>', 'gt')
-vim.keymap.set('n', '<C-p>', 'gT')
+-- buffers
+vim.keymap.set('n', '<Leader>d', '<cmd>bdelete<CR>') -- Reload current buffer.
+vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>')   -- Delete current buffer.
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
@@ -97,6 +94,34 @@ require('lazy').setup({
     end
   },
 
+  -- buffer line
+  {
+    'romgrk/barbar.nvim',
+    init = function()
+      -- Disable auto setup.
+      vim.g.barbar_auto_setup = false
+    end,
+    config = function()
+      -- Move
+      vim.keymap.set('n', '<C-n>', '<cmd>BufferNext<CR>')
+      vim.keymap.set('n', '<C-p>', '<cmd>BufferPrevious<CR>')
+      -- Re-order
+      vim.keymap.set('n', '<C-.>', '<cmd>BufferMoveNext<CR>')
+      vim.keymap.set('n', '<C-,>', '<cmd>BufferMovePrevious<CR>')
+
+      require('barbar').setup({
+        animation = false,
+        auto_hide = true,
+        icons = {
+          button = '',
+          filetype = {
+            enabled = false,
+          },
+        },
+      })
+    end
+  },
+
   -- tree-sitter
   {
     'nvim-treesitter/nvim-treesitter',
@@ -119,7 +144,6 @@ require('lazy').setup({
       { '<Leader>f', '<cmd>Telescope git_files theme=ivy<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files theme=ivy<CR>' },
       { '<Leader>b', '<cmd>Telescope buffers theme=ivy<CR>' },
-      { '<Leader>d', '<cmd>Telescope diagnostics theme=ivy<CR>' },
     },
     config = function()
       require('telescope').setup({
