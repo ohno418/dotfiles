@@ -16,6 +16,8 @@ local options = {
   shiftwidth = 2,
   softtabstop = 2,
   smartindent = true,
+  list = true,
+  listchars = 'tab:> ,lead:·,trail:·,nbsp:+',
   -- searching
   ignorecase = true,
   smartcase = true,
@@ -195,17 +197,6 @@ require('lazy').setup({
           lualine_z = {},
         },
       }
-    end
-  },
-
-  -- Indent lines
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    config = function()
-      require('ibl').setup({
-        -- Disable underline for current scope.
-        scope = { enabled = false },
-      })
     end
   },
 
