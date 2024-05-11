@@ -123,15 +123,14 @@ require('lazy').setup({
       -- Disable auto setup.
       vim.g.barbar_auto_setup = false
     end,
-    keys = {
-      -- Move
-      { '<C-n>', '<cmd>BufferNext<CR>' },
-      { '<C-p>', '<cmd>BufferPrevious<CR>' },
-      -- Re-order
-      { '<C-.>', '<cmd>BufferMoveNext<CR>' },
-      { '<C-,>', '<cmd>BufferMovePrevious<CR>' },
-    },
     config = function()
+      -- Move
+      vim.keymap.set('n', '<C-n>', '<cmd>BufferNext<CR>')
+      vim.keymap.set('n', '<C-p>', '<cmd>BufferPrevious<CR>')
+      -- Re-order
+      vim.keymap.set('n', '<C-.>', '<cmd>BufferMoveNext<CR>')
+      vim.keymap.set('n', '<C-,>', '<cmd>BufferMovePrevious<CR>')
+
       require('barbar').setup({
         animation = false,
         auto_hide = true,
