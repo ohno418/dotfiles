@@ -97,6 +97,10 @@ require('lazy').setup({
   -- File explorer
   {
     'stevearc/oil.nvim',
+    keys = {
+      -- Open parent directory.
+      { '<Leader>e', '<cmd>Oil<CR>' },
+    },
     config = function()
       require('oil').setup({
         keymaps = {
@@ -107,25 +111,25 @@ require('lazy').setup({
           ['<C-l>'] = false,
         },
       })
-      vim.keymap.set('n', '<Leader>e', '<cmd>Oil<CR>', { desc = 'Open parent directory' })
     end
   },
 
-  -- buffer line
+  -- Buffer line
   {
     'romgrk/barbar.nvim',
     init = function()
       -- Disable auto setup.
       vim.g.barbar_auto_setup = false
     end,
-    config = function()
+    keys = {
       -- Move
-      vim.keymap.set('n', '<C-n>', '<cmd>BufferNext<CR>')
-      vim.keymap.set('n', '<C-p>', '<cmd>BufferPrevious<CR>')
+      { '<C-n>', '<cmd>BufferNext<CR>' },
+      { '<C-p>', '<cmd>BufferPrevious<CR>' },
       -- Re-order
-      vim.keymap.set('n', '<C-.>', '<cmd>BufferMoveNext<CR>')
-      vim.keymap.set('n', '<C-,>', '<cmd>BufferMovePrevious<CR>')
-
+      { '<C-.>', '<cmd>BufferMoveNext<CR>' },
+      { '<C-,>', '<cmd>BufferMovePrevious<CR>' },
+    },
+    config = function()
       require('barbar').setup({
         animation = false,
         auto_hide = true,
@@ -194,7 +198,7 @@ require('lazy').setup({
     end
   },
 
-  -- indent lines
+  -- Indent lines
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
@@ -222,6 +226,14 @@ require('lazy').setup({
   -- LSP
   {
     'neovim/nvim-lspconfig',
+    keys = {
+      { 'K', vim.lsp.buf.hover },
+      { 'gd', vim.lsp.buf.definition },
+      { 'gt', vim.lsp.buf.type_definition },
+      { 'gf', vim.diagnostic.open_float },
+      { '[d', vim.diagnostic.goto_prev },
+      { ']d', vim.diagnostic.goto_next },
+    },
     config = function()
       local lspconfig = require('lspconfig')
 
@@ -229,14 +241,6 @@ require('lazy').setup({
       lspconfig.rust_analyzer.setup({})
       lspconfig.clangd.setup({})
       lspconfig.tsserver.setup({})
-
-      -- keymappings
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-      vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition)
-      vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
-      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-      vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
       -- See `:help vim.diagnostic.config`.
       vim.diagnostic.config({
