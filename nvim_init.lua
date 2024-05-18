@@ -25,7 +25,7 @@ local options = {
   confirm = true,
   swapfile = false,
   -- yank to clipboard
-  -- wl-clipboard package is required.
+  -- (wl-clipboard package is required for wayland.)
   clipboard = 'unnamedplus',
 }
 
