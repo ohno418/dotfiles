@@ -146,21 +146,40 @@ require('lazy').setup({
 
   -- Fuzzy finder
   {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-      { '<Leader>f', '<cmd>Telescope git_files theme=ivy<CR>' },
-      { '<Leader>F', '<cmd>Telescope find_files theme=ivy<CR>' },
-      { '<Leader>b', '<cmd>Telescope buffers theme=ivy<CR>' },
+      { '<Leader>f',  '<cmd>Telescope git_files<CR>' },
+      { '<Leader>F',  '<cmd>Telescope find_files<CR>' },
+      { '<Leader>b',  '<cmd>Telescope buffers<CR>' },
+      { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
     },
     config = function()
-      require('telescope').setup({
-        defaults = {
+      local default_config = vim.tbl_extend(
+        'force',
+        require('telescope.themes').get_ivy(),
+        {
           mappings = {
             i = {
-              ['<C-r>'] = 'delete_buffer',                    -- Delete buffer with Ctrl-r.
-              ['<C-u>'] = false,                              -- Delete input with Ctrl-u.
-              ['<esc>'] = require('telescope.actions').close, -- Immediately close with Esc.
+              -- Delete input with Ctrl-u.
+              ['<C-u>'] = false,
+              -- Immediately close with Esc.
+              ['<esc>'] = require('telescope.actions').close,
+            },
+          },
+          layout_config = { height = 40 },
+        }
+      )
+      require('telescope').setup({
+        defaults = default_config,
+        pickers = {
+          buffers = {
+            mappings = {
+              i = {
+                -- Delete buffer with Ctrl-r.
+                ['<C-r>'] = 'delete_buffer',
+              },
             },
           },
         },
