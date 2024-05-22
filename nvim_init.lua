@@ -245,7 +245,6 @@ require('lazy').setup({
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
-
       -- language servers
       lspconfig.rust_analyzer.setup({})
       lspconfig.clangd.setup({})
