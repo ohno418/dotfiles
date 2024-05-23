@@ -155,22 +155,28 @@ require('lazy').setup({
       { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
     },
     config = function()
+      local telescope = require('telescope')
+      local themes = require('telescope.themes')
+      local actions = require('telescope.actions')
       local default_config = vim.tbl_extend(
         'force',
-        require('telescope.themes').get_ivy(),
+        themes.get_ivy(),
         {
           mappings = {
             i = {
               -- Delete input with Ctrl-u.
               ['<C-u>'] = false,
               -- Immediately close with Esc.
-              ['<esc>'] = require('telescope.actions').close,
+              ['<esc>'] = actions.close,
             },
+            n = {
+              ['<C-c>'] = actions.close,
+            }
           },
           layout_config = { height = 40 },
         }
       )
-      require('telescope').setup({
+      telescope.setup({
         defaults = default_config,
         pickers = {
           buffers = {
