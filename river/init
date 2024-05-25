@@ -1,185 +1,170 @@
 #!/bin/sh
 
-#
-# THEME
-#
-yambar &
-riverctl background-color 0x002800
-riverctl border-color-focused 0x22ffaa
-riverctl border-color-unfocused 0x222222
-# Display borders for all apps.
-# Without this, borders not displayed for Firefox for example.
-riverctl rule-add ssd
+# Open apps.
+riverctl map normal Alt+Shift Return spawn foot
+riverctl map normal Alt+Shift b spawn firefox
+riverctl map normal Alt+Shift p spawn "firefox --private-window"
 
-#
-# VIEWS
-#
+# Close the focuesd view.
+riverctl map normal Alt+Shift Q close
+
+# Exit river.
+riverctl map normal Alt+Super+Shift E exit
+
+# Focus the next/previous view.
 riverctl map normal Alt J focus-view next
 riverctl map normal Alt K focus-view previous
 
+# Swap the focused view with the next/previous view.
 riverctl map normal Alt+Shift J swap next
 riverctl map normal Alt+Shift K swap previous
 
+# Focus the next/previous output.
+riverctl map normal Alt Period focus-output next
+riverctl map normal Alt Comma focus-output previous
+
+# Send the focused view to the next/previous output.
+riverctl map normal Alt+Shift Period send-to-output next
+riverctl map normal Alt+Shift Comma send-to-output previous
+
+# Bump the focused view to the top of the layout stack.
 riverctl map normal Alt Return zoom
 
+# Decrease/increase the main ratio of rivertile(1).
 riverctl map normal Alt H send-layout-cmd rivertile "main-ratio -0.05"
 riverctl map normal Alt L send-layout-cmd rivertile "main-ratio +0.05"
 
-riverctl map normal Alt I send-layout-cmd rivertile "main-count +1"
-riverctl map normal Alt D send-layout-cmd rivertile "main-count -1"
+# Increment/decrement the main count of rivertile(1).
+riverctl map normal Alt+Shift I send-layout-cmd rivertile "main-count +1"
+riverctl map normal Alt+Shift D send-layout-cmd rivertile "main-count -1"
 
-riverctl map normal Alt+Shift Q close
+# Move views.
+riverctl map-pointer normal Alt BTN_LEFT move-view
 
-#
-# FLOAT VIEWS
-#
-riverctl map normal Alt Space toggle-float
+# Resize views.
+riverctl map-pointer normal Alt BTN_RIGHT resize-view
 
-# move views
-riverctl map normal Super+Alt H move left 100
-riverctl map normal Super+Alt J move down 100
-riverctl map normal Super+Alt K move up 100
-riverctl map normal Super+Alt L move right 100
+# Toggle float.
+riverctl map-pointer normal Alt BTN_MIDDLE toggle-float
 
-# snap views to screen edges
-riverctl map normal Super+Alt+Control H snap left
-riverctl map normal Super+Alt+Control J snap down
-riverctl map normal Super+Alt+Control K snap up
-riverctl map normal Super+Alt+Control L snap right
-
-# resize views
-riverctl map normal Super+Alt+Shift H resize horizontal -100
-riverctl map normal Super+Alt+Shift J resize vertical 100
-riverctl map normal Super+Alt+Shift K resize vertical -100
-riverctl map normal Super+Alt+Shift L resize horizontal 100
-
-riverctl map-pointer normal Super BTN_LEFT move-view
-riverctl map-pointer normal Super BTN_RIGHT resize-view
-riverctl map-pointer normal Super BTN_MIDDLE toggle-float
-
-#
-# TAGS
-#
 for i in $(seq 1 9)
 do
     tags=$((1 << ($i - 1)))
-    # focus tag [0-8]
+
+    # Focus tag [0-8].
     riverctl map normal Alt $i set-focused-tags $tags
-    # tag focused view with tag [0-8]
+
+    # Tag focused view with tag [0-8].
     riverctl map normal Alt+Shift $i set-view-tags $tags
-    # toggle focus of tag [0-8]
+
+    # Toggle focus of tag [0-8].
     riverctl map normal Alt+Control $i toggle-focused-tags $tags
-    # toggle tag [0-8] of focused view
+
+    # Toggle tag [0-8] of focused view.
     riverctl map normal Alt+Shift+Control $i toggle-view-tags $tags
 done
 
+# Focus all tags, and tag focused view with all tags.
 all_tags=$(((1 << 32) - 1))
 riverctl map normal Alt 0 set-focused-tags $all_tags
 riverctl map normal Alt+Shift 0 set-view-tags $all_tags
 
-# focus previous tags
+# Go back and forth between 2 tag setups.
 riverctl map normal Alt o focus-previous-tags
 riverctl map normal Alt Tab focus-previous-tags
 
-#
-# OUTPUTS
-#
-riverctl map normal Alt Period focus-output next
-riverctl map normal Alt Comma focus-output previous
+# Toggle float.
+riverctl map normal Alt Space toggle-float
 
-riverctl map normal Alt+Shift Period send-to-output next
-riverctl map normal Alt+Shift Comma send-to-output previous
+# Toggle fullscreen.
+riverctl map normal Alt F toggle-fullscreen
 
-#
-# MEDIA KEYS
-#
+# Change layout orientation.
+riverctl map normal Alt Up    send-layout-cmd rivertile "main-location top"
+riverctl map normal Alt Right send-layout-cmd rivertile "main-location right"
+riverctl map normal Alt Down  send-layout-cmd rivertile "main-location bottom"
+riverctl map normal Alt Left  send-layout-cmd rivertile "main-location left"
+
+# Declare a passthrough mode. This mode has only a single mapping to return to
+# normal mode. This makes it useful for testing a nested wayland compositor.
+riverctl declare-mode passthrough
+
+# Enter passthrough mode.
+riverctl map normal Alt F11 enter-mode passthrough
+
+# Return to normal mode.
+riverctl map passthrough Alt F11 enter-mode normal
+
+# Media key mappings.
 for mode in normal locked
 do
-    # audio volume
-    riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
-    riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
-    riverctl map $mode None XF86AudioMute         spawn 'pamixer --toggle-mute'
-    riverctl map $mode None XF86AudioMicMute      spawn 'pamixer --default-source --toggle-mute'
-    riverctl map $mode None F12                   spawn 'pamixer -i 5'
-    riverctl map $mode None F11                   spawn 'pamixer -d 5'
-    riverctl map $mode None F10                   spawn 'pamixer --toggle-mute'
-    riverctl map $mode None F9                    spawn 'pamixer --default-source --toggle-mute'
+    # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
+    riverctl map $mode None XF86AudioRaiseVolume  spawn "pamixer -i 5"
+    riverctl map $mode None XF86AudioLowerVolume  spawn "pamixer -d 5"
+    riverctl map $mode None XF86AudioMute         spawn "pamixer --toggle-mute"
+    riverctl map $mode None XF86AudioMicMute      spawn "pamixer --default-source --toggle-mute"
+    riverctl map $mode None F12                   spawn "pamixer -i 5"
+    riverctl map $mode None F11                   spawn "pamixer -d 5"
+    riverctl map $mode None F10                   spawn "pamixer --toggle-mute"
+    riverctl map $mode None F9                    spawn "pamixer --default-source --toggle-mute"
 
-    # backlight brightness
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set 5%+'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
-    riverctl map $mode None F8                    spawn 'brightnessctl set 5%+'
-    riverctl map $mode None F7                    spawn 'brightnessctl set 5%-'
+    # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
+    riverctl map $mode None XF86MonBrightnessUp   spawn "brightnessctl set +5%"
+    riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 5%-"
+    riverctl map $mode None F8                    spawn "brightnessctl set 5%+"
+    riverctl map $mode None F7                    spawn "brightnessctl set 5%-"
 done
 
-#
-# INPUT
-#
+# Background and border color.
+riverctl background-color 0x002800
+riverctl border-color-focused 0x22ffaa
+riverctl border-color-unfocused 0x222222
+
 # Use device names that are listed by `riverctl list-inputs` here.
 touchpad="pointer-1267-47-Elan_Touchpad"
 trackpoint="pointer-1267-47-Elan_TrackPoint"
 
-# tap to click
+# Tap to click.
 riverctl input $touchpad tap enabled
 
-# cursor speed
+# Cursor speed.
 riverctl input $touchpad pointer-accel 0.3
 riverctl input $trackpoint pointer-accel 0.5
 
-# natural scroll
+# Natural scroll.
 riverctl input $touchpad natural-scroll enabled
 riverctl input $trackpoint natural-scroll enabled
 
 # NOTE: To use CapsLock as Ctrl, set `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier`.
 
-# key repeat rate
-riverctl set-repeat 50 300
-
 # hide cursor
 riverctl hide-cursor timeout 5000
 
-#
-# MISC
-#
-riverctl map normal Alt+Shift Return spawn foot
-riverctl map normal Alt+Shift b spawn firefox
-riverctl map normal Alt+Shift p spawn 'firefox --private-window'
+# Keyboard repeat rate.
+riverctl set-repeat 50 300
 
-# input method
+# Status bar.
+yambar &
+
+# Input method.
 fcitx5 &
 
-# screenshot
+# Screenshot.
 riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".png'
-
-# fullscreen
-riverctl map normal Alt F toggle-fullscreen
 
 # Enable xdg-desktop-portal-wlr,
 # (ref: https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables)
 # and improve startup time of gtk+ apps, e.g., firefox.
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
-# change layout orientation
-riverctl map normal Alt Up    send-layout-cmd rivertile "main-location top"
-riverctl map normal Alt Right send-layout-cmd rivertile "main-location right"
-riverctl map normal Alt Down  send-layout-cmd rivertile "main-location bottom"
-riverctl map normal Alt Left  send-layout-cmd rivertile "main-location left"
-
-# lock
+# Lock.
 riverctl map normal Alt+Shift x spawn waylock
 
-# exit
-riverctl map normal Alt+Super+Shift E exit
+# Display borders for all apps.
+# Without this, borders not displayed for Firefox for example.
+riverctl rule-add ssd
 
-# passthrough mode
-# This mode has only a single mapping to return to normal mode. This makes it
-# useful for testing a nested wayland compositor
-riverctl declare-mode passthrough
-riverctl map normal Super F11 enter-mode passthrough
-riverctl map passthrough Super F11 enter-mode normal
-
-#
-# EXEC
-#
+# Set the default layout generator to be rivertile and start it.
+# River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
 rivertile -view-padding 0 -outer-padding 0 &
