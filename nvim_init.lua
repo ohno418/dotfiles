@@ -157,11 +157,10 @@ require('lazy').setup({
     },
     config = function()
       local telescope = require('telescope')
-      local themes = require('telescope.themes')
       local actions = require('telescope.actions')
       local default_config = vim.tbl_extend(
         'force',
-        themes.get_ivy(),
+        require('telescope.themes').get_ivy(),
         {
           mappings = {
             i = {
