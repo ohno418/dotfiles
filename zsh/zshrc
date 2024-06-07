@@ -20,17 +20,7 @@ PROMPT='%B%(?..[%?] )%b%n@%M:%~ $ '
 alias ls='ls --color=auto'
 alias vi='nvim'
 alias t='tmux'
-alias gs='git status'
-alias gd='git diff'
-alias gdc='git diff --cached'
-alias ga='git add'
-alias gc='git commit'
-alias gg='git grep'
-alias gl='git log'
-alias gb='git branch'
-alias gco='git checkout'
-alias gsw='git switch'
-alias gf='git fetch'
+alias g='gix'
 
 # Load nodenv
 eval "$(nodenv init -)"
