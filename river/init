@@ -121,8 +121,8 @@ riverctl border-color-focused 0x22ffaa
 riverctl border-color-unfocused 0x222222
 
 # Use device names that are listed by `riverctl list-inputs` here.
-touchpad="pointer-1267-47-Elan_Touchpad"
-trackpoint="pointer-1267-47-Elan_TrackPoint"
+touchpad="pointer-1267-12693-ELAN0676:00_04F3:3195_Touchpad"
+trackpoint="pointer-2-10-TPPS/2_Elan_TrackPoint"
 
 # Tap to click.
 riverctl input $touchpad tap enabled
