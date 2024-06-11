@@ -1,3 +1,5 @@
+Installation memo for T14 AMD.
+
 # Packages on chroot
 
 networkmanager
