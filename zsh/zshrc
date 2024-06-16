@@ -28,7 +28,7 @@ alias gc='git commit'
 alias gg='git grep'
 alias gl='git log'
 alias gb='git branch'
-alias gco='git checkout'
+alias gch='git checkout'
 alias gsw='git switch'
 alias gf='git fetch'
 

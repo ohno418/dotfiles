@@ -9,13 +9,12 @@
 	c = commit
 	d = diff
 	dc = diff --cached
-	co = checkout
+	ch = checkout
 	b = branch
 	sw = switch
 	f = fetch
 	l = log
 	g = grep
-	i = init
 	rs = reset
 	rb = rebase
 	cp = cherry-pick
