@@ -39,11 +39,8 @@ vim.opt.shortmess:append('S')
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
-vim.keymap.set('n', '<Leader>w', '<cmd>w<CR>')
-vim.keymap.set('n', '<Leader>q', '<cmd>q<CR>')
-vim.keymap.set('n', '<Leader>v', '<cmd>vs<CR>')
-vim.keymap.set('n', '<Leader>s', '<cmd>sp<CR>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
+vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 -- buffers
 vim.keymap.set('n', '<Leader>d', '<cmd>bdelete<CR>') -- Reload current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>')   -- Delete current buffer.
