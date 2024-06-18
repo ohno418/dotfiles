@@ -31,3 +31,9 @@ Install xdg-desktop-portal-wlr, then reboot.
 
 Emacs-like keybindings for GTK apps:
 https://wiki.archlinux.org/title/GTK#Emacs_key_bindings
+
+# Power management
+
+With s2idle state, the battery drains too much even when on sleep. Fix by adding
+`acpi.ec_no_wakeup=1` to the kernel parameters in
+`/boot/loader/entries/arch.conf`.
