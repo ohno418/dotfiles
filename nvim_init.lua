@@ -147,7 +147,9 @@ require('lazy').setup({
               ['<C-c>'] = actions.close,
             }
           },
-          layout_config = { height = 40 },
+          layout_config = {
+            height = 0.8,
+          },
         }
       )
       telescope.setup({
