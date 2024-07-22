@@ -41,9 +41,6 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 -- buffers
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR><cmd>ls<CR>') -- Move to next and list buffers.
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR><cmd>ls<CR>') -- Move to prev and list buffers.
-vim.keymap.set('n', '<Leader>d', '<cmd>bp|bd#<CR>') -- Delete current buffer and move to previous.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
@@ -164,6 +161,21 @@ require('lazy').setup({
           },
         },
       })
+    end
+  },
+
+  -- harpoon
+  {
+    'ThePrimeagen/harpoon',
+    branch = 'harpoon2',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local harpoon = require('harpoon')
+      harpoon:setup()
+      vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
+      vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+      vim.keymap.set('n', '<C-n>', function() harpoon:list():next() end)
+      vim.keymap.set('n', '<C-p>', function() harpoon:list():prev() end)
     end
   },
 
