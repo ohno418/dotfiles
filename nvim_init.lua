@@ -164,7 +164,7 @@ require('lazy').setup({
     end
   },
 
-  -- harpoon
+  -- Harpoon
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
