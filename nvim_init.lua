@@ -121,9 +121,10 @@ require('lazy').setup({
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
-      { '<Leader>f',  '<cmd>Telescope git_files<CR>' },
-      { '<Leader>F',  '<cmd>Telescope find_files<CR>' },
-      { '<Leader>b',  '<cmd>Telescope buffers<CR>' },
+      { '<Leader>f', '<cmd>Telescope git_files<CR>' },
+      { '<Leader>F', '<cmd>Telescope find_files<CR>' },
+      { '<Leader>b', '<cmd>Telescope buffers<CR>' },
+      { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
     },
     config = function()
       local telescope = require('telescope')
