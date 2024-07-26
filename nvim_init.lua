@@ -41,8 +41,8 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 -- buffers
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR><cmd>ls<CR>') -- Move to next and list buffers.
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR><cmd>ls<CR>') -- Move to prev and list buffers.
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>') -- Move to next.
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>') -- Move to prev.
 vim.keymap.set('n', '<Leader>d', '<cmd>bp|bd#<CR>') -- Delete current buffer and move to previous.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
@@ -127,6 +127,7 @@ require('lazy').setup({
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
       { '<Leader>b', '<cmd>Telescope buffers<CR>' },
+      { '<Leader><Space>', '<cmd>Telescope buffers<CR>' },
       { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
     },
     config = function()
