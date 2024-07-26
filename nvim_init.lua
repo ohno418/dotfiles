@@ -163,6 +163,7 @@ require('lazy').setup({
                 ['<C-r>'] = 'delete_buffer',
               },
             },
+            sort_mru = true,
           },
         },
       })
