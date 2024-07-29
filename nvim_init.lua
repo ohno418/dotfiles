@@ -82,14 +82,7 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       local ayu = require('ayu')
-      local colors = require('ayu.colors')
-      ayu.setup({
-        dark = true,
-        overrides = {
-          VertSplit = { fg = colors.fg },
-          CursorLine = { underline = true },
-        },
-      })
+      ayu.setup({ dark = true })
       ayu.colorscheme()
     end
   },
