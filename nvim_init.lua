@@ -97,7 +97,6 @@ require('lazy').setup({
     config = function()
       require('oil').setup({
         keymaps = {
-          ['<C-p>'] = 'actions.parent',
           ['<C-v>'] = 'actions.select_vsplit',
           ['<C-s>'] = 'actions.select_split',
           -- Disable in favor of moving window.
