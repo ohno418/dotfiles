@@ -32,9 +32,6 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- Display 'search hit BOTTOM' message on searching.
-vim.opt.shortmess:append('S')
-
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
@@ -190,7 +187,7 @@ require('lazy').setup({
               path = 1,
             },
           },
-          lualine_x = { 'searchcount' },
+          lualine_x = {},
           lualine_y = { 'progress' },
           lualine_z = { 'location' },
         },
