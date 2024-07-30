@@ -171,7 +171,7 @@ require('lazy').setup({
         },
         sections = {
           lualine_a = { 'mode' },
-          lualine_b = {},
+          lualine_b = { 'searchcount' },
           lualine_c = {
             {
               'filename',
