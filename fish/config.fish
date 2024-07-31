@@ -1,4 +1,3 @@
-# Start the window manager if on tty1.
 if test (tty) = "/dev/tty1"
     # Use CapsLock as Ctrl.
     set -x XKB_DEFAULT_OPTIONS caps:ctrl_modifier
@@ -13,6 +12,7 @@ if test (tty) = "/dev/tty1"
     # Load nodenv.
     status --is-interactive; and source (nodenv init -|psub)
 
+    # Start river window manager.
     river
 end
 
