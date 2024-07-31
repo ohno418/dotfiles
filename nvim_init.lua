@@ -161,35 +161,33 @@ require('lazy').setup({
   {
     'nvim-lualine/lualine.nvim',
     config = function()
+      local colors = require('ayu.colors');
       require('lualine').setup {
         options = {
           icons_enabled = false,
           theme = 'auto',
-          component_separators = { left = '|', right = '|'},
+          component_separators = { left = '', right = ''},
           section_separators = { left = '', right = ''},
+          globalstatus = true,
         },
         sections = {
           lualine_a = { 'mode' },
-          lualine_b = { 'searchcount' },
-          lualine_c = {
+          lualine_b = {
             {
-              'filename',
-              path = 1,
+              'buffers',
+              show_filename_only = false,
+              show_modified_status = false,
+              buffers_color = {
+                active = { bg = colors.bg, fg = colors.fg },
+                inactive = { bg = colors.black, fg = colors.comment },
+              },
+              symbols = {
+                alternate_file = '',
+                directory =  '',
+              },
             },
           },
-          lualine_x = {},
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' },
-        },
-        inactive_sections = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {
-            {
-              'filename',
-              path = 1,
-            },
-          },
+          lualine_c = {},
           lualine_x = { 'location' },
           lualine_y = {},
           lualine_z = {},
