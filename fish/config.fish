@@ -3,16 +3,17 @@ if test (tty) = "/dev/tty1"
     # Use CapsLock as Ctrl.
     set -gx XKB_DEFAULT_OPTIONS caps:ctrl_modifier
 
+    # fcitx5
+    # Do this before starting the wm. Otherwise, run into some glitches.
+    set -gx GTK_IM_MODULE fcitx
+    set -gx QT_IM_MODULE fcitx
+
     river
 end
 
 # -- Enironment variables --
 # cargo
 fish_add_path --global --prepend $HOME/.cargo/bin
-
-# fcitx5
-set -gx GTK_IM_MODULE fcitx
-set -gx QT_IM_MODULE fcitx
 
 # -- Aliases --
 function vi; nvim $argv; end
