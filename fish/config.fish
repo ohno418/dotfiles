@@ -1,20 +1,18 @@
+# Start the window manager if on tty1.
 if test (tty) = "/dev/tty1"
     # Use CapsLock as Ctrl.
-    set -x XKB_DEFAULT_OPTIONS caps:ctrl_modifier
+    set -gx XKB_DEFAULT_OPTIONS caps:ctrl_modifier
 
-    # cargo
-    set -x PATH $HOME/.cargo/bin $PATH
-
-    # fcitx5
-    set -x GTK_IM_MODULE fcitx
-    set -x QT_IM_MODULE fcitx
-
-    # Load nodenv.
-    status --is-interactive; and source (nodenv init -|psub)
-
-    # Start river window manager.
     river
 end
+
+# -- Enironment variables --
+# cargo
+fish_add_path --global --prepend $HOME/.cargo/bin
+
+# fcitx5
+set -gx GTK_IM_MODULE fcitx
+set -gx QT_IM_MODULE fcitx
 
 # -- Aliases --
 function vi; nvim $argv; end
@@ -31,3 +29,10 @@ function gb;  git branch $argv;        end
 function gch; git checkout $argv;      end
 function gsw; git switch $argv;        end
 function gf;  git fetch $argv;         end
+
+# -- Misc --
+# Suppress welcome message on startup.
+set fish_greeting
+
+# Load nodenv.
+status --is-interactive; and source (nodenv init -|psub)
