@@ -119,7 +119,6 @@ require('lazy').setup({
       { '<Leader><Space>', '<cmd>Telescope buffers<CR>' },
     },
     config = function()
-      local telescope = require('telescope')
       local actions = require('telescope.actions')
       local default_config = vim.tbl_extend(
         'force',
@@ -141,7 +140,7 @@ require('lazy').setup({
           },
         }
       )
-      telescope.setup({
+      require('telescope').setup({
         defaults = default_config,
         pickers = {
           buffers = {
