@@ -226,6 +226,7 @@ require('lazy').setup({
       -- language servers
       lspconfig.rust_analyzer.setup({})
       lspconfig.clangd.setup({})
+      lspconfig.gopls.setup({})
       lspconfig.tsserver.setup({})
 
       -- See `:help vim.diagnostic.config`.
