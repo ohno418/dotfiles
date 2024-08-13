@@ -5,8 +5,9 @@ set my_gmail_password = ""
 set realname = "Yutaro Ohno"
 set from = "yutaro.ono.418@gmail.com"
 set editor = nvim
-set edit_headers = yes
 set charset = UTF-8
+
+set edit_headers = yes
 set use_domain = no
 set use_from = yes
 # Don't append FCC header.
@@ -40,7 +41,7 @@ set smtp_pass = $my_gmail_password
 set ssl_force_tls = yes
 
 #--- Key bindings ---
-# Unbind everything.. the defaults suck balls and do crazy things
+# Unbind everything.
 bind generic,pager,editor,index a noop
 bind generic,pager,editor,index b noop
 bind generic,pager,editor,index c noop
