@@ -2,7 +2,8 @@
 set -e
 
 # fish
-ln -sf $(pwd)/fish/config.fish ~/.config/fish/config.fish
+mkdir -p ~/.config/fish
+ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
 
 # git
 mkdir -p ~/.config/git
