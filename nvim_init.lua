@@ -95,13 +95,55 @@ require('lazy').setup({
       { '<Leader>e', '<cmd>Oil<CR>' },
     },
     config = function()
-      require('oil').setup({
+      -- Hide git-ignored files.
+      local git_ignored = setmetatable({}, {
+        __index = function(self, key)
+          local proc = vim.system(
+            { 'git', 'ls-files', '--ignored', '--exclude-standard', '--others', '--directory' },
+            {
+              cwd = key,
+              text = true,
+            }
+          )
+          local result = proc:wait()
+          local ret = {}
+          if result.code == 0 then
+            for line in vim.gsplit(result.stdout, '\n', { plain = true, trimempty = true }) do
+              -- Remove trailing slash.
+              line = line:gsub('/$', '')
+              table.insert(ret, line)
+            end
+          end
+          rawset(self, key, ret)
+          return ret
+        end,
+      })
+
+      local oil = require('oil')
+      oil.setup({
         keymaps = {
           ['<C-v>'] = 'actions.select_vsplit',
           ['<C-s>'] = 'actions.select_split',
           -- Disable in favor of moving window.
           ['<C-h>'] = false,
           ['<C-l>'] = false,
+        },
+        view_options = {
+          is_hidden_file = function(name, _)
+            -- dotfiles are always considered hidden
+            if vim.startswith(name, '.') then
+              return true
+            end
+
+            -- if no local directory (e.g. for ssh connections), always show
+            local dir = oil.get_current_dir()
+            if not dir then
+              return false
+            end
+
+            -- Check if file is git-ignored
+            return vim.list_contains(git_ignored[dir], name)
+          end,
         },
       })
     end
