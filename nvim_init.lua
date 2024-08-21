@@ -77,13 +77,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'Shatur/neovim-ayu',
+    'EdenEast/nightfox.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      local ayu = require('ayu')
-      ayu.setup({ dark = true })
-      ayu.colorscheme()
+      vim.cmd('colorscheme carbonfox')
     end
   },
 
@@ -202,7 +200,6 @@ require('lazy').setup({
   {
     'nvim-lualine/lualine.nvim',
     config = function()
-      local colors = require('ayu.colors');
       require('lualine').setup {
         options = {
           icons_enabled = false,
@@ -218,10 +215,6 @@ require('lazy').setup({
               'buffers',
               show_filename_only = false,
               show_modified_status = false,
-              buffers_color = {
-                active = { bg = colors.bg, fg = colors.fg },
-                inactive = { bg = colors.black, fg = colors.comment },
-              },
               symbols = {
                 alternate_file = '',
                 directory =  '',
