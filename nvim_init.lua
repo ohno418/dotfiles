@@ -1,6 +1,5 @@
 -- OPTIONS --
 local options = {
-  -- basics
   number = true,
   history = 200,
   visualbell = true,
@@ -23,8 +22,7 @@ local options = {
   -- file handling
   confirm = true,
   swapfile = false,
-  -- yank to clipboard
-  -- (wl-clipboard package is required for wayland.)
+  -- Yank to clipboard.
   clipboard = 'unnamedplus',
 }
 
