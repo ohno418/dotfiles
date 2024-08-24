@@ -153,11 +153,17 @@ require('lazy').setup({
     branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
+      -- file search
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
-      { '<Leader>g', '<cmd>Telescope live_grep<CR>' },
+      -- buffer search
       { '<Leader>b', '<cmd>Telescope buffers<CR>' },
       { '<Leader><Space>', '<cmd>Telescope buffers<CR>' },
+      -- string grep
+      { '<Leader>gg', '<cmd>Telescope live_grep<CR>' },
+      -- git actions
+      { '<Leader>gs', '<cmd>Telescope git_status<CR>' },
+      { '<Leader>gc', '<cmd>Telescope git_commits<CR>' },
     },
     config = function()
       local actions = require('telescope.actions')
@@ -190,7 +196,14 @@ require('lazy').setup({
             mappings = {
               i = {
                 -- Delete buffer with Ctrl-r.
-                ['<C-r>'] = 'delete_buffer',
+                ['<C-r>'] = actions.delete_buffer,
+              },
+            },
+          },
+          git_status = {
+            mappings = {
+              i = {
+                ['<C-a>'] = actions.git_staging_toggle,
               },
             },
           },
