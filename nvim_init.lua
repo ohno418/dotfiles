@@ -38,7 +38,7 @@ vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
 -- buffers
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>') -- Move to next.
 vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>') -- Move to prev.
-vim.keymap.set('n', '<Leader>d', '<cmd>bp|bd#<CR>') -- Delete current buffer and move to previous.
+vim.keymap.set('n', '<Leader>d', '<cmd>bp|bd#<CR>') -- Delete current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
