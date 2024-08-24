@@ -161,7 +161,7 @@ require('lazy').setup({
       { '<Leader>gg', '<cmd>Telescope live_grep<CR>' },
       -- git actions
       { '<Leader>gs', '<cmd>Telescope git_status<CR>' },
-      { '<Leader>gc', '<cmd>Telescope git_commits<CR>' },
+      { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
     },
     config = function()
       local actions = require('telescope.actions')
