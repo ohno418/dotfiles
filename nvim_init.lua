@@ -95,7 +95,8 @@ require('lazy').setup({
       local git_ignored = setmetatable({}, {
         __index = function(self, key)
           local proc = vim.system(
-            { 'git', 'ls-files', '--ignored', '--exclude-standard', '--others', '--directory' },
+            { 'git', 'ls-files', '--ignored', '--exclude-standard', '--others',
+              '--directory' },
             {
               cwd = key,
               text = true,
@@ -104,7 +105,9 @@ require('lazy').setup({
           local result = proc:wait()
           local ret = {}
           if result.code == 0 then
-            for line in vim.gsplit(result.stdout, '\n', { plain = true, trimempty = true }) do
+            local lines = vim.gsplit(result.stdout, '\n',
+                                     { plain = true, trimempty = true })
+            for line in lines do
               -- Remove trailing slash.
               line = line:gsub('/$', '')
               table.insert(ret, line)
