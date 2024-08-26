@@ -32,8 +32,4 @@ mkdir -p ~/.mutt/cache/bodies
 touch ~/.mutt/certificates
 ln -sf $(pwd)/muttrc ~/.mutt/muttrc
 
-# aerc (email client)
-mkdir -p ~/.config/aerc
-ln -sf $(pwd)/aerc/* ~/.config/aerc/
-
 echo OK
