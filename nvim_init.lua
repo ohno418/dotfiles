@@ -234,7 +234,7 @@ require('lazy').setup({
               show_filename_only = false,
               show_modified_status = false,
               symbols = {
-                alternate_file = '# ',
+                alternate_file = '',
                 directory =  '',
               },
             },
