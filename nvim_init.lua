@@ -3,6 +3,7 @@ local options = {
   number = true,
   history = 200,
   visualbell = true,
+  cursorline = true,
   colorcolumn = '80',
   mouse = '', -- Disable mouse.
   -- softwrap
