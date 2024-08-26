@@ -218,8 +218,8 @@ require('lazy').setup({
         options = {
           icons_enabled = false,
           theme = 'auto',
-          component_separators = { left = '', right = ''},
-          section_separators = { left = '', right = ''},
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
           globalstatus = true,
         },
         sections = {
@@ -230,13 +230,13 @@ require('lazy').setup({
               show_filename_only = false,
               show_modified_status = false,
               symbols = {
-                alternate_file = '',
+                alternate_file = '# ',
                 directory =  '',
               },
             },
           },
           lualine_c = {},
-          lualine_x = { 'location' },
+          lualine_x = {},
           lualine_y = {},
           lualine_z = {},
         },
