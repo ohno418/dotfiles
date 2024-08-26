@@ -75,12 +75,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'EdenEast/nightfox.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd('colorscheme carbonfox')
-    end
+    'tiagovla/tokyodark.nvim',
+    config = function(_, opts)
+      require('tokyodark').setup(opts) -- calling setup is optional
+      vim.cmd([[colorscheme tokyodark]])
+    end,
   },
 
   -- File explorer
