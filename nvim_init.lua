@@ -84,7 +84,7 @@ require('lazy').setup({
     name = 'moonfly',
     config = function()
       vim.g.moonflyWinSeparator = 2
-      vim.cmd([[colorscheme moonfly]])
+      vim.cmd('colorscheme moonfly')
     end,
   },
 
