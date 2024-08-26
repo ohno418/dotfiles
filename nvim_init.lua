@@ -80,10 +80,11 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'tiagovla/tokyodark.nvim',
-    config = function(_, opts)
-      require('tokyodark').setup(opts) -- calling setup is optional
-      vim.cmd([[colorscheme tokyodark]])
+    'bluz71/vim-moonfly-colors',
+    name = 'moonfly',
+    config = function()
+      vim.g.moonflyWinSeparator = 2
+      vim.cmd([[colorscheme moonfly]])
     end,
   },
 
