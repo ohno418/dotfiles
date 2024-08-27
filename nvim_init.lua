@@ -1,35 +1,30 @@
 -- OPTIONS --
-local options = {
-  number = true,
-  history = 200,
-  visualbell = true,
-  cursorline = true,
-  colorcolumn = '80',
-  mouse = '', -- Disable mouse.
-  -- softwrap
-  wrap = false,
-  breakindent = true,
-  -- tab, indent
-  expandtab = true,
-  tabstop = 4,
-  shiftwidth = 2,
-  softtabstop = 2,
-  smartindent = true,
-  list = true,
-  listchars = 'tab:> ,lead:·,trail:·,nbsp:+',
-  -- searching
-  ignorecase = true,
-  smartcase = true,
-  -- file handling
-  confirm = true,
-  swapfile = false,
-  -- Yank to clipboard.
-  clipboard = 'unnamedplus',
-}
-
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+vim.opt.number = true
+vim.opt.history = 200
+vim.opt.visualbell = true
+vim.opt.cursorline = true
+vim.opt.colorcolumn = '80'
+-- Disable mouse.
+vim.opt.mouse = ''
+-- softwrap
+vim.opt.wrap = false
+vim.opt.breakindent = true
+-- tab, indent
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.smartindent = true
+vim.opt.list = true
+vim.opt.listchars = 'tab:> ,lead:·,trail:·,nbsp:+'
+-- searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- file handling
+vim.opt.confirm = true
+vim.opt.swapfile = false
+-- Yank to clipboard.
+vim.opt.clipboard = 'unnamedplus'
 
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
