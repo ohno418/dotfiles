@@ -12,8 +12,8 @@ vim.opt.breakindent = true
 -- tab, indent
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 vim.opt.list = true
 vim.opt.listchars = 'tab:> ,lead:·,trail:·,nbsp:+'
@@ -25,14 +25,6 @@ vim.opt.confirm = true
 vim.opt.swapfile = false
 -- Yank to clipboard.
 vim.opt.clipboard = 'unnamedplus'
-
--- Change the number of spaces for indentation based on file type.
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'c',
-  callback = function()
-    vim.bo.shiftwidth = 4
-  end,
-})
 
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
