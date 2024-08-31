@@ -143,7 +143,7 @@ require('lazy').setup({
           end,
         },
       })
-    end
+    end,
   },
 
   -- Fuzzy finder
@@ -207,7 +207,7 @@ require('lazy').setup({
           },
         },
       })
-    end
+    end,
   },
 
   -- Status line
@@ -241,7 +241,7 @@ require('lazy').setup({
           lualine_z = {},
         },
       }
-    end
+    end,
   },
 
   -- tree-sitter
@@ -255,7 +255,7 @@ require('lazy').setup({
           enable = true,
         },
       })
-    end
+    end,
   },
 
   -- LSP
@@ -293,7 +293,7 @@ require('lazy').setup({
           border = 'rounded',
         }
       )
-    end
+    end,
   },
   -- LSP server management
   {
@@ -301,7 +301,7 @@ require('lazy').setup({
     build = ':MasonUpdate',
     config = function()
       require('mason').setup()
-    end
+    end,
   },
   -- Autocompletion
   {
@@ -330,6 +330,6 @@ require('lazy').setup({
         -- Select nothing at first.
         preselect = cmp.PreselectMode.None,
       })
-    end
+    end,
   },
 })
