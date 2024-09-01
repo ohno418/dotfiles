@@ -211,8 +211,6 @@ require('lazy').setup({
   },
 
   -- Status line
-  -- TODO: Consider other plugin that displays buffers on status bar.
-  -- (e.g. https://github.com/girishji/bufline.vim?tab=readme-ov-file)
   {
     'nvim-lualine/lualine.nvim',
     config = function()
@@ -225,8 +223,7 @@ require('lazy').setup({
           globalstatus = true,
         },
         sections = {
-          lualine_a = { 'mode' },
-          lualine_b = {
+          lualine_a = {
             {
               'buffers',
               show_filename_only = false,
@@ -237,6 +234,7 @@ require('lazy').setup({
               },
             },
           },
+          lualine_b = {},
           lualine_c = {},
           lualine_x = {},
           lualine_y = {},
