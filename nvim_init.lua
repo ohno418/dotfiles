@@ -229,6 +229,7 @@ require('lazy').setup({
               'buffers',
               show_filename_only = false,
               show_modified_status = false,
+              max_length = vim.o.columns,
               symbols = {
                 alternate_file = '',
                 directory =  '',
