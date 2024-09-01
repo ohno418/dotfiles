@@ -156,9 +156,9 @@ require('lazy').setup({
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
       -- buffer search
-      { '<Leader>b',       '<cmd>Telescope buffers<CR>' },
-      { '<Leader><Space>', '<cmd>Telescope buffers<CR>' },
-      { '<C-a>',           '<cmd>Telescope buffers<CR>' },
+      { '<Leader>b',        '<cmd>Telescope buffers<CR>' },
+      { '<Leader><Leader>', '<cmd>Telescope buffers<CR>' },
+      { '<C-a>',            '<cmd>Telescope buffers<CR>' },
       -- string grep
       { '<Leader>gg', '<cmd>Telescope live_grep<CR>' },
       -- git actions
