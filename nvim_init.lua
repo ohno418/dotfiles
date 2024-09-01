@@ -211,6 +211,8 @@ require('lazy').setup({
   },
 
   -- Status line
+  -- TODO: Consider other plugin that displays buffers on status bar.
+  -- (e.g. https://github.com/girishji/bufline.vim?tab=readme-ov-file)
   {
     'nvim-lualine/lualine.nvim',
     config = function()
