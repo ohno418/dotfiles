@@ -251,7 +251,7 @@ require('lazy').setup({
     build = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'rust', 'typescript' },
+        ensure_installed = { 'c', 'rust', 'typescript' },
         highlight = { enable = true },
       })
     end,
