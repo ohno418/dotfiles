@@ -17,10 +17,10 @@ vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 vim.opt.list = true
 vim.opt.listchars = {
-    tab = '> ',
-    lead = '-',
-    trail = '-',
-    nbsp = '+',
+  tab = '> ',
+  lead = '-',
+  trail = '-',
+  nbsp = '+',
 }
 -- searching
 vim.opt.ignorecase = true
