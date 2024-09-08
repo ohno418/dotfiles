@@ -93,31 +93,6 @@ require('lazy').setup({
       { '<Leader>e', '<cmd>Oil<CR>' },
     },
     config = function()
-      local git_ignored = setmetatable({}, {
-        __index = function(self, key)
-          local result = vim.system(
-            { 'git', 'ls-files', '--ignored', '--exclude-standard', '--others',
-              '--directory' },
-            {
-              cwd = key,
-              text = true,
-            }
-          ):wait()
-          local ret = {}
-          if result.code == 0 then
-            local lines = vim.gsplit(result.stdout, '\n',
-                                     { plain = true, trimempty = true })
-            for line in lines do
-              -- Remove trailing slash.
-              line = line:gsub('/$', '')
-              table.insert(ret, line)
-            end
-          end
-          rawset(self, key, ret)
-          return ret
-        end,
-      })
-
       local oil = require('oil')
       oil.setup({
         keymaps = {
@@ -129,19 +104,8 @@ require('lazy').setup({
         },
         view_options = {
           is_hidden_file = function(name, _)
-            -- If no local directory (e.g. for ssh connections), always show.
-            local dir = oil.get_current_dir()
-            if not dir then
-              return false
-            end
-
-            -- Hide dotfiles.
-            if vim.startswith(name, '.') then
-              return true
-            end
-
-            -- Hide git-ignored files.
-            return vim.list_contains(git_ignored[dir], name)
+            return vim.startswith(name, '.') or -- dotfiles
+                   vim.endswith(name, '.o')     -- object files
           end,
         },
       })
