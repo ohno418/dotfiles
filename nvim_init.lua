@@ -252,9 +252,7 @@ require('lazy').setup({
     config = function()
       require('nvim-treesitter.configs').setup({
         ensure_installed = { 'rust', 'typescript' },
-        highlight = {
-          enable = true,
-        },
+        highlight = { enable = true },
       })
     end,
   },
