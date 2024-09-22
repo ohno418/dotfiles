@@ -129,6 +129,8 @@ require('lazy').setup({
       { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
       -- diagnostics
       { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
+      -- marks
+      { '<Leader>m', '<cmd>Telescope marks<CR>' },
     },
     config = function()
       local actions = require('telescope.actions')
