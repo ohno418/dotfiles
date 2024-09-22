@@ -248,7 +248,7 @@ require('lazy').setup({
         signs = true,
         update_in_insert = false,
         severity_sort = true,
-        float = { border = 'rounded' },
+        float = { border = 'single' },
       })
 
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
