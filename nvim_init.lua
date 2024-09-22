@@ -124,13 +124,13 @@ require('lazy').setup({
       -- buffer search
       { '<Leader>b',        '<cmd>Telescope buffers<CR>' },
       { '<Leader><Leader>', '<cmd>Telescope buffers<CR>' },
+      -- marks
+      { '<Leader>m', '<cmd>Telescope marks<CR>' },
+      -- diagnostics
+      { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
       -- git actions
       { '<Leader>gs', '<cmd>Telescope git_status<CR>' },
       { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
-      -- diagnostics
-      { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
-      -- marks
-      { '<Leader>m', '<cmd>Telescope marks<CR>' },
     },
     config = function()
       local actions = require('telescope.actions')
