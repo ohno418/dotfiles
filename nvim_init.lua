@@ -124,8 +124,6 @@ require('lazy').setup({
       -- buffer search
       { '<Leader>b',        '<cmd>Telescope buffers<CR>' },
       { '<Leader><Leader>', '<cmd>Telescope buffers<CR>' },
-      -- string grep
-      { '<Leader>gg', '<cmd>Telescope live_grep<CR>' },
       -- git actions
       { '<Leader>gs', '<cmd>Telescope git_status<CR>' },
       { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
