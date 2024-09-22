@@ -143,7 +143,7 @@ require('lazy').setup({
               i = {
                 ['<C-f>'] = actions.results_scrolling_down,
                 ['<C-b>'] = actions.results_scrolling_up,
-                -- Immediately close with Esc.
+                -- Close with Esc, instead of going to normal mode.
                 ['<esc>'] = actions.close,
               },
               n = {
