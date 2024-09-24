@@ -146,13 +146,7 @@ riverctl hide-cursor timeout 5000
 riverctl set-repeat 50 300
 
 # Status bar.
-while true; do
-    vol="vol: $(pamixer --get-volume)%$([ "$(pamixer --get-mute)" = "true" ] && printf " (mute)")"
-    bat="bat: $(cat /sys/class/power_supply/BAT0/capacity)%$([ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && printf " (charging)")"
-    date="$(date +'%Y-%m-%d %a %H:%M')"
-    echo "$vol | $bat | $date"
-    sleep 1
-done | creek -fn 'Noto Sans':size=16 -hg 30 -nf 0xeeeeee -nb 0x2E3440 -ff 0x000000 -fb 0x81a1c1
+yambar &
 
 # Input method.
 fcitx5 &

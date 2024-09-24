@@ -18,8 +18,9 @@ mkdir -p ~/.config/nvim
 ln -sf $(pwd)/nvim_init.lua ~/.config/nvim/init.lua
 
 # river
-mkdir -p ~/.config/river
-ln -sf $(pwd)/river_init ~/.config/river/init
+mkdir -p ~/.config/river ~/.config/yambar
+ln -sf $(pwd)/river/init ~/.config/river/init
+ln -sf $(pwd)/river/yambar_config.yml ~/.config/yambar/config.yml
 
 # foot
 mkdir -p ~/.config/foot
