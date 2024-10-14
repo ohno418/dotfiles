@@ -31,10 +31,22 @@ vim.opt.swapfile = false
 -- Yank to clipboard.
 vim.opt.clipboard = 'unnamedplus'
 
+-- COMMANDS ---
+-- Copy relative path of current buffer to clipboard.
+vim.api.nvim_create_user_command(
+  'CopyRelPath',
+  function()
+    local relpath = vim.fn.fnamemodify(vim.fn.expand('%'), ':.')
+    vim.api.nvim_call_function('setreg', { '+', relpath })
+  end,
+  {}
+)
+
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
+vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
 -- buffers
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>') -- Move to next.
