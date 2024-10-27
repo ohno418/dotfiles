@@ -4,8 +4,6 @@
 riverctl map normal Alt+Shift Return spawn foot
 riverctl map normal Alt+Shift b spawn firefox
 riverctl map normal Alt+Shift p spawn "firefox --private-window"
-# drawing app
-riverctl map normal Alt d spawn "GTK_THEME=Adwaita:dark pinta"
 
 # Close the focuesd view.
 riverctl map normal Alt+Shift Q close
