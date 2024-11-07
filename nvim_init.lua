@@ -49,6 +49,9 @@ vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
 -- buffers
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>') -- Move to next.
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>') -- Move to prev.
+vim.keymap.set('n', '<Leader>D', '<cmd>bp|bd#<CR>') -- Delete current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
@@ -177,7 +180,8 @@ require('lazy').setup({
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
       -- buffer
-      { '<Leader>b', '<cmd>Telescope buffers<CR>' },
+      { '<Leader>b',        '<cmd>Telescope buffers<CR>' },
+      { '<Leader><Leader>', '<cmd>Telescope buffers<CR>' },
       -- marks
       { '<Leader>m', '<cmd>Telescope marks<CR>' },
       -- diagnostics
@@ -227,27 +231,6 @@ require('lazy').setup({
           },
         },
       })
-    end,
-  },
-
-  -- harpoon
-  {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      local harpoon = require('harpoon')
-      harpoon:setup()
-
-      local toggle_menu = function()
-        harpoon.ui:toggle_quick_menu(harpoon:list())
-      end
-      vim.keymap.set('n', '<Leader>h',        toggle_menu)
-      vim.keymap.set('n', '<Leader><Leader>', toggle_menu)
-      vim.keymap.set('n', '<Leader>a', function() harpoon:list():add() end)
-
-      vim.keymap.set('n', '<C-n>', function() harpoon:list():next() end)
-      vim.keymap.set('n', '<C-p>', function() harpoon:list():prev() end)
     end,
   },
 
