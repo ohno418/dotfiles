@@ -53,6 +53,10 @@ vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>') -- Move to next.
 vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>') -- Move to prev.
 vim.keymap.set('n', '<Leader>D', '<cmd>bp|bd#<CR>') -- Delete current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
+-- tabs
+vim.keymap.set('n', '<Leader>tt', '<cmd>tabnew<CR>')
+vim.keymap.set('n', '<Leader>tn', '<cmd>tabnext<CR>')
+vim.keymap.set('n', '<Leader>tp', '<cmd>tabprev<CR>')
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
