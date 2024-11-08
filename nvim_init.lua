@@ -49,8 +49,8 @@ vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
 -- buffers
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>') -- Move to next.
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>') -- Move to prev.
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
 vim.keymap.set('n', '<Leader>D', '<cmd>bp|bd#<CR>') -- Delete current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- tabs
