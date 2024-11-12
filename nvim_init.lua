@@ -57,6 +57,7 @@ vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 vim.keymap.set('n', '<Leader>tt', '<cmd>tabnew<CR>')
 vim.keymap.set('n', '<Leader>tn', '<cmd>tabnext<CR>')
 vim.keymap.set('n', '<Leader>tp', '<cmd>tabprev<CR>')
+vim.keymap.set('n', '<Leader>tc', '<cmd>tabclose<CR>')
 -- move window
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
