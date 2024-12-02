@@ -49,6 +49,9 @@ vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
 -- buffers
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
+vim.keymap.set('n', '<Leader>D', '<cmd>bp|bd#<CR>') -- Delete current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
 vim.keymap.set('n', '<tab>', '<C-w><C-w>')
@@ -107,21 +110,6 @@ require('lazy').setup({
     end,
   },
 
-  -- harpoon
-  {
-    'ThePrimeagen/harpoon',
-    branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      local harpoon = require('harpoon')
-      harpoon:setup()
-      vim.keymap.set('n', '<C-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-      vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
-      vim.keymap.set('n', '<C-n>', function() harpoon:list():next() end)
-      vim.keymap.set('n', '<C-p>', function() harpoon:list():prev() end)
-    end,
-  },
-
   -- File explorer
   {
     'stevearc/oil.nvim',
@@ -146,6 +134,40 @@ require('lazy').setup({
           end,
         },
       })
+    end,
+  },
+
+  -- Status line
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          icons_enabled = false,
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          globalstatus = true,
+        },
+        sections = {
+          lualine_a = {
+            {
+              'buffers',
+              show_filename_only = false,
+              show_modified_status = false,
+              max_length = vim.o.columns,
+              symbols = {
+                alternate_file = '',
+                directory =  '',
+              },
+            },
+          },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = {},
+        },
+      }
     end,
   },
 
