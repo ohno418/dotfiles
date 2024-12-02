@@ -142,40 +142,6 @@ require('lazy').setup({
     end,
   },
 
-  -- Status line
-  {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup {
-        options = {
-          icons_enabled = false,
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' },
-          globalstatus = true,
-        },
-        sections = {
-          lualine_a = {
-            {
-              'buffers',
-              show_filename_only = false,
-              show_modified_status = false,
-              max_length = vim.o.columns,
-              symbols = {
-                alternate_file = '',
-                directory =  '',
-              },
-            },
-          },
-          lualine_b = {},
-          lualine_c = {},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {},
-        },
-      }
-    end,
-  },
-
   -- Fuzzy finder
   {
     'nvim-telescope/telescope.nvim',
