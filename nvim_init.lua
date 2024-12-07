@@ -182,8 +182,7 @@ require('lazy').setup({
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
       -- buffer
-      { '<Leader>b',        '<cmd>Telescope buffers<CR>' },
-      { '<Leader><Leader>', '<cmd>Telescope buffers<CR>' },
+      { '<Leader>j', '<cmd>Telescope buffers<CR>' },
       -- diagnostics
       { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
       -- git
