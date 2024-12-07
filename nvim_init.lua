@@ -1,5 +1,6 @@
 -- OPTIONS --
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.history = 200
 vim.opt.visualbell = true
 vim.opt.cursorline = true
