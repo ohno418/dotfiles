@@ -251,6 +251,7 @@ require('lazy').setup({
       lspconfig.rust_analyzer.setup({})
       lspconfig.clangd.setup({})
       lspconfig.ts_ls.setup({})
+      lspconfig.gopls.setup({})
 
       -- See `:help vim.diagnostic.config`.
       vim.diagnostic.config({
