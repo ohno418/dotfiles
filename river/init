@@ -11,7 +11,7 @@ riverctl map normal Alt a spawn "firefox --new-window https://www.perplexity.ai"
 riverctl map normal Alt Q close
 
 # Exit river.
-riverctl map normal Alt+Super+Shift E exit
+riverctl map normal Alt+Shift E exit
 
 # Focus the next/previous view.
 riverctl map normal Alt J focus-view next
