@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Open apps.
-riverctl map normal Alt Return spawn foot
+riverctl map normal Alt t spawn foot
 riverctl map normal Alt b spawn firefox
 riverctl map normal Alt p spawn "firefox --private-window"
 # Like an "AI assistant".
