@@ -185,9 +185,6 @@ require('lazy').setup({
       { '<Leader>j', '<cmd>Telescope buffers<CR>' },
       -- diagnostics
       { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
-      -- git
-      { '<Leader>gs', '<cmd>Telescope git_status<CR>' },
-      { '<Leader>gc', '<cmd>Telescope git_bcommits<CR>' },
     },
     config = function()
       local actions = require('telescope.actions')
@@ -212,23 +209,6 @@ require('lazy').setup({
             },
           }
         ),
-        pickers = {
-          buffers = {
-            mappings = {
-              i = {
-                -- Delete buffer with Ctrl-r.
-                ['<C-r>'] = actions.delete_buffer,
-              },
-            },
-          },
-          git_status = {
-            mappings = {
-              i = {
-                ['<C-a>'] = actions.git_staging_toggle,
-              },
-            },
-          },
-        },
       })
     end,
   },
