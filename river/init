@@ -1,14 +1,14 @@
 #!/bin/sh
 
 # Open apps.
-riverctl map normal Alt+Shift Return spawn foot
-riverctl map normal Alt+Shift b spawn firefox
-riverctl map normal Alt+Shift p spawn "firefox --private-window"
+riverctl map normal Alt Return spawn foot
+riverctl map normal Alt b spawn firefox
+riverctl map normal Alt p spawn "firefox --private-window"
 # Like an "AI assistant".
 riverctl map normal Alt a spawn "firefox --new-window https://www.perplexity.ai"
 
 # Close the focuesd view.
-riverctl map normal Alt+Shift Q close
+riverctl map normal Alt Q close
 
 # Exit river.
 riverctl map normal Alt+Super+Shift E exit
@@ -160,7 +160,7 @@ riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
 # Lock.
-riverctl map normal Alt+Shift x spawn waylock
+riverctl map normal Alt x spawn waylock
 
 # Display borders for all apps.
 # Without this, borders not displayed for Firefox for example.
