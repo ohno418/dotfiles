@@ -209,6 +209,16 @@ require('lazy').setup({
             },
           }
         ),
+        pickers = {
+          buffers = {
+            mappings = {
+              i = {
+                -- Delete buffer with Ctrl-r.
+                ['<C-r>'] = actions.delete_buffer,
+              },
+            },
+          },
+        },
       })
     end,
   },
