@@ -119,8 +119,7 @@ require('lazy').setup({
       { '<Leader>e', '<cmd>Oil<CR>' },
     },
     config = function()
-      local oil = require('oil')
-      oil.setup({
+      require('oil').setup({
         keymaps = {
           ['<C-v>'] = 'actions.select_vsplit',
           ['<C-s>'] = 'actions.select_split',
