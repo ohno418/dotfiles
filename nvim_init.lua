@@ -49,10 +49,6 @@ vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
--- buffers
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
-vim.keymap.set('n', '<Leader>D', '<cmd>bp|bd#<CR>') -- Delete current buffer.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
 vim.keymap.set('n', '<tab>', '<C-w><C-w>')
@@ -137,6 +133,36 @@ require('lazy').setup({
     end,
   },
 
+  -- Buffer manager
+  {
+    'j-morano/buffer_manager.nvim',
+    config = function()
+      require('buffer_manager').setup({
+        select_menu_item_commands = {
+          v = {
+            key = '<C-v>',
+            command = 'vsplit',
+          },
+          s = {
+            key = '<C-s>',
+            command = 'split',
+          }
+        },
+        highlight = 'Normal:BufferManagerBorder',
+        win_extra_options = {
+          winhighlight = 'Normal:BufferManagerNormal',
+        },
+      })
+
+      local bmui = require('buffer_manager.ui')
+      vim.keymap.set('n', '<Leader>l', bmui.toggle_quick_menu)
+      vim.keymap.set('n', '<C-n>', bmui.nav_next)
+      vim.keymap.set('n', '<C-p>', bmui.nav_prev)
+      -- TODO: <C-c> to close menu.
+    end,
+  },
+
+  -- TODO: Now that no need to manage buffers on status bar.
   -- Status line
   {
     'nvim-lualine/lualine.nvim',
@@ -180,8 +206,6 @@ require('lazy').setup({
       -- file
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
-      -- buffer
-      { '<Leader>l', '<cmd>Telescope buffers<CR>' },
       -- diagnostics
       { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
     },
@@ -208,16 +232,6 @@ require('lazy').setup({
             },
           }
         ),
-        pickers = {
-          buffers = {
-            mappings = {
-              i = {
-                -- Delete buffer with Ctrl-r.
-                ['<C-r>'] = actions.delete_buffer,
-              },
-            },
-          },
-        },
       })
     end,
   },
