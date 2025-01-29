@@ -36,7 +36,6 @@ vim.opt.clipboard = 'unnamedplus'
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
-vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
@@ -61,6 +60,7 @@ vim.api.nvim_create_user_command(
   end,
   {}
 )
+vim.keymap.set('n', '<Leader>c', '<cmd>CopyRelPath<CR>')
 
 -- PLUGINS --
 -- Bootstrap lazy.nvim plugin manager.
