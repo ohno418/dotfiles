@@ -32,17 +32,6 @@ vim.opt.swapfile = false
 -- Yank to clipboard.
 vim.opt.clipboard = 'unnamedplus'
 
--- COMMANDS ---
--- Copy relative path of current buffer to clipboard.
-vim.api.nvim_create_user_command(
-  'CopyRelPath',
-  function()
-    local relpath = vim.fn.fnamemodify(vim.fn.expand('%'), ':.')
-    vim.api.nvim_call_function('setreg', { '+', relpath })
-  end,
-  {}
-)
-
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
@@ -61,6 +50,17 @@ vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
 vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
+
+-- COMMANDS ---
+-- Copy relative path of current buffer to clipboard.
+vim.api.nvim_create_user_command(
+  'CopyRelPath',
+  function()
+    local relpath = vim.fn.fnamemodify(vim.fn.expand('%'), ':.')
+    vim.api.nvim_call_function('setreg', { '+', relpath })
+  end,
+  {}
+)
 
 -- PLUGINS --
 -- Bootstrap lazy.nvim plugin manager.
