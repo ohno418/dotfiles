@@ -122,6 +122,7 @@ bind generic,pager,editor,index 9 noop
 bind generic,pager,editor,index 0 noop
 bind generic,pager,editor,index ! noop
 bind generic,pager,editor,index @ noop
+bind generic,pager,editor,index \# noop
 bind generic,pager,editor,index $ noop
 bind generic,pager,editor,index % noop
 bind generic,pager,editor,index ^ noop
@@ -129,6 +130,12 @@ bind generic,pager,editor,index & noop
 bind generic,pager,editor,index * noop
 bind generic,pager,editor,index ( noop
 bind generic,pager,editor,index ) noop
+bind generic,pager,editor,index - noop
+bind generic,pager,editor,index _ noop
+bind generic,pager,editor,index = noop
+bind generic,pager,editor,index + noop
+bind generic,pager,editor,index ~ noop
+bind generic,pager,editor,index . noop
 
 bind generic,pager,editor,index \Ca noop
 bind generic,pager,editor,index \Cb noop
@@ -304,6 +311,7 @@ bind generic,pager,editor,index <Esc>& noop
 bind generic,pager,editor,index <Esc>* noop
 bind generic,pager,editor,index <Esc>( noop
 bind generic,pager,editor,index <Esc>) noop
+bind generic,pager,editor,index <Esc>/ noop
 
 # All
 bind generic,index,pager q exit
