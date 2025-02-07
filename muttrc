@@ -328,6 +328,8 @@ bind index \Cf next-page
 bind index \Cb previous-page
 bind index \Cd half-down
 bind index \Cu half-up
+bind index \Ce next-line
+bind index \Cy previous-line
 
 bind index H top-page
 bind index M middle-page
