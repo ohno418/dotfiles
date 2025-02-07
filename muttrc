@@ -308,14 +308,22 @@ bind generic,pager,editor,index <Esc>) noop
 # All
 bind generic,index,pager q exit
 
+bind generic,index,pager / search
+bind generic,index,pager n search-next
+bind generic,index,pager N search-opposite
+
 # Index
 bind generic,index j next-entry
 bind generic,index k previous-entry
-bind index J next-subthread
-bind index K previous-subthread
 
 bind index \Cf next-page
 bind index \Cb previous-page
+bind index \Cd half-down
+bind index \Cu half-up
+
+bind index H top-page
+bind index M middle-page
+bind index L bottom-page
 
 bind generic,index <Return> select-entry
 
@@ -325,6 +333,7 @@ bind index G last-entry
 bind index m mail
 bind index r reply
 bind index R group-reply
+
 bind index \Cr sync-mailbox
 
 # Pager
@@ -341,11 +350,6 @@ bind pager G bottom
 bind pager m mail
 bind pager r reply
 bind pager R group-reply
-
-# Search
-bind generic,index,pager / search
-bind generic,index,pager n search-next
-bind generic,index,pager N search-opposite
 
 # Compose
 bind compose y noop
