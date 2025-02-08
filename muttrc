@@ -24,6 +24,9 @@ set sort = threads
 set sort_aux = reverse-last-date-received
 set mark_old = no
 
+#--- Pager ---
+set pager_stop = yes
+
 #--- IMAP ---
 set imap_user = "yutaro.ono.418@gmail.com"
 set imap_pass = $my_gmail_password
