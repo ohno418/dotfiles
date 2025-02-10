@@ -224,8 +224,6 @@ require('lazy').setup({
   {
     'neovim/nvim-lspconfig',
     config = function()
-      local lspconfig = require('lspconfig')
-
       -- keymappings
       vim.keymap.set('n', 'K', vim.lsp.buf.hover)
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
@@ -235,6 +233,7 @@ require('lazy').setup({
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
       -- language servers
+      local lspconfig = require('lspconfig')
       lspconfig.rust_analyzer.setup({})
       lspconfig.clangd.setup({})
       lspconfig.ts_ls.setup({})
