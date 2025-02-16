@@ -133,34 +133,6 @@ require('lazy').setup({
     end,
   },
 
-  -- Buffer manager
-  {
-    'j-morano/buffer_manager.nvim',
-    config = function()
-      require('buffer_manager').setup({
-        select_menu_item_commands = {
-          v = {
-            key = '<C-v>',
-            command = 'vsplit',
-          },
-          s = {
-            key = '<C-s>',
-            command = 'split',
-          }
-        },
-        highlight = 'Normal:BufferManagerBorder',
-        win_extra_options = {
-          winhighlight = 'Normal:BufferManagerNormal',
-        },
-      })
-
-      local bmui = require('buffer_manager.ui')
-      vim.keymap.set('n', '<Leader>l', bmui.toggle_quick_menu)
-      vim.keymap.set('n', '<C-n>', bmui.nav_next)
-      vim.keymap.set('n', '<C-p>', bmui.nav_prev)
-    end,
-  },
-
   -- Status line
   {
     'nvim-lualine/lualine.nvim',
@@ -191,6 +163,7 @@ require('lazy').setup({
     keys = {
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
       { '<Leader>F', '<cmd>Telescope find_files<CR>' },
+      { '<Leader>j', '<cmd>Telescope buffers<CR>' },
       { '<Leader>d', '<cmd>Telescope diagnostics<CR>' },
     },
     config = function()
@@ -213,6 +186,16 @@ require('lazy').setup({
             },
             layout_config = {
               height = 0.8,
+            },
+            pickers = {
+              buffers = {
+                sort_mru = true,
+                mappings = {
+                  i = {
+                    ['<C-r>'] = actions.delete_buffer,
+                  },
+                },
+              },
             },
           }
         ),
