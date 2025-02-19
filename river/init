@@ -4,8 +4,6 @@
 riverctl map normal Alt t spawn foot
 riverctl map normal Alt b spawn firefox
 riverctl map normal Alt p spawn "firefox --private-window"
-# Like an "AI assistant".
-riverctl map normal Alt a spawn "firefox --new-window https://chatgpt.com"
 
 # Close the focuesd view.
 riverctl map normal Alt+Shift Q close
