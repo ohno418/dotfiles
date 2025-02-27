@@ -342,6 +342,9 @@ bind index <Return> select-entry
 bind index j next-entry
 bind index k previous-entry
 
+bind index J next-new
+bind index K previous-new
+
 bind index \Cf next-page
 bind index \Cb previous-page
 bind index \Cd half-down
