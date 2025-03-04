@@ -9,6 +9,7 @@
 	c = commit
 	d = diff
 	dc = diff --cached
+	r = restore
 	ch = checkout
 	b = branch
 	sw = switch
