@@ -5,17 +5,17 @@
 	editor = nvim
 [alias]
 	s = status
-	a = add
-	c = commit
 	d = diff
 	dc = diff --cached
+	a = add
+	c = commit
 	r = restore
-	ch = checkout
-	b = branch
-	sw = switch
-	f = fetch
 	l = log
 	g = grep
+	f = fetch
+	b = branch
+	sw = switch
 	rs = reset
 	rb = rebase
 	cp = cherry-pick
+	ch = checkout
