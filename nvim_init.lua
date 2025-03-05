@@ -187,18 +187,18 @@ require('lazy').setup({
             layout_config = {
               height = 0.8,
             },
-            pickers = {
-              buffers = {
-                sort_mru = true,
-                mappings = {
-                  i = {
-                    ['<C-r>'] = actions.delete_buffer,
-                  },
-                },
-              },
-            },
           }
         ),
+        pickers = {
+          buffers = {
+            sort_mru = true,
+            mappings = {
+              i = {
+                ['<C-r>'] = actions.delete_buffer,
+              },
+            },
+          },
+        },
       })
     end,
   },
