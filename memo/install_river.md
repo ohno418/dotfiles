@@ -34,7 +34,7 @@ pamixer
 (Use pipewire-jack and wireplumber for dependencies of other packages.)
 
 slurp
-waylock
+gtklock
 wl-clipboard
 xdg-desktop-portal-wlr
 zsh
