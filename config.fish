@@ -24,12 +24,13 @@ function gd;  git diff $argv;          end
 function gdc; git diff --cached $argv; end
 function ga;  git add $argv;           end
 function gc;  git commit $argv;        end
-function gg;  git grep $argv;          end
+function gr;  git restore $argv;       end
 function gl;  git log $argv;           end
-function gb;  git branch $argv;        end
-function gch; git checkout $argv;      end
-function gsw; git switch $argv;        end
+function gg;  git grep $argv;          end
 function gf;  git fetch $argv;         end
+function gb;  git branch $argv;        end
+function gsw; git switch $argv;        end
+function gch; git checkout $argv;      end
 
 # -- Misc --
 # Suppress welcome message on startup.
