@@ -37,6 +37,9 @@ vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
+-- buffers
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- move window
 vim.keymap.set('n', '<tab>', '<C-w><C-w>')
