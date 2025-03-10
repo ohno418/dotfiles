@@ -35,7 +35,3 @@ function gch; git checkout $argv;      end
 # -- Misc --
 # Suppress welcome message on startup.
 set fish_greeting
-
-# nodenv
-set -Ux fish_user_paths $HOME/.nodenv/bin $fish_user_paths
-status --is-interactive; and nodenv init - fish | source
