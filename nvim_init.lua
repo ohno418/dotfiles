@@ -220,8 +220,8 @@ require('lazy').setup({
 
       -- language servers
       local lspconfig = require('lspconfig')
-      lspconfig.rust_analyzer.setup({})
       lspconfig.clangd.setup({})
+      lspconfig.rust_analyzer.setup({})
       lspconfig.ts_ls.setup({})
 
       -- See `:help vim.diagnostic.config`.
