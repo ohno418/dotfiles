@@ -104,7 +104,7 @@ require('lazy').setup({
     build = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup({
-        ensure_installed = { 'c', 'rust', 'typescript', 'ruby' },
+        ensure_installed = { 'c', 'rust', 'ruby' },
         highlight = { enable = true },
       })
     end,
@@ -222,7 +222,6 @@ require('lazy').setup({
       local lspconfig = require('lspconfig')
       lspconfig.clangd.setup({})
       lspconfig.rust_analyzer.setup({})
-      lspconfig.ts_ls.setup({})
 
       -- See `:help vim.diagnostic.config`.
       vim.diagnostic.config({
