@@ -35,3 +35,8 @@ function gch; git checkout $argv;      end
 # -- Misc --
 # Suppress welcome message on startup.
 set fish_greeting
+
+# Load secrets if present.
+if test -f ~/.config/fish/secret.fish
+    source ~/.config/fish/secret.fish
+end
