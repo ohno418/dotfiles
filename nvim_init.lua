@@ -220,6 +220,12 @@ require('lazy').setup({
         max_tokens = 4096,
         disable_tools = true,
       },
+      mappings = {
+        submit = {
+          insert = '<C-y>',
+        },
+      },
+      hints = { enabled = false },
     },
     build = 'make',
     dependencies = {
@@ -227,9 +233,6 @@ require('lazy').setup({
       'stevearc/dressing.nvim',
       'nvim-lua/plenary.nvim',
       'MunifTanjim/nui.nvim',
-      -- optional:
-      'nvim-telescope/telescope.nvim',
-      'hrsh7th/nvim-cmp',
     },
   },
 
