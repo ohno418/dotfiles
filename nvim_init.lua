@@ -211,22 +211,14 @@ require('lazy').setup({
     event = 'VeryLazy',
     version = false,
     opts = {
-      -- provider = 'claude',
-      -- claude = {
-      --   endpoint = 'https://api.anthropic.com',
-      --   model = 'claude-3-7-sonnet-20250219',
-      --   timeout = 30000,
-      --   temperature = 0,
-      --   max_tokens = 4096,
-      --   disable_tools = true,
-      -- },
-      provider = 'openai',
-      openai = {
-        endpoint = 'https://api.openai.com/v1',
-        model = 'gpt-4o',
+      provider = 'claude',
+      claude = {
+        endpoint = 'https://api.anthropic.com',
+        model = 'claude-3-7-sonnet-20250219',
         timeout = 30000,
         temperature = 0,
-        max_completion_tokens = 8192,
+        max_tokens = 4096,
+        disable_tools = true,
       },
       mappings = {
         submit = {
