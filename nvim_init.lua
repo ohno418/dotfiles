@@ -88,13 +88,12 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- Colorscheme
   {
-    'bluz71/vim-moonfly-colors',
-    name = 'moonfly',
+    'projekt0n/github-nvim-theme',
+    name = 'github-theme',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.moonflyWinSeparator = 2
-      vim.cmd('colorscheme moonfly')
+      vim.cmd('colorscheme github_dark_colorblind')
     end,
   },
 
