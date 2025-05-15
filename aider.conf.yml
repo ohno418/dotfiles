@@ -1,1 +1,11 @@
+# ref: https://aider.chat/docs/config/aider_conf.html
+
+##################
+# Output settings:
+
 dark-mode: true
+
+###############
+# Git settings:
+
+auto-commits: false
