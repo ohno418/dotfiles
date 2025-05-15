@@ -218,8 +218,7 @@ require('lazy').setup({
     end,
   },
 
-  -- Autocompletion
-  -- TODO: Use Nvim built-ins.
+  -- Autocompletion for LSP
   {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
