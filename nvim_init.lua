@@ -209,42 +209,7 @@ require('lazy').setup({
     end,
   },
 
-  -- LSP
-  {
-    'neovim/nvim-lspconfig',
-    config = function()
-      -- keymappings
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover)
-      vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-      vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition)
-      vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
-      vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-      vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-
-      -- language servers
-      local lspconfig = require('lspconfig')
-      lspconfig.clangd.setup({})
-      lspconfig.rust_analyzer.setup({})
-
-      -- See `:help vim.diagnostic.config`.
-      vim.diagnostic.config({
-        underline = true,
-        virtual_text = false,
-        signs = true,
-        update_in_insert = false,
-        severity_sort = true,
-        float = { border = 'single' },
-      })
-
-      vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-        vim.lsp.handlers.hover, {
-          -- Border for hover window.
-          border = 'single',
-        }
-      )
-    end,
-  },
-  -- LSP server management
+  -- Language server management
   {
     'williamboman/mason.nvim',
     build = ':MasonUpdate',
@@ -252,7 +217,9 @@ require('lazy').setup({
       require('mason').setup()
     end,
   },
+
   -- Autocompletion
+  -- TODO: Use Nvim built-ins.
   {
     'hrsh7th/nvim-cmp',
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
@@ -280,3 +247,25 @@ require('lazy').setup({
     end,
   },
 })
+
+-- LSP --
+vim.keymap.set('n', 'K',  vim.lsp.buf.hover)
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition)
+vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+
+-- C
+vim.lsp.config['clangd'] = {
+  cmd = { 'clangd' },
+  filetypes = { 'c' },
+}
+vim.lsp.enable('clangd')
+
+-- Rust
+vim.lsp.config['rust_analyzer'] = {
+  cmd = { 'rust-analyzer' },
+  filetypes = { 'rust' },
+}
+vim.lsp.enable('rust_analyzer')
