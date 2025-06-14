@@ -13,8 +13,11 @@ promptinit
 # autocompletion
 zstyle ':completion:*' menu select
 
+# autocompletion
+zstyle ':completion:*' menu select
+
 # prompt
-PROMPT='%B%(?..[%?] )%b%n@%M:%~ $ '
+PROMPT='%F{red}%(?..[%?] )%f%F{cyan}[%n@%M %~]%f$ '
 
 # aliases
 alias ls='ls --color=auto'
@@ -33,3 +36,8 @@ alias gf='git fetch'
 alias gb='git branch'
 alias gsw='git switch'
 alias gch='git checkout'
+
+# zsh-syntax-highlighting package
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh-autosuggestions package
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
