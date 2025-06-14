@@ -17,7 +17,7 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' menu select
 
 # prompt
-PROMPT='%F{red}%(?..[%?] )%f%F{cyan}[%n@%M %~]%f$ '
+PROMPT='%F{red}%(?..[%?] )%f%F{cyan}%n@%M:%~%f $ '
 
 # aliases
 alias ls='ls --color=auto'
