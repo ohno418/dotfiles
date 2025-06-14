@@ -1,0 +1,35 @@
+# history file
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Emacs key bindings
+bindkey -e
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+# autocompletion
+zstyle ':completion:*' menu select
+
+# prompt
+PROMPT='%B%(?..[%?] )%b%n@%M:%~ $ '
+
+# aliases
+alias ls='ls --color=auto'
+alias vi='nvim'
+alias t='tmux'
+# git
+alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias ga='git add'
+alias gc='git commit'
+alias gr='git restore'
+alias gl='git log'
+alias gg='git grep'
+alias gf='git fetch'
+alias gb='git branch'
+alias gsw='git switch'
+alias gch='git checkout'

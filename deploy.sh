@@ -1,9 +1,10 @@
 #!/bin/sh
 set -e
 
-# fish
-mkdir -p ~/.config/fish
-ln -sf $(pwd)/config.fish ~/.config/fish/config.fish
+# zsh
+ln -sf $(pwd)/zsh/zprofile ~/.zprofile
+ln -sf $(pwd)/zsh/zshrc ~/.zshrc
+ln -sf $(pwd)/zsh/zshenv ~/.zshenv
 
 # git
 mkdir -p ~/.config/git

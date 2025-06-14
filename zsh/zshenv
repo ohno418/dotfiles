@@ -1,0 +1,17 @@
+# PATH
+# ref: https://zsh.sourceforge.io/Guide/zshguide02.html#l24
+typeset -U path
+path=(
+  # cargo
+  $HOME/.cargo/bin
+
+  $path
+)
+export PATH
+
+# fcitx5
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+
+# Use CapsLock as Ctrl.
+export XKB_DEFAULT_OPTIONS=caps:ctrl_modifier
