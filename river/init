@@ -106,16 +106,10 @@ do
     riverctl map $mode None XF86AudioLowerVolume  spawn "pamixer -d 5"
     riverctl map $mode None XF86AudioMute         spawn "pamixer --toggle-mute"
     riverctl map $mode None XF86AudioMicMute      spawn "pamixer --default-source --toggle-mute"
-    riverctl map $mode None F12                   spawn "pamixer -i 5"
-    riverctl map $mode None F11                   spawn "pamixer -d 5"
-    riverctl map $mode None F10                   spawn "pamixer --toggle-mute"
-    riverctl map $mode None F9                    spawn "pamixer --default-source --toggle-mute"
 
     # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
     riverctl map $mode None XF86MonBrightnessUp   spawn "brightnessctl set +5%"
     riverctl map $mode None XF86MonBrightnessDown spawn "brightnessctl set 5%-"
-    riverctl map $mode None F8                    spawn "brightnessctl set 5%+"
-    riverctl map $mode None F7                    spawn "brightnessctl set 5%-"
 done
 
 # Background and border color.
