@@ -33,7 +33,4 @@ mkdir -p ~/.mutt/cache/bodies
 touch ~/.mutt/certificates
 ln -sf $(pwd)/muttrc ~/.mutt/muttrc
 
-# aider
-ln -sf $(pwd)/aider.conf.yml ~/.aider.conf.yml
-
 echo OK
