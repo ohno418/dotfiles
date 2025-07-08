@@ -257,13 +257,6 @@ vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
--- C
-vim.lsp.config['clangd'] = {
-  cmd = { 'clangd' },
-  filetypes = { 'c' },
-}
-vim.lsp.enable('clangd')
-
 -- Rust
 vim.lsp.config['rust_analyzer'] = {
   cmd = { 'rust-analyzer' },
