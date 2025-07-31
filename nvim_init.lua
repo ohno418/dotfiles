@@ -30,7 +30,8 @@ vim.opt.clipboard = 'unnamedplus'
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
-vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>') -- Toggle soft wrap.
+vim.keymap.set('n', '<Leader>n', '<cmd>set relativenumber!<CR>') -- Toggle relativenumber.
+vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')           -- Toggle soft wrap.
 -- buffers
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
 vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
