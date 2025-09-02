@@ -136,21 +136,14 @@ require('lazy').setup({
 
   -- Status line
   {
-    'nvim-lualine/lualine.nvim',
+    'ojroques/nvim-hardline',
     config = function()
-      require('lualine').setup({
-        options = {
-          icon_enabled = false,
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' },
-        },
+      require('hardline').setup({
         sections = {
-          lualine_a = { 'mode' },
-          lualine_b = {},
-          lualine_c = { { 'filename', path = 1 } },
-          lualine_x = {},
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' }
+          { class = 'mode', item = require('hardline.parts.mode').get_item },
+          { class = 'med', item = require('hardline.parts.filename').get_item },
+          { class = 'med', item = '%=' },
+          { class = 'mode', item = require('hardline.parts.line').get_item },
         },
       })
     end,
