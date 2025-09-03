@@ -260,10 +260,3 @@ vim.lsp.config['rust_analyzer'] = {
   filetypes = { 'rust' },
 }
 vim.lsp.enable('rust_analyzer')
-
--- Ruby
-vim.lsp.config['solargraph'] = {
-  cmd = { 'solargraph', 'stdio' },
-  filetypes = { 'ruby' },
-}
-vim.lsp.enable('solargraph')
