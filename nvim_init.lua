@@ -17,6 +17,12 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 vim.opt.list = true
+vim.opt.listchars = {
+  tab = '> ',
+  leadmultispace = '▏ ',
+  trail = '-',
+  extends = '>',
+}
 -- searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -195,16 +201,6 @@ require('lazy').setup({
           },
         },
       })
-    end,
-  },
-
-  -- Indent line
-  {
-    'nvimdev/indentmini.nvim',
-    config = function()
-      require('indentmini').setup()
-      vim.api.nvim_set_hl(0, 'IndentLine', { link = 'Whitespace' })
-      vim.api.nvim_set_hl(0, 'IndentLineCurrent', { link = 'Whitespace' })
     end,
   },
 
