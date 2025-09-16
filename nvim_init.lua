@@ -31,6 +31,8 @@ vim.opt.confirm = true
 vim.opt.swapfile = false
 -- Yank to clipboard.
 vim.opt.clipboard = 'unnamedplus'
+-- status line
+vim.opt.statusline = '%{fnamemodify(expand("%"), ":~:.")} %m%=%l:%c %p%%'
 
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
@@ -135,21 +137,6 @@ require('lazy').setup({
             return vim.startswith(name, '.') or -- dotfiles
                    vim.endswith(name, '.o')     -- object files
           end,
-        },
-      })
-    end,
-  },
-
-  -- Status line
-  {
-    'ojroques/nvim-hardline',
-    config = function()
-      require('hardline').setup({
-        sections = {
-          { class = 'mode', item = require('hardline.parts.mode').get_item },
-          { class = 'med', item = require('hardline.parts.filename').get_item },
-          { class = 'med', item = '%=' },
-          { class = 'mode', item = require('hardline.parts.line').get_item },
         },
       })
     end,
