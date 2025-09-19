@@ -101,7 +101,7 @@ require('lazy').setup({
     end,
   },
 
-  -- tree-sitter
+  -- Tree-sitter
   {
     'nvim-treesitter/nvim-treesitter',
     branch = 'master',
