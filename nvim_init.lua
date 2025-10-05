@@ -41,16 +41,18 @@ vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
 vim.keymap.set('n', '<Leader>n', '<cmd>set relativenumber!<CR>') -- Toggle relativenumber.
 vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')           -- Toggle soft wrap.
 -- buffers
-vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>')
-vim.keymap.set('n', '<C-p>', '<cmd>bprev<CR>')
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
--- move window
+-- tabs
+vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
+vim.keymap.set('n', '<C-n>', '<cmd>tabnext<CR>')
+vim.keymap.set('n', '<C-p>', '<cmd>tabprev<CR>')
+-- Move window.
 vim.keymap.set('n', '<tab>', '<C-w><C-w>')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
--- resize window
+-- Resize window.
 vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
