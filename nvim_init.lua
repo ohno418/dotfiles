@@ -60,8 +60,6 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR><Esc>')
-vim.keymap.set('n', '<Leader>n', '<cmd>set relativenumber!<CR>') -- Toggle relativenumber.
-vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')           -- Toggle soft wrap.
 -- buffers
 vim.keymap.set('n', '<Leader>r', '<cmd>edit%<CR>') -- Reload current buffer.
 -- tabs
@@ -79,6 +77,10 @@ vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
 vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
+-- Toggle relativenumber.
+vim.keymap.set('n', '<Leader>n', '<cmd>set relativenumber!<CR>')
+-- Toggle soft wrap.
+vim.keymap.set('n', '<Leader>w', '<cmd>set wrap!<CR>')
 
 -- Copy relative path of current buffer to clipboard.
 vim.api.nvim_create_user_command(
