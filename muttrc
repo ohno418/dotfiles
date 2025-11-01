@@ -39,7 +39,7 @@ set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 
 #--- SMTP ---
-set smtp_url = "smtp://yutaro.ono.418@smtp.gmail.com:587/"
+set smtp_url = "smtps://yutaro.ono.418@smtp.gmail.com:587/"
 set smtp_pass = $my_gmail_password
 set ssl_force_tls = yes # Require encrypted connection
 
