@@ -80,7 +80,6 @@ vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
 vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
 vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
 
--- COMMANDS ---
 -- Copy relative path of current buffer to clipboard.
 vim.api.nvim_create_user_command(
   'CopyRelPath',
