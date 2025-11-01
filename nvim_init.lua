@@ -239,8 +239,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 
 -- Rust
-vim.lsp.config['rust_analyzer'] = {
+vim.lsp.config('rust_analyzer', {
   cmd = { 'rust-analyzer' },
   filetypes = { 'rust' },
-}
+})
 vim.lsp.enable('rust_analyzer')
