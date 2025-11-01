@@ -159,33 +159,23 @@ require('lazy').setup({
     config = function()
       local actions = require('telescope.actions')
       require('telescope').setup({
-        defaults = vim.tbl_extend(
-          'force',
-          require('telescope.themes').get_ivy(),
-          {
-            mappings = {
-              i = {
-                ['<C-f>'] = actions.results_scrolling_down,
-                ['<C-b>'] = actions.results_scrolling_up,
-                -- Close with Esc, instead of going to normal mode.
-                ['<Esc>'] = actions.close,
-              },
-              n = {
-                ['<C-c>'] = actions.close,
-              }
+        defaults = require('telescope.themes').get_ivy({
+          mappings = {
+            i = {
+              ['<C-f>'] = actions.results_scrolling_down,
+              ['<C-b>'] = actions.results_scrolling_up,
+              -- Close with Esc, instead of going to normal mode.
+              ['<Esc>'] = actions.close,
             },
-            layout_config = {
-              height = 0.8,
+            n = {
+              ['<C-c>'] = actions.close,
             },
-          }
-        ),
+          },
+          layout_config = { height = 0.8 },
+        }),
         pickers = {
           buffers = {
-            mappings = {
-              i = {
-                ['<C-r>'] = actions.delete_buffer,
-              },
-            },
+            mappings = { i = { ['<C-r>'] = actions.delete_buffer } },
           },
         },
       })
