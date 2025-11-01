@@ -218,9 +218,7 @@ require('lazy').setup({
           ['<C-y>'] = cmp.mapping.confirm({ select = true }),
           ['<CR>'] = cmp.mapping.confirm({ select = true }),
         },
-        sources = {
-          { name = 'nvim_lsp' },
-        },
+        sources = { { name = 'nvim_lsp' } },
         -- Select nothing at first.
         preselect = cmp.PreselectMode.None,
       })
