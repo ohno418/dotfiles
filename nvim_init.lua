@@ -21,6 +21,7 @@ vim.opt.listchars = {
   tab = '> ',
   trail = '-',
   extends = '>',
+  precedes = '<',
 }
 -- indent line
 vim.api.nvim_create_autocmd('FileType', {
