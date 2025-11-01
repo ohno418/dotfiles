@@ -19,10 +19,21 @@ vim.opt.smartindent = true
 vim.opt.list = true
 vim.opt.listchars = {
   tab = '> ',
-  leadmultispace = '▏ ',
   trail = '-',
   extends = '>',
 }
+-- indent line
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function()
+    local sw = vim.bo.shiftwidth
+    if sw == 0 then
+      sw = vim.bo.tabstop
+    end
+    vim.opt_local.listchars:append({
+      leadmultispace = '▏' .. string.rep(' ', sw - 1),
+    })
+  end,
+})
 -- searching
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
