@@ -23,6 +23,26 @@ vim.opt.listchars = {
   extends = '>',
   precedes = '<',
 }
+-- searching
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- file handling
+vim.opt.confirm = true
+vim.opt.swapfile = false
+-- Yank to clipboard.
+vim.opt.clipboard = 'unnamedplus'
+-- status line
+vim.opt.statusline = '%{fnamemodify(expand("%"), ":~:.")} %m%=%l:%c %p%%'
+
+-- Lua file indent width
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'lua',
+  callback = function()
+    vim.opt.shiftwidth = 2
+    vim.opt.softtabstop = 2
+  end,
+})
+
 -- indent line
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
@@ -35,16 +55,6 @@ vim.api.nvim_create_autocmd('FileType', {
     })
   end,
 })
--- searching
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
--- file handling
-vim.opt.confirm = true
-vim.opt.swapfile = false
--- Yank to clipboard.
-vim.opt.clipboard = 'unnamedplus'
--- status line
-vim.opt.statusline = '%{fnamemodify(expand("%"), ":~:.")} %m%=%l:%c %p%%'
 
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
