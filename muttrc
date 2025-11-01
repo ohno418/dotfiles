@@ -1,5 +1,4 @@
-# Use an application specific password here.
-set my_gmail_password = ""
+source ~/.mutt/secrets
 
 #--- Basics ---
 set realname = "Yutaro Ohno"
