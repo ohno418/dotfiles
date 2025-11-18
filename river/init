@@ -155,7 +155,7 @@ riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t png ~/Downloads/"
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
 # Lock.
-riverctl map normal Alt x spawn "gtklock -S"
+riverctl map normal Alt x spawn "swaylock --color 001400"
 
 # Display borders for all apps.
 # Without this, borders not displayed for Firefox for example.
