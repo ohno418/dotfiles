@@ -4,7 +4,7 @@
 riverctl map normal Alt t spawn foot
 riverctl map normal Alt b spawn firefox
 riverctl map normal Alt p spawn "firefox --private-window"
-riverctl map normal Alt a spawn "firefox --new-window https://claude.ai/new" # Like an "AI assistant".
+riverctl map normal Alt a spawn "firefox --new-window https://gemini.google.com/app" # Like an "AI assistant".
 riverctl map normal Alt d spawn "firefox --new-window https://dictionary.cambridge.org/" # Dictionary
 riverctl map normal Alt s spawn slack
 
