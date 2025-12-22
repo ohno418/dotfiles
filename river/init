@@ -120,6 +120,7 @@ riverctl border-color-unfocused 0x222222
 # Use device names that are listed by `riverctl list-inputs` here.
 touchpad="pointer-1267-12693-ELAN0676:00_04F3:3195_Touchpad"
 trackpoint="pointer-2-10-TPPS/2_Elan_TrackPoint"
+mouse="pointer-1133-49271-Logitech_USB_Optical_Mouse"
 
 # Tap to click.
 riverctl input $touchpad tap enabled
@@ -131,6 +132,7 @@ riverctl input $trackpoint pointer-accel 0.5
 # Natural scroll.
 riverctl input $touchpad natural-scroll enabled
 riverctl input $trackpoint natural-scroll enabled
+riverctl input $mouse natural-scroll enabled
 
 # NOTE: To use CapsLock as Ctrl, set `XKB_DEFAULT_OPTIONS=caps:ctrl_modifier`.
 
