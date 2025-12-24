@@ -194,7 +194,6 @@ require('lazy').setup({
               ['<C-c>'] = actions.close,
             },
           },
-          layout_config = { height = 0.8 },
         }),
         pickers = {
           buffers = {
