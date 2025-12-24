@@ -41,3 +41,6 @@ alias gch='git checkout'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # zsh-autosuggestions package
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# EDITOR
+export EDITOR='nvim'
