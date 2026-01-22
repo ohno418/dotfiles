@@ -198,6 +198,7 @@ require('lazy').setup({
         pickers = {
           buffers = {
             mappings = { i = { ['<C-r>'] = actions.delete_buffer } },
+            sort_mru = true,
           },
         },
       })
