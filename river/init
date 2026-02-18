@@ -150,6 +150,7 @@ fcitx5 &
 
 # Screenshot.
 riverctl map normal None Print spawn 'grim -g "$(slurp -d)" -t jpeg ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".jpg'
+riverctl map normal Shift Print spawn 'grim -t jpeg ~/Downloads/"$(date '+%Y%m%d-%H_%M_%S')".jpg'
 
 # Enable xdg-desktop-portal-wlr,
 # (ref: https://github.com/emersion/xdg-desktop-portal-wlr/wiki/systemd-user-services,-pam,-and-environment-variables)
