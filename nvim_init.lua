@@ -168,7 +168,7 @@ require('lazy').setup({
   -- Fuzzy finder
   {
     'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
+    version = '*',
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
       { '<Leader>f', '<cmd>Telescope git_files<CR>' },
