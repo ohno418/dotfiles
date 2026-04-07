@@ -129,14 +129,12 @@ require('lazy').setup({
   -- Tree-sitter
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
+    branch = 'main',
     lazy = false,
     build = ':TSUpdate',
     config = function()
-      require('nvim-treesitter.configs').setup({
+      require('nvim-treesitter').setup({
         ensure_installed = { 'c', 'rust', 'ruby' },
-        highlight = { enable = true },
-        indent = { enable = true },
       })
     end,
   },
