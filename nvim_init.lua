@@ -33,6 +33,10 @@ vim.opt.swapfile = false
 vim.opt.clipboard = 'unnamedplus'
 -- status line
 vim.opt.statusline = '%{fnamemodify(expand("%"), ":~:.")} %m%=%l:%c %p%%'
+-- completion
+-- TODO: Display LSP completion data on popup menu window.
+vim.opt.pumborder = 'rounded'
+vim.opt.completeopt = { 'fuzzy', 'menu', 'menuone', 'noselect', 'popup' }
 
 -- Lua file indent width
 vim.api.nvim_create_autocmd('FileType', {
@@ -212,28 +216,6 @@ require('lazy').setup({
     build = ':MasonUpdate',
     config = function()
       require('mason').setup()
-    end,
-  },
-
-  -- Autocompletion for LSP
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp' },
-    config = function()
-      local cmp = require('cmp')
-      cmp.setup({
-        mapping = {
-          ['<C-n>'] = cmp.mapping.select_next_item(),
-          ['<C-p>'] = cmp.mapping.select_prev_item(),
-          ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-          ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-          ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        },
-        sources = { { name = 'nvim_lsp' } },
-        -- Select nothing at first.
-        preselect = cmp.PreselectMode.None,
-      })
     end,
   },
 })
