@@ -31,8 +31,6 @@ vim.opt.confirm = true
 vim.opt.swapfile = false
 -- Yank to clipboard.
 vim.opt.clipboard = 'unnamedplus'
--- status line
-vim.opt.statusline = '%{fnamemodify(expand("%"), ":~:.")} %m%=%l:%c %p%%'
 -- completion
 -- TODO: Display LSP completion data on popup menu window.
 vim.opt.pumborder = 'rounded'
