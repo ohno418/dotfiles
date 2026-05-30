@@ -32,7 +32,6 @@ vim.opt.swapfile = false
 -- Yank to clipboard.
 vim.opt.clipboard = 'unnamedplus'
 -- completion
--- TODO: Display LSP completion data on popup menu window.
 vim.opt.pumborder = 'rounded'
 vim.opt.completeopt = { 'fuzzy', 'menu', 'menuone', 'noselect', 'popup' }
 
@@ -208,28 +207,4 @@ require('lazy').setup({
       })
     end,
   },
-
-  -- Language server management
-  {
-    'williamboman/mason.nvim',
-    build = ':MasonUpdate',
-    config = function()
-      require('mason').setup()
-    end,
-  },
 })
-
--- LSP --
-vim.keymap.set('n', 'K',  vim.lsp.buf.hover)
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
-vim.keymap.set('n', 'gt', vim.lsp.buf.type_definition)
-vim.keymap.set('n', 'gf', vim.diagnostic.open_float)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-
--- Rust
-vim.lsp.config('rust_analyzer', {
-  cmd = { 'rust-analyzer' },
-  filetypes = { 'rust' },
-})
-vim.lsp.enable('rust_analyzer')
