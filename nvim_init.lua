@@ -69,7 +69,6 @@ vim.keymap.set('n', '<Leader>t', '<cmd>tabnew<CR>')
 vim.keymap.set('n', '<C-n>', '<cmd>tabnext<CR>')
 vim.keymap.set('n', '<C-p>', '<cmd>tabprev<CR>')
 -- Move window.
-vim.keymap.set('n', '<tab>', '<C-w><C-w>')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
