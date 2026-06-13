@@ -188,8 +188,6 @@ require('lazy').setup({
         defaults = require('telescope.themes').get_ivy({
           mappings = {
             i = {
-              ['<C-f>'] = actions.results_scrolling_down,
-              ['<C-b>'] = actions.results_scrolling_up,
               -- Close with Esc, instead of going to normal mode.
               ['<Esc>'] = actions.close,
             },
@@ -200,7 +198,6 @@ require('lazy').setup({
         }),
         pickers = {
           buffers = {
-            mappings = { i = { ['<C-r>'] = actions.delete_buffer } },
             sort_mru = true,
           },
         },
