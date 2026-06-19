@@ -76,8 +76,6 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 -- Resize window.
 vim.keymap.set('n', '=', '<cmd>vertical resize +5<CR>')
 vim.keymap.set('n', '-', '<cmd>vertical resize -5<CR>')
-vim.keymap.set('n', '+', '<cmd>horizontal resize +2<CR>')
-vim.keymap.set('n', '_', '<cmd>horizontal resize -2<CR>')
 -- Toggle relativenumber.
 vim.keymap.set('n', '<Leader>n', '<cmd>set relativenumber!<CR>')
 -- Toggle soft wrap.
