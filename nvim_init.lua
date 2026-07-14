@@ -132,9 +132,7 @@ require('lazy').setup({
     lazy = false,
     build = ':TSUpdate',
     config = function()
-      require('nvim-treesitter').setup({
-        ensure_installed = { 'c', 'rust', 'ruby' },
-      })
+      require('nvim-treesitter').install({ 'c', 'rust', 'ruby' })
     end,
   },
 
@@ -200,4 +198,9 @@ require('lazy').setup({
       })
     end,
   },
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { 'c', 'rust', 'ruby' },
+  callback = function() vim.treesitter.start() end,
 })
