@@ -35,16 +35,6 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.pumborder = 'rounded'
 vim.opt.completeopt = { 'fuzzy', 'menu', 'menuone', 'noselect', 'popup' }
 
--- Lua file indent width
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'lua',
-  callback = function()
-    vim.opt.tabstop = 2
-    vim.opt.shiftwidth = 2
-    vim.opt.softtabstop = 2
-  end,
-})
-
 -- indent line
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
@@ -203,4 +193,14 @@ require('lazy').setup({
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'c', 'rust', 'ruby' },
   callback = function() vim.treesitter.start() end,
+})
+
+-- Lua file indent width
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'lua',
+  callback = function()
+    vim.opt.tabstop = 2
+    vim.opt.shiftwidth = 2
+    vim.opt.softtabstop = 2
+  end,
 })
