@@ -204,3 +204,34 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.softtabstop = 2
   end,
 })
+
+-- LSP --
+vim.diagnostic.config({
+  jump = { float = true },
+})
+
+-- Tailwind
+vim.lsp.config('tailwindcss', {
+  cmd = { 'tailwindcss-language-server', '--stdio' },
+  filetypes = { 'html', 'css', 'scss', 'eruby', 'javascript', 'typescript' },
+  workspace_required = true,
+  root_dir = function(bufnr, on_dir)
+    local markers = {
+      'tailwind.config.js', 'tailwind.config.ts', 'app/assets/tailwind',
+    }
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    for dir in vim.fs.parents(fname) do
+      for _, m in ipairs(markers) do
+        if vim.uv.fs_stat(vim.fs.joinpath(dir, m)) then
+          return on_dir(dir)
+        end
+      end
+    end
+  end,
+  settings = {
+    tailwindCSS = {
+      includeLanguages = { eruby = 'erb' },
+    },
+  },
+})
+vim.lsp.enable('tailwindcss')
