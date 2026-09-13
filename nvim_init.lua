@@ -35,19 +35,6 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.pumborder = 'rounded'
 vim.opt.completeopt = { 'fuzzy', 'menu', 'menuone', 'noselect', 'popup' }
 
--- indent line
-vim.api.nvim_create_autocmd('FileType', {
-  callback = function()
-    local sw = vim.bo.shiftwidth
-    if sw == 0 then
-      sw = vim.bo.tabstop
-    end
-    vim.opt_local.listchars:append({
-      leadmultispace = '▏' .. string.rep(' ', sw - 1),
-    })
-  end,
-})
-
 -- KEYMAPPINGS --
 vim.g.mapleader = ' '
 vim.keymap.set('i', 'jj', '<Esc>')
@@ -201,6 +188,19 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt.tabstop = 2
     vim.opt.shiftwidth = 2
     vim.opt.softtabstop = 2
+  end,
+})
+
+-- indent line
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function()
+    local sw = vim.bo.shiftwidth
+    if sw == 0 then
+      sw = vim.bo.tabstop
+    end
+    vim.opt_local.listchars:append({
+      leadmultispace = '▏' .. string.rep(' ', sw - 1),
+    })
   end,
 })
 
