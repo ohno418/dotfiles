@@ -113,9 +113,10 @@ do
 done
 
 # Background and border color.
-riverctl background-color 0x002800
-riverctl border-color-focused 0x22ffaa
-riverctl border-color-unfocused 0x222222
+riverctl background-color 0x232a25
+riverctl border-width 2
+riverctl border-color-focused 0x8aa17f
+riverctl border-color-unfocused 0x313a33
 
 # Use device names that are listed by `riverctl list-inputs` here.
 touchpad="pointer-1267-12693-ELAN0676:00_04F3:3195_Touchpad"
@@ -158,7 +159,7 @@ riverctl map normal Shift Print spawn 'grim -t jpeg ~/Downloads/"$(date '+%Y%m%d
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
 
 # Lock.
-riverctl map normal Alt x spawn "swaylock --color 001400"
+riverctl map normal Alt x spawn "swaylock --color 141a16"
 
 # Display borders for all apps.
 # Without this, borders not displayed for Firefox for example.
